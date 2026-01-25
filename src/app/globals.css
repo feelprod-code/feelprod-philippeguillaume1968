@@ -218,6 +218,8 @@ section {
   -webkit-text-fill-color: #1d1d1f;
   color: #1d1d1f;
   margin-bottom: 20px;
+  margin-top: 150px;
+  /* Pousse le titre vers le bas dans le blanc */
   position: relative;
   z-index: 2;
   /* Content above video */
