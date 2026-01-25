@@ -44,8 +44,8 @@ export default function VideoModal({ isOpen, videoSrc, videoId, onClose }: Video
                 >
                     &times;
                 </button>
-                {/* Changement ici : pb-[42.85%] pour le format 21/9 Cinéma - Style inline pour forcer l'affichage */}
-                <div className="relative h-0 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-black" style={{ paddingBottom: '42.85%' }}>
+                {/* Retour au format 16/9 standard pour compatibilité YouTube maximale */}
+                <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl bg-black">
                     {videoSrc ? (
                         <video
                             ref={videoRef}
@@ -54,7 +54,7 @@ export default function VideoModal({ isOpen, videoSrc, videoId, onClose }: Video
                             className="absolute top-0 left-0 w-full h-full object-cover"
                             playsInline
                             autoPlay
-                            muted // Muted is often required for autoplay to work reliably
+                            muted
                             loop
                         />
                     ) : videoId ? (
