@@ -184,10 +184,11 @@ section {
   color: #1d1d1f;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* Back to center */
+  justify-content: flex-end;
+  /* Push content to bottom in the white area */
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
+  /* Space for text */
 }
 
 .hero-section .video-background {
@@ -195,11 +196,11 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80vh;
-  /* Controlled height for the video part */
+  height: 85%;
+  /* Video stops before bottom */
   min-height: 500px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 95%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   z-index: 0;
 }
 
@@ -209,7 +210,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
 }
 
 .hero-section h1 {
