@@ -94,7 +94,18 @@ export default function InfiniteCarousel({ items, onOpen }: InfiniteCarouselProp
                             onOpen(item.videoSrc, item.videoId);
                         }}
                     >
-                        <img src={item.image} alt={item.alt} draggable={false} />
+                        {item.videoSrc ? (
+                            <video
+                                src={item.videoSrc}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover pointer-events-none"
+                            />
+                        ) : (
+                            <img src={item.image} alt={item.alt} draggable={false} className="w-full h-full object-cover" />
+                        )}
                     </div>
                 ))}
             </div>

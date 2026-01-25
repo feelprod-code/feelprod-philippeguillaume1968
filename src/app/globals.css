@@ -281,30 +281,7 @@ section {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.card::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60px;
-  height: 60px;
-  background: rgba(25, 25, 25, 0.6) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>') no-repeat center center;
-  background-size: 40%;
-  border-radius: 50%;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.8);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  pointer-events: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
 
-.card:hover::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
 
 .card img {
   width: 100%;
