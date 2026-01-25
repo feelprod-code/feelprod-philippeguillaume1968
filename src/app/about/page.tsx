@@ -50,7 +50,7 @@ export default function AboutPage() {
 
             {/* Hero Slideshow Section - Strictly 16/9 Ratio with Bottom Fade (Fondu) */}
             <section className="relative w-full aspect-video overflow-hidden">
-                <div className="w-full h-full" style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}>
+                <div className="w-full h-full" style={{ maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)' }}>
                     <AnimatePresence mode="popLayout">
                         <motion.div
                             key={index}
