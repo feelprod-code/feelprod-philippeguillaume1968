@@ -63,7 +63,7 @@ export default function AboutPage() {
                             <img
                                 src={images[index]}
                                 alt="Philippe Guillaume"
-                                className="w-full h-full object-cover object-top"
+                                className="w-full h-full object-cover object-top grayscale"
                                 style={{ transform: 'scale(1)' }} /* Reset specific scale if needed, object-cover handles it */
                             />
                         </motion.div>
@@ -83,70 +83,67 @@ export default function AboutPage() {
                 </Reveal>
 
                 <Reveal delay={0.3}>
-                    <div className="prose prose-lg text-gray-600 leading-relaxed font-medium space-y-8 text-left md:text-justify">
-                        <p>
-                            <strong>FEELPROD est né d’un regard porté sur l’humain.</strong><br />
+                    <div className="max-w-3xl mx-auto text-lg leading-loose text-gray-700 font-light tracking-wide text-justify">
+                        <p className="mb-8">
+                            <span className="text-3xl font-bold text-[#1d1d1f] mr-1 float-left leading-none mt-2">F</span><strong>EELPROD est né d’un regard porté sur l’humain.</strong><br />
                             À l’origine, il y a Philippe Guillaume, thérapeute de profession, passionné d’image et de mouvement, guidé depuis toujours par une même recherche : révéler ce qui est vivant, sensible et lumineux chez les personnes.
                         </p>
 
-                        <p>
+                        <p className="mb-8">
                             FEELPROD n’est pas un simple nom de production.<br />
                             Il exprime une intention.<br />
                             Sentir avant de montrer. Ressentir avant de produire.<br />
                             Mettre en lumière ce qui anime, ce qui vibre, ce qui relie.
                         </p>
 
-                        <blockquote className="border-l-4 border-[#fca00b] pl-6 py-2 italic text-gray-800 text-xl font-serif my-8">
-                            « Dans mon métier de thérapeute, je vais chercher chez les personnes leurs ressources, leur capacité à se remettre en mouvement.<br />
-                            Avec l’image, je fais exactement la même chose. »
+                        <blockquote className="border-l-2 border-[#1d1d1f]/30 pl-8 italic text-gray-500 my-12 font-serif">
+                            « Dans mon métier de thérapeute, je vais chercher chez les personnes leurs ressources, leur capacité à se remettre en mouvement. Avec l’image, je fais exactement la même chose. »
                         </blockquote>
 
-                        <p>
+                        <p className="mb-8">
                             Très tôt, Philippe s’intéresse à la vidéo, bien avant l’ère des smartphones. Le sport, le geste, l’effort, la coordination, le mouvement l’attirent naturellement. Il traverse les évolutions technologiques successives — vidéo, photo, montage, diffusion — non par goût de la technique seule, mais parce que chaque outil affine la manière de raconter le réel.
                         </p>
 
-                        <p>
+                        <p className="mb-8">
                             FEELPROD s’est construit dans cette liberté : filmer, monter, produire, diffuser.<br />
                             Une approche autonome, légère, complète.<br />
                             Comprendre le son, l’image, le rythme, l’émotion.
                         </p>
 
-                        <p>
+                        <p className="mb-12">
                             Danse, sport, événements, entreprises…<br />
                             FEELPROD accompagne des moments de vie, des instants de présence, des projets humains. Toujours avec la même posture : être là sans s’imposer, observer, ressentir, capter l’essentiel.
                         </p>
 
-                        <blockquote className="border-l-4 border-[#fca00b] pl-6 py-2 italic text-gray-800 text-xl font-serif my-8">
-                            « Je ne cherche pas à fabriquer une image.<br />
-                            Je cherche à révéler ce qui est déjà là. »
+                        <blockquote className="border-l-2 border-[#1d1d1f]/30 pl-8 italic text-gray-500 my-12 font-serif">
+                            « Je ne cherche pas à fabriquer une image. Je cherche à révéler ce qui est déjà là. »
                         </blockquote>
 
-                        <p>
+                        <p className="mb-8">
                             L’évolution de la photo et de la vidéo mobile renforce cette vision. À l’aise avec une caméra professionnelle comme avec un smartphone, FEELPROD associe naturellement image fixe et image en mouvement. L’outil s’efface au profit du regard.
                         </p>
 
-                        <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 my-8">
-                            <p className="font-bold text-lg mb-4">Aujourd’hui, FEELPROD est à la croisée de plusieurs mondes :</p>
-                            <ul className="list-none space-y-2 pl-0">
-                                <li className="flex items-center gap-2"><span className="text-[#fca00b] text-xl">•</span> la thérapie et la création,</li>
-                                <li className="flex items-center gap-2"><span className="text-[#fca00b] text-xl">•</span> le soin et l’image,</li>
-                                <li className="flex items-center gap-2"><span className="text-[#fca00b] text-xl">•</span> la technologie et l’humain.</li>
+                        <div className="bg-gray-50/50 p-8 rounded-sm my-12 text-center text-base">
+                            <p className="font-semibold text-gray-900 mb-6 uppercase tracking-widest text-sm">Aujourd’hui, FEELPROD est à la croisée de plusieurs mondes</p>
+                            <ul className="space-y-3 pl-0 text-gray-600 font-normal list-none">
+                                <li className="flex items-center justify-center gap-3"><span className="h-1 w-1 bg-[#1d1d1f] rounded-full"></span> la thérapie et la création</li>
+                                <li className="flex items-center justify-center gap-3"><span className="h-1 w-1 bg-[#1d1d1f] rounded-full"></span> le soin et l’image</li>
+                                <li className="flex items-center justify-center gap-3"><span className="h-1 w-1 bg-[#1d1d1f] rounded-full"></span> la technologie et l’humain</li>
                             </ul>
                         </div>
 
-                        <p>
-                            <strong>Une même démarche traverse tout :</strong><br />
-                            aller chercher la lumière chez les personnes,<br />
-                            la mettre en valeur,<br />
-                            l’accompagner,<br />
-                            l’immortaliser.
-                        </p>
+                        <div className="mb-16 text-center text-gray-800">
+                            <p className="mb-1 font-medium">Une même démarche traverse tout :</p>
+                            <p className="italic text-gray-500 font-light">aller chercher la lumière chez les personnes, la mettre en valeur, l’accompagner, l’immortaliser.</p>
+                        </div>
 
-                        <p className="text-xl font-bold text-[#1d1d1f] pt-8 border-t border-gray-100">
-                            FEELPROD, c’est une vision sensible de l’image.<br />
-                            Une attention portée au vivant.<br />
-                            Une vie en mouvement.
-                        </p>
+                        <div className="text-center pt-10 border-t border-gray-100">
+                            <p className="text-xl font-bold text-[#1d1d1f] leading-relaxed">
+                                FEELPROD, c’est une vision sensible de l’image.<br />
+                                <span className="text-gray-500 font-normal">Une attention portée au vivant.</span><br />
+                                Une vie en mouvement.
+                            </p>
+                        </div>
                     </div>
                 </Reveal>
             </section>
