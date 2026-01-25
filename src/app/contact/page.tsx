@@ -44,7 +44,7 @@ export default function ContactPage() {
             </nav>
 
             {/* Main Content - CENTERED LAYOUT to solve 'stuck to left' */}
-            <div className="w-full max-w-3xl mx-auto pt-32 pb-20 px-6">
+            <div className="w-full max-w-3xl mx-auto pt-52 pb-20 px-6">
 
                 {/* Header Section */}
                 <div className="text-center space-y-8 mb-16">
