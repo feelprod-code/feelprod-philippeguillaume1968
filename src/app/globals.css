@@ -205,12 +205,12 @@ section {
 }
 
 .hero-section .video-background video {
-  transform: scale(1.15);
-  /* Back to normal zoom */
+  transform: scale(1.35);
+  /* Zoom to remove black bars */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
 }
 
 .hero-section h1 {
