@@ -43,7 +43,8 @@ export default function ContactPage() {
                 </div>
             </nav>
 
-            <div className="max-w-[1400px] mx-auto pt-32 pb-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+            {/* Layout Container - Increased padding and max-width adjustment */}
+            <div className="max-w-7xl mx-auto pt-40 pb-20 px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
 
                 {/* Left Column: Info */}
                 <div className="space-y-12">
