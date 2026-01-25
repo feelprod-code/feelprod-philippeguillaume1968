@@ -186,9 +186,9 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   /* Push content to bottom in the white area */
-  padding-top: 50px;
-  padding-bottom: 80px;
-  /* Space for text */
+  padding-top: 0;
+  padding-bottom: 150px;
+  /* Space for text and spacing */
 }
 
 .hero-section .video-background {
