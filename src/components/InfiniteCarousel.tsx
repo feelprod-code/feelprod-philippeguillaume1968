@@ -101,6 +101,7 @@ export default function InfiniteCarousel({ items, onOpen }: InfiniteCarouselProp
                                 muted
                                 loop
                                 playsInline
+                                poster={item.image}
                                 className="w-full h-full object-cover pointer-events-none"
                             />
                         ) : (
