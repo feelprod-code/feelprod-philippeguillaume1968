@@ -48,28 +48,29 @@ export default function AboutPage() {
                 </div>
             </nav>
 
-            {/* Hero Slideshow Section - Strictly 16/9 Ratio with Bottom Fade (Fondu) */}
+            {/* Hero Slideshow Section - Strictly 16/9 Ratio with White Gradient Fade */}
             <section className="relative w-full aspect-video overflow-hidden">
-                <div className="w-full h-full" style={{ maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)' }}>
-                    <AnimatePresence mode="popLayout">
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 1.1 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
-                            className="absolute inset-0 w-full h-full"
-                        >
-                            <img
-                                src={images[index]}
-                                alt="Philippe Guillaume"
-                                className="w-full h-full object-cover object-top grayscale"
-                            />
-                            {/* Overlay gradient for depth */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
+                <AnimatePresence mode="popLayout">
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute inset-0 w-full h-full"
+                    >
+                        <img
+                            src={images[index]}
+                            alt="Philippe Guillaume"
+                            className="w-full h-full object-cover object-top grayscale"
+                        />
+                        {/* Subtle inner shadow for depth at top */}
+                        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent"></div>
+
+                        {/* White Fade to Bottom (Fondu) - Lighter touch */}
+                        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </motion.div>
+                </AnimatePresence>
             </section>
 
             {/* Content Section - Clean & Readable */}
