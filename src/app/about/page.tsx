@@ -49,7 +49,7 @@ export default function AboutPage() {
             </nav>
 
             {/* Hero Slideshow Section - Strictly 16/9 Ratio with White Gradient Fade */}
-            <section className="relative w-full aspect-video overflow-hidden">
+            <section className="relative w-full aspect-video overflow-hidden mt-0">
                 <AnimatePresence mode="popLayout">
                     <motion.div
                         key={index}
@@ -74,7 +74,7 @@ export default function AboutPage() {
             </section>
 
             {/* Content Section - Clean & Readable */}
-            <section className="w-full bg-white relative z-10 -mt-20 rounded-t-[2.5rem] px-6 py-16 md:py-20">
+            <section className="w-full bg-white relative z-10 -mt-8 md:-mt-20 rounded-t-[2.5rem] px-6 py-16 md:py-20">
                 <div className="max-w-3xl mx-auto">
                     <Reveal>
                         <div className="text-center mb-10 md:mb-16">
