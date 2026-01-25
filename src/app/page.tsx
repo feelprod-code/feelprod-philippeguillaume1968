@@ -40,7 +40,12 @@ export default function Home() {
                 className="global-nav"
             >
                 <div className="nav-content">
-                    <span className="nav-title">bienvenue sur le site de feelprod</span>
+                    <span className="nav-title">FEELPROD</span>
+                </div>
+                <div className="nav-menu">
+                    <a href="#" className="nav-link">ACCUEIL</a>
+                    <a href="#" className="nav-link">À PROPOS</a>
+                    <a href="#" className="nav-link">CONTACT</a>
                 </div>
             </motion.nav>
 
