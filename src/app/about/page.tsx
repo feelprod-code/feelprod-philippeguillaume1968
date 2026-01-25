@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import Reveal from "@/components/Reveal";
 
 const images = [
     "assets/images/steadyphil.JPG",
@@ -23,7 +22,7 @@ export default function AboutPage() {
 
     return (
         <main className="bg-white min-h-screen">
-            {/* Navigation (Reusing exact same nav as Home for consistency) */}
+            {/* Navigation */}
             <nav className="global-nav">
                 <div className="nav-content">
                     <Link href="/" className="nav-title hover:opacity-70 transition-opacity">FEELPROD</Link>
@@ -48,8 +47,7 @@ export default function AboutPage() {
                 </div>
             </nav>
 
-            {/* Hero Slideshow Section - Strictly 16/9 Ratio with White Gradient Fade */}
-            {/* Mobile: No negative margin to treat image respectfully. Desktop overlap remains. */}
+            {/* Hero Slideshow Section - 16/9 with fade */}
             <section className="relative w-full aspect-video overflow-hidden mt-0">
                 <AnimatePresence mode="popLayout">
                     <motion.div
@@ -65,88 +63,28 @@ export default function AboutPage() {
                             alt="Philippe Guillaume"
                             className="w-full h-full object-cover object-top grayscale"
                         />
-                        {/* Subtle inner shadow for depth at top */}
-                        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent"></div>
 
-                        {/* White Fade to Bottom (Fondu) - Lighter touch */}
-                        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                        {/* Gradient Fades */}
+                        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent"></div>
+                        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/60 to-transparent"></div>
                     </motion.div>
                 </AnimatePresence>
             </section>
 
-            {/* Content Section - Clean & Readable */}
-            {/* Removed negative margin on mobile (mt-0) so text never eats the photo. Kept negative margin on desktop. */}
-            <section className="w-full bg-white relative z-10 mt-0 md:-mt-20 rounded-none md:rounded-t-[2.5rem] px-6 py-12 md:py-20">
-                <div className="max-w-3xl mx-auto">
-                    <Reveal>
-                        <div className="text-center mb-10 md:mb-16">
-                            <h1 className="text-[#1d1d1f] text-5xl md:text-7xl font-black tracking-tighter leading-none mb-2">
-                                L'ARTISAN
-                            </h1>
-                            <p className="text-sm md:text-lg font-bold text-gray-400 uppercase tracking-[0.2em]">
-                                Derrière la caméra
-                            </p>
-                        </div>
-                    </Reveal>
-
-                    <Reveal delay={0.2}>
-                        <div className="max-w-2xl mx-auto text-center space-y-8 md:space-y-10">
-
-                            {/* Intro */}
-                            <div className="space-y-4 px-4 md:px-0">
-                                <p className="text-lg md:text-2xl font-medium text-[#1d1d1f] leading-snug">
-                                    FEELPROD est né d’un regard porté sur l’humain.
-                                </p>
-                                <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
-                                    À l’origine, il y a Philippe Guillaume, thérapeute de profession, passionné d’image et de mouvement.<br className="hidden md:block" />
-                                    Depuis toujours, une même recherche traverse son parcours :<br />
-                                    <span className="text-gray-800 font-medium">aller à la rencontre de ce qui est vivant, sensible et lumineux chez les personnes.</span>
-                                </p>
-                            </div>
-
-                            {/* Citation */}
-                            <div className="relative py-6 px-8 md:px-4">
-                                <span className="text-4xl text-[#fca00b] opacity-40 font-serif block mb-2">“</span>
-                                <p className="text-base md:text-xl italic text-gray-700 font-serif leading-relaxed">
-                                    Dans mon métier de thérapeute, je vais chercher les ressources qui permettent au corps et à l’être de se remettre en mouvement.<br />
-                                    Avec l’image, je fais exactement la même chose.
-                                </p>
-                            </div>
-
-                            {/* Histoire */}
-                            <p className="text-sm md:text-lg text-gray-600 leading-relaxed px-4 md:px-0">
-                                Très tôt, bien avant l’ère des smartphones, il s’intéresse à la vidéo. Le sport, le geste, le rythme, la présence. Il traverse les évolutions technologiques — vidéo, photo, son, montage — non par fascination pour l’outil, mais pour affiner sa manière de capter le réel.
-                            </p>
-
-                            {/* Approche */}
-                            <div className="space-y-3 px-4 md:px-0">
-                                <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#fca00b]">Danse • Sport • Événements • Entreprises</p>
-                                <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
-                                    FEELPROD accompagne des moments de vie avec une approche sensible et discrète : observer, ressentir, révéler sans jamais forcer.
-                                </p>
-                                <div className="pt-2">
-                                    <p className="text-base md:text-xl font-medium text-[#1d1d1f]">L’outil s’efface au profit du regard.</p>
-                                    <p className="text-base md:text-xl font-light text-gray-500">La technique sert l’émotion.</p>
-                                </div>
-                            </div>
-
-                            {/* Conclusion */}
-                            <div className="pt-10 border-t border-gray-100 mt-10 px-4 md:px-0">
-                                <p className="text-xl md:text-3xl font-bold text-[#1d1d1f] leading-tight mb-3">
-                                    FEELPROD se situe à l’endroit où l’humain rencontre l’image.
-                                </p>
-                                <p className="text-sm md:text-lg text-gray-600 mb-1 font-light">
-                                    Un espace où l’on révèle la lumière, le mouvement et la justesse d’un instant.
-                                </p>
-                                <p className="text-xs md:text-base text-[#fca00b] font-bold uppercase tracking-widest mt-6">
-                                    Pour donner à voir ce qui est déjà là, pleinement vivant.
-                                </p>
-                            </div>
-
-                        </div>
-                    </Reveal>
-                </div>
+            {/* Content Section - EMPTY FOR NOW */}
+            <section className="w-full bg-white relative z-10 px-6 py-20 min-h-[50vh]">
+                {/* Waiting for new text content */}
             </section>
+
+            <div className="w-full flex justify-center pb-20 bg-white">
+                <Link
+                    href="/"
+                    className="comic-link text-xl tracking-wide uppercase text-[#1d1d1f]"
+                    style={{ fontFamily: 'var(--font-comic)' }}
+                >
+                    RETOUR ACCUEIL
+                </Link>
+            </div>
         </main>
     );
 }
