@@ -83,7 +83,7 @@ export default function AboutPage() {
                 </Reveal>
 
                 <Reveal delay={0.3}>
-                    <div className="max-w-3xl mx-auto text-lg leading-loose text-gray-700 font-light tracking-wide text-justify">
+                    <div className="max-w-3xl mx-auto text-lg leading-loose text-gray-700 font-light tracking-wide text-justify px-6 md:px-0">
                         <p className="mb-8">
                             <span className="text-3xl font-bold text-[#1d1d1f] mr-1 float-left leading-none mt-2">F</span><strong>EELPROD est né d’un regard porté sur l’humain.</strong><br />
                             À l’origine, il y a Philippe Guillaume, thérapeute de profession, passionné d’image et de mouvement, guidé depuis toujours par une même recherche : révéler ce qui est vivant, sensible et lumineux chez les personnes.
