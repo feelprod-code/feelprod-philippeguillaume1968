@@ -187,7 +187,7 @@ section {
   justify-content: flex-end;
   /* Push content to bottom in the white area */
   padding-top: 0;
-  padding-bottom: 150px;
+  padding-bottom: 250px;
   /* Space for text and spacing */
 }
 
