@@ -46,3 +46,4 @@ artifacts/
 _legacy/
 design_inspo/
 *.rtf
+.env*.local
