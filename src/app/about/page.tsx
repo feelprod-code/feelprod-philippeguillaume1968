@@ -76,15 +76,6 @@ export default function AboutPage() {
                 {/* Waiting for new text content */}
             </section>
 
-            <div className="w-full flex justify-center pb-20 bg-white">
-                <Link
-                    href="/"
-                    className="comic-link text-xl tracking-wide uppercase text-[#1d1d1f]"
-                    style={{ fontFamily: 'var(--font-comic)' }}
-                >
-                    RETOUR ACCUEIL
-                </Link>
-            </div>
         </main>
     );
 }
