@@ -481,14 +481,27 @@ footer {
 }
 
 /* Desktop Specific Adjustments for Hero */
+/* Desktop Specific Adjustments for Hero */
 @media (min-width: 1024px) {
   .hero-section {
-    padding-bottom: 250px;
-    /* More space for desktop text */
+    padding-bottom: 80px;
+    /* Reduced for flex layout, space comes from gap */
+    justify-content: flex-end;
+    /* Force content to bottom */
+    min-height: calc(100vh - 80px);
+    /* Ensure full height */
   }
 
   .hero-section h1 {
-    margin-top: 150px;
-    /* Push title down on desktop only */
+    margin-top: 0;
+    /* Let flex handle positioning */
+    margin-bottom: 20px;
+  }
+
+  .hero-section .video-background {
+    height: 80%;
+    /* Video stops at 80% to leave CLEAR white space at bottom */
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 }
