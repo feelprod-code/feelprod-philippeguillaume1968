@@ -484,7 +484,7 @@ footer {
 /* Desktop Specific Adjustments for Hero */
 @media (min-width: 1024px) {
   .hero-section {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     /* Reduced for flex layout, space comes from gap */
     justify-content: flex-end;
     /* Force content to bottom */
