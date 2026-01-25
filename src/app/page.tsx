@@ -9,6 +9,7 @@ export default function Home() {
     const [modalState, setModalState] = useState<{ src?: string; id?: string; isOpen: boolean }>({
         isOpen: false,
     });
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleOpenModal = (src?: string, id?: string) => {
         setModalState({ src, id, isOpen: true });
@@ -42,10 +43,25 @@ export default function Home() {
                 <div className="nav-content">
                     <span className="nav-title">FEELPROD</span>
                 </div>
-                <div className="nav-menu">
-                    <a href="#" className="nav-link">ACCUEIL</a>
-                    <a href="#" className="nav-link">À PROPOS</a>
-                    <a href="#" className="nav-link">CONTACT</a>
+
+                {/* Hamburger Button */}
+                <button
+                    className="hamburger-button"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label="Menu"
+                >
+                    <span className={`hamburger-bar ${isMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></span>
+                    <span className={`hamburger-bar ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                    <span className={`hamburger-bar ${isMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></span>
+                </button>
+
+                {/* Mobile Menu Overlay */}
+                <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
+                    <a href="#" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</a>
+                    <a href="#" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>SOUVENIRS</a>
+                    <a href="#" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ADRÉNALINE</a>
+                    <a href="#" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ÉVASION</a>
+                    <a href="#" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</a>
                 </div>
             </motion.nav>
 
