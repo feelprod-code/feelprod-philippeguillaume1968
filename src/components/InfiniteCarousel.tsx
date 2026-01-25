@@ -85,7 +85,7 @@ export default function InfiniteCarousel({ items, onOpen }: InfiniteCarouselProp
                 {displayItems.map((item, index) => (
                     <div
                         key={index}
-                        className="card"
+                        className="card group relative"
                         onClick={(e) => {
                             // Prevent click if it was a drag (simple threshold)
                             // Actually difficult to calculate exactly without state, but if isDragging is false on mouseUp, it triggers click.
@@ -107,6 +107,15 @@ export default function InfiniteCarousel({ items, onOpen }: InfiniteCarouselProp
                         ) : (
                             <img src={item.image} alt={item.alt} draggable={false} className="w-full h-full object-cover" />
                         )}
+
+                        {/* Play Icon Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform scale-90 transition-transform duration-300 group-hover:scale-100">
+                                <svg className="w-8 h-8 text-white fill-current ml-1" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
