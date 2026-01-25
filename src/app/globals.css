@@ -74,7 +74,7 @@ h1 {
   /* Sticky position so it stays at the top but takes up space in the flow */
   top: 0;
   width: 100%;
-  height: 80px;
+  height: 120px;
   background: #ffffff;
   /* White background */
   z-index: 100000;
@@ -177,17 +177,18 @@ section {
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 120px);
   /* Full height minus header */
   min-height: 500px;
   background-color: #fff;
   color: #1d1d1f;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* Center vertically */
+  justify-content: flex-end;
+  /* Push content to bottom */
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: 80px;
+  /* Space for white fade text */
 }
 
 .hero-section .video-background {
@@ -195,19 +196,21 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  /* Fully cover the section */
+  height: 90%;
+  /* Video stops before bottom for pure white fade */
   min-height: auto;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   z-index: 0;
 }
 
 .hero-section .video-background video {
-  transform: scale(1.15);
+  transform: scale(1.5);
+  /* Strong zoom to fix borders */
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .hero-section h1 {
