@@ -58,9 +58,6 @@ export default function Home() {
                 {/* Mobile Menu Overlay */}
                 <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
                     <a href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</a>
-                    <a href="#souvenirs" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>SOUVENIRS</a>
-                    <a href="#adrenaline" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ADRÉNALINE</a>
-                    <a href="#evasion" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ÉVASION</a>
                     <a href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</a>
                     <a href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</a>
                 </div>
