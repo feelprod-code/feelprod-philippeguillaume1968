@@ -80,7 +80,7 @@ export default function Home() {
                     <InfiniteCarousel
                         onOpen={handleOpenModal}
                         items={[
-                            { videoSrc: "https://www.dropbox.com/scl/fi/tdlaw41w7op31qxqxeg4g/COMBAT-2.m4v?rlkey=qcl926k6988wu6f31fxk3vu91&raw=1", image: "assets/images/1.jpg", alt: "Combat 2 - FEELPROD" },
+                            { videoId: "Co8j8n_g_6Q", image: "assets/images/1.jpg", alt: "Souvenirs" },
                             { videoId: "Co8j8n_g_6Q", image: "assets/images/2.jpg", alt: "Souvenirs" },
                             { videoId: "Co8j8n_g_6Q", image: "assets/images/3.jpg", alt: "Souvenirs" },
                             { videoId: "iCkE_gYsLXo", image: "assets/images/4.jpg", alt: "Souvenirs" },
