@@ -166,7 +166,7 @@ export default function Home() {
 
             <footer>
                 <div className="footer-content">
-                    <p>Copyright &copy; 2026 FEELPROD.</p>
+                    <p>Copyright &copy; 2026 FEELPROD. <span className="opacity-30 text-[10px]">v:New-Contact-TEST</span></p>
                 </div>
             </footer>
         </main>
