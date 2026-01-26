@@ -9,15 +9,6 @@ const images = [
     "assets/images/barriophil.jpg",
     "assets/images/phil.PNG",
     "assets/images/pont.jpeg",
-    "assets/images/1.jpg",
-    "assets/images/2.jpg",
-    "assets/images/3.jpg",
-    "assets/images/4.jpg",
-    "assets/images/5.jpg",
-    "assets/images/6.jpg",
-    "assets/images/10.jpg",
-    "assets/images/12.jpg",
-    "assets/images/15.jpg",
 ];
 
 export default function AboutPage() {

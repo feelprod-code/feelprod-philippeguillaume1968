@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import InfiniteCarousel from "@/components/InfiniteCarousel";
+import { InfiniteCarousel } from "@/components/InfiniteCarousel";
 import VideoModal from "@/components/VideoModal";
 import Reveal from "@/components/Reveal";
 
