@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 interface RevealProps {
     children: React.ReactNode;
     delay?: number;
+    className?: string; // Add optional className
 }
 
-export default function Reveal({ children, delay = 0 }: RevealProps) {
+export default function Reveal({ children, delay = 0, className = "" }: RevealProps) {
     return (
         <motion.div
+            className={className} // Apply it here
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
