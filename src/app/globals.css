@@ -422,13 +422,13 @@ footer {
     justify-content: flex-start;
     padding-top: 42vh;
     /* Tighter for other sections: Text starts just below video */
-    padding-bottom: 0px;
+    padding-bottom: 60px;
     min-height: auto;
   }
 
   .horizontal-scroll-container {
     min-height: 200px;
-    padding-bottom: 0px;
+    padding-bottom: 40px;
     mask-image: none;
     -webkit-mask-image: none;
   }

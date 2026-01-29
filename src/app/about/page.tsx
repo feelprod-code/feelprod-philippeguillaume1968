@@ -4,11 +4,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    "assets/images/steadyphil.JPG",
-    "assets/images/travelingphil.JPG",
-    "assets/images/barriophil.jpg",
-    "assets/images/phil.PNG",
-    "assets/images/pont.jpeg",
+    "/assets/images/steadyphil.JPG",
+    "/assets/images/travelingphil.JPG",
+    "/assets/images/barriophil.jpg",
+    "/assets/images/phil.PNG",
+    "/assets/images/pont.jpeg",
 ];
 
 export default function AboutPage() {

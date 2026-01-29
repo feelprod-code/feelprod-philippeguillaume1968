@@ -70,7 +70,7 @@ export default function Home() {
                     style={{ y: useTransform(scrollYProgress, [0, 0.2], ["0%", "20%"]) }} // Parallax down
                 >
                     <video autoPlay muted loop playsInline>
-                        <source src="assets/videos/hero.mp4" type="video/mp4" />
+                        <source src="/assets/videos/hero.mp4" type="video/mp4" />
                     </video>
                 </motion.div>
 
@@ -99,11 +99,11 @@ export default function Home() {
                     <InfiniteCarousel
                         onOpen={handleOpenModal}
                         items={[
-                            { videoId: "Pfj2jnbRwfw", image: "assets/images/1.jpg", alt: "Souvenirs" },
-                            { videoId: "Co8j8n_g_6Q", image: "assets/images/2.jpg", alt: "Souvenirs" },
-                            { videoId: "Co8j8n_g_6Q", image: "assets/images/3.jpg", alt: "Souvenirs" },
-                            { videoId: "iCkE_gYsLXo", image: "assets/images/4.jpg", alt: "Souvenirs" },
-                            { videoId: "Co8j8n_g_6Q", image: "assets/images/5.jpg", alt: "Souvenirs" },
+                            { videoId: "Pfj2jnbRwfw", image: "/assets/images/1.jpg", alt: "Souvenirs" },
+                            { videoId: "Co8j8n_g_6Q", image: "/assets/images/2.jpg", alt: "Souvenirs" },
+                            { videoId: "Co8j8n_g_6Q", image: "/assets/images/3.jpg", alt: "Souvenirs" },
+                            { videoId: "iCkE_gYsLXo", image: "/assets/images/4.jpg", alt: "Souvenirs" },
+                            { videoId: "Co8j8n_g_6Q", image: "/assets/images/5.jpg", alt: "Souvenirs" },
                         ]}
                     />
                 </Reveal>
@@ -123,11 +123,11 @@ export default function Home() {
                     <InfiniteCarousel
                         onOpen={handleOpenModal}
                         items={[
-                            { videoId: "CyRH585e4yY", image: "assets/images/6.jpg", alt: "Adrénaline" },
-                            { videoId: "CyRH585e4yY", image: "assets/images/7.jpg", alt: "Adrénaline" },
-                            { videoId: "CyRH585e4yY", image: "assets/images/8.jpg", alt: "Adrénaline" },
-                            { videoId: "CyRH585e4yY", image: "assets/images/9.jpg", alt: "Adrénaline" },
-                            { videoId: "CyRH585e4yY", image: "assets/images/10.jpg", alt: "Adrénaline" },
+                            { videoId: "CyRH585e4yY", image: "/assets/images/6.jpg", alt: "Adrénaline" },
+                            { videoId: "CyRH585e4yY", image: "/assets/images/7.jpg", alt: "Adrénaline" },
+                            { videoId: "CyRH585e4yY", image: "/assets/images/8.jpg", alt: "Adrénaline" },
+                            { videoId: "CyRH585e4yY", image: "/assets/images/9.jpg", alt: "Adrénaline" },
+                            { videoId: "CyRH585e4yY", image: "/assets/images/10.jpg", alt: "Adrénaline" },
                         ]}
                     />
                 </Reveal>
@@ -147,11 +147,11 @@ export default function Home() {
                     <InfiniteCarousel
                         onOpen={handleOpenModal}
                         items={[
-                            { videoId: "WELgM9kD69A", image: "assets/images/11.jpg", alt: "Game" },
-                            { videoId: "Iy4iQNKMJFQ", image: "assets/images/12.jpg", alt: "Game" },
-                            { videoId: "Iy4iQNKMJFQ", image: "assets/images/13.jpg", alt: "Game" },
-                            { videoId: "Iy4iQNKMJFQ", image: "assets/images/14.jpg", alt: "Game" },
-                            { videoId: "Iy4iQNKMJFQ", image: "assets/images/15.jpg", alt: "Game" },
+                            { videoId: "WELgM9kD69A", image: "/assets/images/11.jpg", alt: "Game" },
+                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/12.jpg", alt: "Game" },
+                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/13.jpg", alt: "Game" },
+                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/14.jpg", alt: "Game" },
+                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/15.jpg", alt: "Game" },
                         ]}
                     />
                 </Reveal>
@@ -184,9 +184,9 @@ function SectionWithParallax({ id, theme, children, zoomVideo }: { id: string, t
     const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
     const videoSrcMap: Record<string, string> = {
-        "souvenirs": "assets/videos/tv.mp4",
-        "adrenaline": "assets/videos/karma.mp4",
-        "evasion": "assets/videos/divers.mp4"
+        "souvenirs": "/assets/videos/tv.mp4",
+        "adrenaline": "/assets/videos/karma.mp4",
+        "evasion": "/assets/videos/divers.mp4"
     };
 
     return (
