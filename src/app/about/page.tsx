@@ -4,11 +4,14 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    "/assets/images/steadyphil.JPG",
-    "/assets/images/travelingphil.JPG",
-    "/assets/images/barriophil.jpg",
-    "/assets/images/phil.PNG",
-    "/assets/images/pont.jpeg",
+    { src: "/assets/images/steadyphil.JPG", position: "center 70%", scale: 1.30, finalScale: 1 },
+    { src: "/assets/images/travelingphil-2.jpg", position: "center 20%", scale: 4, finalScale: 2 },
+    { src: "/assets/images/barriophil.jpg", position: "center 80%", scale: 1.25, finalScale: 1 },
+    { src: "/assets/images/pont.jpeg", position: "center 60%", scale: 1.25, finalScale: 1 },
+    { src: "/assets/images/stabbvaw.JPG", position: "center 80%", scale: 1.25, finalScale: 1 },
+    { src: "/assets/images/barrio stab.jpg", position: "center 80%", scale: 1.25, finalScale: 1 },
+    { src: "/assets/images/barriohaut.jpg", position: "center 90%", scale: 1.25, finalScale: 1 },
+    { src: "/assets/images/pont alex.jpg", position: "center 60%", scale: 1.25, finalScale: 1 },
 ];
 
 export default function AboutPage() {
@@ -54,21 +57,22 @@ export default function AboutPage() {
                 <AnimatePresence mode="popLayout">
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, scale: images[index].scale }}
+                        animate={{ opacity: 1, scale: images[index].finalScale }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        transition={{ duration: 2.5, ease: "easeInOut" }}
                         className="absolute inset-0 w-full h-full"
                     >
                         <img
-                            src={images[index]}
+                            src={images[index].src}
                             alt="Philippe Guillaume"
-                            className="w-full h-full object-cover object-top grayscale"
+                            className="w-full h-full object-cover grayscale"
+                            style={{ objectPosition: images[index].position }}
                         />
 
                         {/* Gradient Fades */}
                         <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent"></div>
-                        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/60 to-transparent"></div>
+                        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
                     </motion.div>
                 </AnimatePresence>
             </section>
