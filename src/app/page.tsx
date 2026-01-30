@@ -134,7 +134,7 @@ export default function Home() {
             </SectionWithParallax>
 
             {/* Divers Section */}
-            <SectionWithParallax id="evasion" theme="theme-arcade">
+            <SectionWithParallax id="evasion" theme="theme-arcade" className="pb-2 md:pb-24">
                 <div className="section-header" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
@@ -158,8 +158,9 @@ export default function Home() {
             </SectionWithParallax>
 
             {/* Podcast Section */}
-            <section className="py-24 overflow-hidden bg-white">
-                <div className="section-header px-[5%] mb-12" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
+            {/* Podcast Section */}
+            <section className="py-0 md:py-12 overflow-hidden bg-white -mt-4 relative z-10">
+                <div className="section-header px-[5%] mb-4 md:mb-12" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo" style={{ fontSize: '60px' }}>
@@ -173,23 +174,24 @@ export default function Home() {
                     <InfiniteCarousel
                         variant="square"
                         items={[
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/0-presentation-du-podcast", image: "/assets/images/podcast_cover.png", alt: "Présentation" },
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/1-l-homeostasie", image: "/assets/images/tdt1.png", alt: "L'Homéostasie" },
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/4-le-chemin-du-toucher-connaissant-1-l-osteopathie-biodynamique-avec-pascal-anselin", image: "/assets/images/TDT2.png", alt: "Pascal Anselin - Partie 1" },
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/6-approche-du-non-resolu-en-osteopathie-biodynamique-avec-pascal-anselin", image: "/assets/images/non resolu.png", alt: "Pascal Anselin - Partie 2" },
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/7-l-harmonisation-psychocorporelle-en-biokinergie-avec-michel-lidoreau", image: "/assets/images/HPC.png", alt: "Michel Lidoreau" },
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/l-embryologie-biodynamique-la-ou-tout-commence-marc-damoiseaux", image: "/assets/images/EMBRYO.png", alt: "Marc Damoiseaux" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/0-presentation-du-podcast", image: "/assets/images/tdt1.png", alt: "Présentation du podcast" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/1-l-homeostasie", image: "/assets/images/TDT2.png", alt: "L'Homéostasie" },
                             { link: "https://podcast.ausha.co/techniques-douces-tissulaires/2-le-mouvement-involontaire", image: "/assets/images/TDT3.png", alt: "Le Mouvement Involontaire" },
                             { link: "https://podcast.ausha.co/techniques-douces-tissulaires/3-les-limites-de-l-homeostasie", image: "/assets/images/TDT4.png", alt: "Les Limites de l'Homéostasie" },
-                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/presentation-de-la-biokinergie-m-entretien-avec-michel-lidoreau", image: "/assets/images/BIOKI.png", alt: "Bioji - La Biokinergie" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/4-le-chemin-du-toucher-connaissant-1-l-osteopathie-biodynamique-avec-pascal-anselin", image: "/assets/images/BIODY.png", alt: "Le chemin du toucher connaissant - Pascal Anselin" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/presentation-de-la-biokinergie-m-entretien-avec-michel-lidoreau", image: "/assets/images/BIOKI.png", alt: "Présentation de la Biokinergie" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/6-approche-du-non-resolu-en-osteopathie-biodynamique-avec-pascal-anselin", image: "/assets/images/non resolu.png", alt: "Approche du non-résolu - Pascal Anselin" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/7-l-harmonisation-psychocorporelle-en-biokinergie-avec-michel-lidoreau", image: "/assets/images/HPC.png", alt: "L'Harmonisation Psychocorporelle - Michel Lidoreau" },
+                            { link: "https://podcast.ausha.co/techniques-douces-tissulaires/l-embryologie-biodynamique-la-ou-tout-commence-marc-damoiseaux", image: "/assets/images/EMBRYO.png", alt: "L'Embryologie Biodynamique - Marc Damoiseaux" },
                         ]}
                     />
                 </Reveal>
             </section>
 
             {/* Music Section */}
-            <section className="py-24 overflow-hidden bg-white">
-                <div className="section-header px-[5%] mb-12" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
+            {/* Music Section */}
+            <section className="py-0 md:py-12 overflow-hidden bg-white -mt-4 relative z-10">
+                <div className="section-header px-[5%] mb-4 md:mb-12" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo" style={{ fontSize: '60px' }}>
@@ -222,7 +224,7 @@ export default function Home() {
 
             <footer>
                 <div className="footer-content">
-                    <p>Copyright &copy; 2026 FEELPROD. <span className="opacity-30 text-[10px]">v:New-Contact-TEST</span></p>
+                    <p>Copyright &copy; 2026 FEELPROD.</p>
                 </div>
             </footer>
         </main >
@@ -230,7 +232,7 @@ export default function Home() {
 }
 
 // Helper component for Section with Parallax Video
-function SectionWithParallax({ id, theme, children, zoomVideo }: { id: string, theme: string, children: React.ReactNode, zoomVideo?: boolean }) {
+function SectionWithParallax({ id, theme, children, zoomVideo, className }: { id: string, theme: string, children: React.ReactNode, zoomVideo?: boolean, className?: string }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -246,7 +248,7 @@ function SectionWithParallax({ id, theme, children, zoomVideo }: { id: string, t
     };
 
     return (
-        <section className={`service-section ${theme} overflow-hidden`} id={id} ref={ref}>
+        <section className={`service-section ${theme} overflow-hidden ${className || ""}`} id={id} ref={ref}>
             <motion.div style={{ y }} className={`video-background ${zoomVideo ? 'zoom-video' : ''} absolute inset-0 h-[120%] -top-[10%]`}>
                 <video autoPlay muted loop playsInline className="w-full h-full object-cover">
                     <source src={videoSrcMap[id]} type="video/mp4" />

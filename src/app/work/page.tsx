@@ -75,7 +75,7 @@ export default async function WorkPage() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="hero-section flex flex-col justify-center px-[5%] pt-32 pb-16" style={{ minHeight: '60vh' }}>
+            <section className="hero-section flex flex-col justify-center px-[5%] pt-24 pb-16" style={{ minHeight: '60vh' }}>
                 <div className="max-w-4xl">
                     <Reveal delay={0.2}>
                         <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter" style={{ fontFamily: 'var(--font-bangers)' }}>

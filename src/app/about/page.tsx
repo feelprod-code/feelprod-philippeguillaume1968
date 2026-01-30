@@ -53,7 +53,7 @@ export default function AboutPage() {
             </nav>
 
             {/* Hero Slideshow Section - 16/9 with fade */}
-            <section className="relative w-full aspect-video overflow-hidden mt-0">
+            <section className="relative w-full aspect-video overflow-hidden" style={{ marginTop: '80px' }}>
                 <AnimatePresence mode="popLayout">
                     <motion.div
                         key={index}

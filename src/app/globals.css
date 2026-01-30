@@ -70,8 +70,8 @@ h1 {
 
 /* Nav */
 .global-nav {
-  position: sticky;
-  /* Sticky position so it stays at the top but takes up space in the flow */
+  position: fixed;
+  /* Fixed position so it stays at the top without moving during scroll */
   top: 0;
   width: 100%;
   height: 80px;
@@ -186,6 +186,8 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   /* Push content to bottom in the white area */
+  margin-top: 80px;
+  /* Push section below fixed header */
   padding-top: 0;
   padding-bottom: 80px;
   /* Space for text and spacing */
@@ -440,7 +442,7 @@ footer {
     justify-content: flex-start;
     padding-top: 42vh;
     /* Tighter for other sections: Text starts just below video */
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     min-height: auto;
   }
 
