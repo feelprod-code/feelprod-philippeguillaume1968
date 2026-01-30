@@ -376,6 +376,24 @@ section {
   display: block;
 }
 
+.card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
 /* Footer */
 footer {
   padding: 40px 5%;
