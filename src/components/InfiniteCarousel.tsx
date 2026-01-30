@@ -71,7 +71,7 @@ export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 
                 {[...data, ...data].map((item, index) => (
                     <div
                         key={index}
-                        className={`relative flex-shrink-0 bg-neutral-900 overflow-hidden rounded-lg cursor-pointer group ${variant === 'square'
+                        className={`relative flex-shrink-0 bg-neutral-900 overflow-hidden rounded-lg cursor-pointer group transition-transform duration-500 hover:scale-[1.02] ${variant === 'square'
                             ? 'w-[300px] h-[300px] md:w-[450px] md:h-[450px]'
                             : 'w-[300px] h-[200px] md:w-[400px] md:h-[250px]'
                             }`}
@@ -87,7 +87,7 @@ export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 
                     >
                         {/* Play/Link Button Overlay */}
                         {(item.videoId || item.link) && (
-                            <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                            <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/50 hover:bg-white/30 transition-colors">
                                     <svg className="w-8 h-8 text-white fill-current ml-1" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z" />

@@ -163,7 +163,7 @@ export default function Home() {
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo" style={{ fontSize: '60px' }}>
-                                PODCAST
+                                PODCASTS
                             </h2>
                         </a>
                         <p className="service-tagline text-gray-500">La santé autrement...</p>
