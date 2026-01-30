@@ -279,7 +279,7 @@ section {
   padding-left: 5%;
 }
 
-.service-section .service-logo {
+.service-logo {
   font-family: var(--font-comic);
   font-size: 80px;
   letter-spacing: 2px;
@@ -291,7 +291,7 @@ section {
   display: inline-block;
 }
 
-.service-section .service-tagline {
+.service-tagline {
   font-family: var(--font-chewy), cursive;
   color: #000;
   font-size: 34px;

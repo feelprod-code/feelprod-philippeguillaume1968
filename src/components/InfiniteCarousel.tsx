@@ -8,6 +8,7 @@ export interface CarouselItem {
     videoId?: string;
     image: string;
     alt?: string;
+    link?: string;
 }
 
 interface InfiniteCarouselProps {
@@ -15,9 +16,10 @@ interface InfiniteCarouselProps {
     items?: CarouselItem[]; // Advanced mode (Home page)
     speed?: number;
     onOpen?: (src?: string, id?: string) => void;
+    variant?: 'default' | 'square';
 }
 
-export const InfiniteCarousel = ({ images, items, speed = 50, onOpen }: InfiniteCarouselProps) => {
+export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 'default' }: InfiniteCarouselProps) => {
     // Normalize data: transform simple strings into objects if needed
     const data: CarouselItem[] = items || (images ? images.map(img => ({ image: img })) : []);
 
@@ -69,18 +71,25 @@ export const InfiniteCarousel = ({ images, items, speed = 50, onOpen }: Infinite
                 {[...data, ...data].map((item, index) => (
                     <div
                         key={index}
-                        className="relative w-[300px] h-[200px] md:w-[400px] md:h-[250px] flex-shrink-0 bg-neutral-900 overflow-hidden rounded-lg cursor-pointer group"
+                        className={`relative flex-shrink-0 bg-neutral-900 overflow-hidden rounded-lg cursor-pointer group ${variant === 'square'
+                            ? 'w-[300px] h-[300px] md:w-[450px] md:h-[450px]'
+                            : 'w-[300px] h-[200px] md:w-[400px] md:h-[250px]'
+                            }`}
                         onClick={() => {
-                            if (onOpen && item.videoId && !isDragging) {
-                                onOpen(undefined, item.videoId);
+                            if (!isDragging) {
+                                if (item.link) {
+                                    window.open(item.link, '_blank');
+                                } else if (onOpen && item.videoId) {
+                                    onOpen(undefined, item.videoId);
+                                }
                             }
                         }}
                     >
-                        {/* Play Button Overlay (Only if videoId exists) */}
-                        {item.videoId && (
+                        {/* Play/Link Button Overlay */}
+                        {(item.videoId || item.link) && (
                             <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-                                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/50">
-                                    <svg className="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
+                                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/50 hover:bg-white/30 transition-colors">
+                                    <svg className="w-8 h-8 text-white fill-current ml-1" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z" />
                                     </svg>
                                 </div>
