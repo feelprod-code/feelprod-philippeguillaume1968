@@ -75,18 +75,44 @@ export default function Home() {
                 </motion.div>
 
                 <div className="hero-content relative z-10">
-                    <Reveal delay={0.2}>
-                        <h1>FEELPROD</h1>
-                    </Reveal>
-                    <Reveal delay={0.4}>
-                        <p className="subhead">Créateur d&#39;émotions visuelles. Capturer l&#39;instant, sublimer le mouvement.</p>
-                    </Reveal>
+                    {/* Version Mobile - Image Droite + Titre ecarte gauche et plus bas */}
+                    <div className="md:hidden flex flex-col justify-center relative w-full h-full">
+                        <Reveal delay={0.2}>
+                            <div
+                                className="hero-bd-title z-20 relative self-start"
+                                style={{ marginLeft: '10%', marginTop: '2rem', marginBottom: '-30px' }}
+                            >
+                                <span>LA VIE</span>
+                                <span>EN MOUVEMENT</span>
+                            </div>
+                        </Reveal>
+                        <Reveal delay={0.3}>
+                            <div className="flex justify-end w-full pr-4">
+                                <img
+                                    src="/assets/images/COUVfeel.png"
+                                    alt="FeelProd"
+                                    className="h-auto object-contain"
+                                    style={{ width: '65%', opacity: 0.95 }}
+                                />
+                            </div>
+                        </Reveal>
+                    </div>
+
+                    {/* Version Desktop - Texte */}
+                    <div className="hidden md:block">
+                        <Reveal delay={0.2}>
+                            <h1>FEELPROD</h1>
+                        </Reveal>
+                        <Reveal delay={0.4}>
+                            <p className="subhead">Créateur d&#39;émotions visuelles. Capturer l&#39;instant, sublimer le mouvement.</p>
+                        </Reveal>
+                    </div>
                 </div>
                 <div className="hero-overlay"></div>
             </section>
 
             {/* Spectacle Section */}
-            <SectionWithParallax id="souvenirs" theme="theme-tv">
+            <SectionWithParallax id="souvenirs" theme="theme-tv" className="souvenirs-only md:pt-0">
                 <div className="section-header" style={{ "--comic-color": "#FF9F1C" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
@@ -157,7 +183,6 @@ export default function Home() {
                 </Reveal>
             </SectionWithParallax>
 
-            {/* Podcast Section */}
             {/* Podcast Section */}
             <section className="py-0 md:py-12 overflow-hidden bg-white -mt-4 relative z-10">
                 <div className="section-header px-[5%] mb-4 md:mb-12" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
