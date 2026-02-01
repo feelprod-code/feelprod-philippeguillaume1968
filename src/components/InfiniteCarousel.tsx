@@ -16,7 +16,7 @@ interface InfiniteCarouselProps {
     items?: CarouselItem[]; // Advanced mode (Home page)
     speed?: number;
     onOpen?: (src?: string, id?: string) => void;
-    variant?: 'default' | 'square';
+    variant?: 'default' | 'square' | 'small';
 }
 
 export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 'default' }: InfiniteCarouselProps) => {
@@ -72,8 +72,10 @@ export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 
                     <div
                         key={index}
                         className={`relative flex-shrink-0 bg-neutral-900 overflow-hidden rounded-lg cursor-pointer group transition-transform duration-500 hover:scale-[1.02] ${variant === 'square'
-                            ? 'w-[300px] h-[300px] md:w-[450px] md:h-[450px]'
-                            : 'w-[300px] h-[200px] md:w-[400px] md:h-[250px]'
+                            ? 'w-[200px] h-[200px] md:w-[250px] md:h-[250px]'
+                            : variant === 'small'
+                                ? 'w-[220px] h-[146px] md:w-[280px] md:h-[186px]'
+                                : 'w-[300px] h-[200px] md:w-[400px] md:h-[250px]'
                             }`}
                         onClick={() => {
                             if (!isDragging) {
@@ -103,8 +105,9 @@ export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 
                             className="object-cover"
                         />
                     </div>
-                ))}
-            </motion.div>
-        </div>
+                ))
+                }
+            </motion.div >
+        </div >
     );
 };
