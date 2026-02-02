@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { InfiniteCarousel } from "@/components/InfiniteCarousel";
 import VideoModal from "@/components/VideoModal";
@@ -18,6 +18,16 @@ export default function Home() {
     const handleCloseModal = () => {
         setModalState((prev) => ({ ...prev, isOpen: false }));
     };
+
+    // Force Play Video Logic (Hero)
+    const videoRef = useRef<HTMLVideoElement>(null);
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.play().catch(error => {
+                console.log("Hero video autoplay prevented:", error);
+            });
+        }
+    }, []);
 
     // Parallax Logic
     const containerRef = useRef(null);
@@ -69,7 +79,14 @@ export default function Home() {
                     className="video-background"
                     style={{ y: useTransform(scrollYProgress, [0, 0.2], ["0%", "20%"]) }} // Parallax down
                 >
-                    <video autoPlay muted loop playsInline>
+                    <video
+                        ref={videoRef}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                    >
                         <source src="/assets/videos/hero.mp4" type="video/mp4" />
                     </video>
                 </motion.div>
@@ -326,10 +343,28 @@ function SectionWithParallax({ id, theme, children, zoomVideo, className, videoK
         "evasion": "/assets/videos/divers.mp4"
     };
 
+    // Force Play Logic for Sections
+    const sectionVideoRef = useRef<HTMLVideoElement>(null);
+    useEffect(() => {
+        if (sectionVideoRef.current) {
+            sectionVideoRef.current.play().catch(error => {
+                console.log(`Video ${id} autoplay prevented:`, error);
+            });
+        }
+    }, [id]);
+
     return (
         <section className={`service-section ${theme} overflow-hidden ${className || ""}`} id={id} ref={ref}>
             <motion.div style={{ y }} className={`video-background ${zoomVideo ? 'zoom-video' : ''} absolute inset-0 h-[120%] -top-[10%]`}>
-                <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                <video
+                    ref={sectionVideoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover"
+                >
                     <source src={videoSrcMap[videoKey || id]} type="video/mp4" />
                 </video>
             </motion.div>
