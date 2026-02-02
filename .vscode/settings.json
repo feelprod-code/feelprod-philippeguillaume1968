@@ -1,0 +1,7 @@
+{
+    "workbench.editor.autoLockGroups": {
+        "antigravity.globalArtifactsEditorInput": true,
+        "antigravity.artifactsEditorInput": true
+    },
+    "zenMode.restore": false
+}

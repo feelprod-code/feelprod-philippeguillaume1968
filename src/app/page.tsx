@@ -140,6 +140,9 @@ export default function Home() {
                             { videoId: "WELgM9kD69A", image: "/assets/images/4-ALEX.png", alt: "ALEX" },
                             { videoId: "sZX2ws_vSQI", image: "/assets/images/5-SALSA4.png", alt: "SALSA 4" },
                             { videoId: "LjPaIVq8weg", image: "/assets/images/6-LAURE.png", alt: "LAURE" },
+                            { videoId: "N_f-Oepxyco", image: "/assets/images/21-ELYSEE 63.png", alt: "ELYSEE 63" },
+                            { videoId: "p9kzlJa5rA4", image: "/assets/images/20-Aguila.jpg", alt: "AGUILA" },
+                            { videoId: "pEw1uxjsYvI", image: "/assets/images/23-BARRIO.png", alt: "BARRIO" },
                         ]}
                     />
                 </Reveal>
@@ -172,6 +175,8 @@ export default function Home() {
                             { videoId: "GsFDEIkVxAo", image: "/assets/images/9-KARMA.png", alt: "KARMA" },
                             { videoId: "3nkt9iLfyfc", image: "/assets/images/10-MORSANG.png", alt: "MORSANG" },
                             { videoId: "iCkE_gYsLXo", image: "/assets/images/11-bvaw.png", alt: "BVAW" },
+                            { videoId: "B6o4AcsAPSc", image: "/assets/images/18-ledjane.png", alt: "LEDJANE" },
+                            { videoId: "P4E2A1CswL4", image: "/assets/images/19-Cannessalsa.png", alt: "CANNES SALSA" },
                         ]}
                     />
                 </Reveal>
@@ -204,6 +209,8 @@ export default function Home() {
                             { videoId: "025yJW0B3GQ", image: "/assets/images/12-ANNIALLEMAGNE.png", alt: "ANNI ALLEMAGNE" },
                             { videoId: "ucJyA0cVRdg", image: "/assets/images/13-MARIAGE.png", alt: "MARIAGE" },
                             { videoId: "v6BcNiiB9DA", image: "/assets/images/15-THEOSURF.png", alt: "THEO SURF" },
+                            { videoId: "Pfj2jnbRwfw", image: "/assets/images/17.jpg", alt: "SOUVENIR 17" },
+                            { videoId: "aZBeiycEwl8", image: "/assets/images/22-U9.jpg", alt: "U9" },
                         ]}
                     />
                 </Reveal>
