@@ -16,7 +16,7 @@ interface InfiniteCarouselProps {
     items?: CarouselItem[]; // Advanced mode (Home page)
     speed?: number;
     onOpen?: (src?: string, id?: string) => void;
-    variant?: 'default' | 'square' | 'small';
+    variant?: 'default' | 'square' | 'small' | 'tiny' | 'square-small';
 }
 
 export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 'default' }: InfiniteCarouselProps) => {
@@ -73,9 +73,13 @@ export const InfiniteCarousel = ({ images, items, speed = 50, onOpen, variant = 
                         key={index}
                         className={`relative flex-shrink-0 bg-neutral-900 overflow-hidden rounded-lg cursor-pointer group transition-transform duration-500 hover:scale-[1.02] ${variant === 'square'
                             ? 'w-[200px] h-[200px] md:w-[250px] md:h-[250px]'
-                            : variant === 'small'
-                                ? 'w-[220px] h-[146px] md:w-[280px] md:h-[186px]'
-                                : 'w-[300px] h-[200px] md:w-[400px] md:h-[250px]'
+                            : variant === 'square-small'
+                                ? 'w-[160px] h-[160px] md:w-[200px] md:h-[200px]'
+                                : variant === 'small'
+                                    ? 'w-[220px] h-[146px] md:w-[280px] md:h-[186px]'
+                                    : variant === 'tiny'
+                                        ? 'w-[180px] h-[120px] md:w-[220px] md:h-[146px]'
+                                        : 'w-[300px] h-[200px] md:w-[400px] md:h-[250px]'
                             }`}
                         onClick={() => {
                             if (!isDragging) {

@@ -134,12 +134,12 @@ export default function Home() {
                         variant="small"
                         onOpen={handleOpenModal}
                         items={[
-                            { videoId: "WELgM9kD69A", image: "/assets/images/1-RELLE.png", alt: "RELLE" },
-                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/2-BARRIOLATINOSALSA.png", alt: "BARRIO LATINO SALSA" },
-                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/3-LARTISTEVENT.png", alt: "L ARTIST EVENT" },
-                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/4-ALEX.png", alt: "ALEX" },
-                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/5-SALSA4.png", alt: "SALSA 4" },
-                            { videoId: "Iy4iQNKMJFQ", image: "/assets/images/6-LAURE.png", alt: "LAURE" },
+                            { videoId: "exnbHE-BgYw", image: "/assets/images/1-RELLE.png", alt: "RELLE" },
+                            { videoId: "AGUxUQ5bwXk", image: "/assets/images/2-BARRIOLATINOSALSA.png", alt: "BARRIO LATINO SALSA" },
+                            { videoId: "STp41rTjP-Q", image: "/assets/images/3-LARTISTEVENT.png", alt: "L ARTIST EVENT" },
+                            { videoId: "WELgM9kD69A", image: "/assets/images/4-ALEX.png", alt: "ALEX" },
+                            { videoId: "sZX2ws_vSQI", image: "/assets/images/5-SALSA4.png", alt: "SALSA 4" },
+                            { videoId: "LjPaIVq8weg", image: "/assets/images/6-LAURE.png", alt: "LAURE" },
                         ]}
                     />
                 </Reveal>
@@ -167,12 +167,11 @@ export default function Home() {
                         variant="small"
                         onOpen={handleOpenModal}
                         items={[
-                            { videoId: "CyRH585e4yY", image: "/assets/images/7-BAGARTLAND.png", alt: "BAGART PLAN" },
-                            { videoId: "CyRH585e4yY", image: "/assets/images/8-BARRIOCARNAVAL.png", alt: "BARRIO CARNAVAL" },
-                            { videoId: "CyRH585e4yY", image: "/assets/images/9-KARMA.png", alt: "KARMA" },
-                            { videoId: "CyRH585e4yY", image: "/assets/images/10-MORSANG.png", alt: "MORSANG" },
-                            { videoId: "CyRH585e4yY", image: "/assets/images/11-bvaw.png", alt: "BVAW" },
-                            { videoId: "CyRH585e4yY", image: "/assets/images/12-ANNIALLEMAGNE.png", alt: "ANNI ALLEMAGNE" },
+                            { videoId: "dp8Tt0_H7is", image: "/assets/images/7-BAGARTLAND.png", alt: "BAGART PLAN" },
+                            { videoId: "5XSxn3IJvG8", image: "/assets/images/8-BARRIOCARNAVAL.png", alt: "BARRIO CARNAVAL" },
+                            { videoId: "GsFDEIkVxAo", image: "/assets/images/9-KARMA.png", alt: "KARMA" },
+                            { videoId: "3nkt9iLfyfc", image: "/assets/images/10-MORSANG.png", alt: "MORSANG" },
+                            { videoId: "iCkE_gYsLXo", image: "/assets/images/11-bvaw.png", alt: "BVAW" },
                         ]}
                     />
                 </Reveal>
@@ -202,11 +201,9 @@ export default function Home() {
                         variant="small"
                         onOpen={handleOpenModal}
                         items={[
-                            { videoId: "Pfj2jnbRwfw", image: "/assets/images/13-MARIAGE.png", alt: "MARIAGE" },
-                            { videoId: "Co8j8n_g_6Q", image: "/assets/images/14-VENEJAN.png", alt: "VENEJAN" },
-                            { videoId: "Co8j8n_g_6Q", image: "/assets/images/15-THEOSURF.png", alt: "THEO SURF" },
-                            { videoId: "iCkE_gYsLXo", image: "/assets/images/16-VILLERS.png", alt: "VILLERS" },
-                            { videoId: "Co8j8n_g_6Q", image: "/assets/images/17.jpg", alt: "Souvenirs" },
+                            { videoId: "025yJW0B3GQ", image: "/assets/images/12-ANNIALLEMAGNE.png", alt: "ANNI ALLEMAGNE" },
+                            { videoId: "ucJyA0cVRdg", image: "/assets/images/13-MARIAGE.png", alt: "MARIAGE" },
+                            { videoId: "v6BcNiiB9DA", image: "/assets/images/15-THEOSURF.png", alt: "THEO SURF" },
                         ]}
                     />
                 </Reveal>
@@ -278,7 +275,7 @@ export default function Home() {
                 </div>
                 <Reveal delay={0.2}>
                     <InfiniteCarousel
-                        variant="square"
+                        variant="square-small"
                         items={[
                             { link: "https://open.spotify.com/intl-fr/album/4yTJoVRYocLhlXplLVrxsz?si=npZWx-MpS0e7oZxR7GqijQ", image: "/assets/images/music_tu_crois.jpg", alt: "Tu crois qu'il faut tirer" },
                             { link: "https://soundcloud.com/user-881586097/sets/u9-charenton-inside-2025-2026?si=9cec6317a0e242c186a0f631511f3ba0&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", image: "/assets/images/music_charenton.jpg", alt: "U9 Charenton Inside" },
