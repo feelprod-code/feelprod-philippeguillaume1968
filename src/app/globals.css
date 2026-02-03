@@ -758,7 +758,7 @@ footer {
   }
 
   .espace-sous-souvenirs {
-    height: 0px;
+    height: 2px;
   }
 
   .espace-sous-podcasts {
@@ -792,14 +792,14 @@ footer {
   }
 
   .spacing-section-top {
-    height: 0vh;
+    height: 2vh;
   }
 
   .section-podcast-container {
-    margin-top: -20px;
+    margin-top: -18px;
   }
 
   .section-musiques-container {
-    margin-top: -60px;
+    margin-top: 0px;
   }
 }
