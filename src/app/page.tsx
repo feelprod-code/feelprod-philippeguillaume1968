@@ -184,7 +184,7 @@ export default function Home() {
                         ]}
                     />
                 </Reveal>
-                <div className="w-full h-[02vh]" /> {/* ESPACE MANUEL ICI */}
+                <div className="espace-sous-promo" />
             </SectionWithParallax>
 
             {/* Sport Section */}
@@ -218,7 +218,7 @@ export default function Home() {
                         ]}
                     />
                 </Reveal>
-                <div className="w-full h-[02vh]" /> {/* ESPACE MANUEL ICI */}
+                <div className="espace-sous-immersion" />
             </SectionWithParallax>
 
             {/* Spectacle Section */}
@@ -252,13 +252,13 @@ export default function Home() {
                         ]}
                     />
                 </Reveal>
-                <div className="w-full h-[00vh]" /> {/* ESPACE FIN SOUVENIRS (Laissez à 0) */}
+                <div className="espace-sous-souvenirs" />
             </SectionWithParallax>
 
             {/* Podcast Section */}
             {/* --- CONTROLE TRANSITION TABLETTE --- : Modifiez "md:-mt-[6vh]" ci-dessous pour remonter/descendre le bloc sur ordi */}
-            <section className="py-0 !pt-0 overflow-hidden bg-white -mt-4 md:-mt-[8vh] relative z-10">
-                <div className="w-full h-[03vh]" /> {/* <--- MODIFIEZ ICI (Changez 0 pour 10) */}
+            <section className="section-podcast-container">
+                <div className="spacing-section-top" /> {/* ESPACE HAUT PODCAST */}
 
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
                     <Reveal>
@@ -292,14 +292,14 @@ export default function Home() {
                         ]}
                     />
                 </Reveal>
-                <div className="w-full h-[03vh]" /> {/* ESPACE BAS PODCAST - Ajustez pour l'écart avec Musiques */}
+                <div className="espace-sous-podcasts" />
             </section>
 
             {/* Music Section */}
             {/* Music Section */}
             {/* --- CONTROLE UNIQUE ESPACE --- : Changez "-5vh" pour monter/descendre le bloc. C'est la SEULE ligne à toucher ! */}
-            <section className="py-0 !pt-0 overflow-hidden bg-white relative z-10" style={{ marginTop: "-10vh" }}>
-                <div className="w-full h-[5vh]" /> {/* Espace de sécurité fixe (ne pas toucher) */}
+            <section className="section-musiques-container">
+                <div className="spacing-section-top" /> {/* ESPACE HAUT MUSIQUE */}
 
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>

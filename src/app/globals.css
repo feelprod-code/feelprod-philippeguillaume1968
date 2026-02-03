@@ -536,13 +536,14 @@ footer {
 }
 
 /* ============================================================
-   RÉGLAGE TAILLES TITRES PAR SECTION
+   TABLEAU DE BORD : RÉGLAGES DU SITE (RÉPONSE AUX DEMANDES)
    ============================================================ */
 
-/* --- VERSION DESKTOP (Ordinateur) --- */
+/* --- 1. TAILLES DES TITRES (FONT-SIZE) --- */
+
+/* VERSION DESKTOP */
 .title-promo {
   font-size: 70px;
-  opacity: 1;
 }
 
 .title-immersion {
@@ -561,7 +562,7 @@ footer {
   font-size: 65px;
 }
 
-/* --- VERSION TABLETTE --- */
+/* VERSION TABLETTE */
 @media (min-width: 769px) and (max-width: 1024px) {
   .title-promo {
     font-size: 60px !important;
@@ -584,7 +585,7 @@ footer {
   }
 }
 
-/* --- VERSION MOBILE (Téléphone) --- */
+/* VERSION MOBILE */
 @media (max-width: 768px) {
   .title-promo {
     font-size: 50px !important;
@@ -605,4 +606,97 @@ footer {
   .title-musiques {
     font-size: 50px !important;
   }
+}
+
+
+/* --- 2. ESPACES SOUS LES VIGNETTES --- */
+
+/* VERSION DESKTOP */
+.espace-sous-promo {
+  height: 4vh;
+}
+
+.espace-sous-immersion {
+  height: 4vh;
+}
+
+.espace-sous-souvenirs {
+  height: 0vh;
+}
+
+/* <--- ESPACE SOUS SOUVENIRS */
+.espace-sous-podcasts {
+  height: 4vh;
+}
+
+/* VERSION MOBILE */
+@media (max-width: 768px) {
+  .espace-sous-promo {
+    height: 20px !important;
+  }
+
+  .espace-sous-immersion {
+    height: 20px !important;
+  }
+
+  .espace-sous-souvenirs {
+    height: 2px !important;
+  }
+
+  /* <--- MOBILE SOUS SOUVENIRS */
+  .espace-sous-podcasts {
+    height: 20px !important;
+  }
+}
+
+
+/* --- 3. MARGES ENTRE TITRE ET VIGNETTES --- */
+
+.section-header {
+  margin-bottom: 4vh;
+}
+
+/* Desktop */
+
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 20px !important;
+  }
+
+  /* Mobile */
+}
+
+
+/* --- 4. CHEVAUCHEMENT DES SECTIONS (MONTÉE DU BLOC) --- */
+
+.section-podcast-container,
+.section-musiques-container {
+  background: white;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.section-podcast-container {
+  margin-top: -8vh;
+}
+
+/* Desktop Podcast */
+.section-musiques-container {
+  margin-top: -10vh;
+}
+
+/* Desktop Musiques */
+
+@media (max-width: 768px) {
+  .section-podcast-container {
+    margin-top: -18px !important;
+  }
+
+  /* Mobile Podcast */
+  .section-musiques-container {
+    margin-top: 0px !important;
+  }
+
+  /* Mobile Musiques */
 }
