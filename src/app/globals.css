@@ -87,21 +87,36 @@ h1 {
 /* Nav */
 .global-nav {
   position: fixed;
-  /* Fixed position so it stays at the top without moving during scroll */
   top: 0;
   width: 100%;
   height: 80px;
   background: #ffffff;
-  /* White background */
   z-index: 100000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  /* Subtle border for white header */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  /* Slight shadow for depth */
+}
+
+@media (min-width: 768px) {
+  .global-nav {
+    padding: 0 40px;
+  }
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .social-icon svg {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .nav-content {
@@ -299,7 +314,6 @@ section {
 
 .service-logo {
   font-family: var(--font-comic);
-  font-size: 80px;
   letter-spacing: 2px;
   color: var(--comic-color, #fca00b);
   text-shadow: 4px 4px 0px #000;
@@ -436,7 +450,8 @@ footer {
   }
 
   .service-section .service-logo {
-    font-size: 50px;
+    /* Taille de repli */
+    font-size: 45px;
   }
 
   .service-section .service-tagline {
@@ -511,7 +526,7 @@ footer {
   }
 
   .service-section .service-logo {
-    font-size: 65px;
+    font-size: 60px;
   }
 
   .hero-section,
@@ -520,28 +535,74 @@ footer {
   }
 }
 
-/* Desktop Specific Adjustments for Hero */
-/* Desktop Specific Adjustments for Hero */
-@media (min-width: 1024px) {
-  .hero-section {
-    padding-bottom: 40px;
-    /* Reduced for flex layout, space comes from gap */
-    justify-content: flex-end;
-    /* Force content to bottom */
-    min-height: calc(100vh - 80px);
-    /* Ensure full height */
+/* ============================================================
+   RÉGLAGE TAILLES TITRES PAR SECTION
+   ============================================================ */
+
+/* --- VERSION DESKTOP (Ordinateur) --- */
+.title-promo {
+  font-size: 70px;
+  opacity: 1;
+}
+
+.title-immersion {
+  font-size: 70px;
+}
+
+.title-souvenirs {
+  font-size: 65px;
+}
+
+.title-podcasts {
+  font-size: 65px;
+}
+
+.title-musiques {
+  font-size: 65px;
+}
+
+/* --- VERSION TABLETTE --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .title-promo {
+    font-size: 60px !important;
   }
 
-  .hero-section h1 {
-    margin-top: 0;
-    /* Let flex handle positioning */
-    margin-bottom: 20px;
+  .title-immersion {
+    font-size: 55px !important;
   }
 
-  .hero-section .video-background {
-    height: 80%;
-    /* Video stops at 80% to leave CLEAR white space at bottom */
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  .title-souvenirs {
+    font-size: 55px !important;
+  }
+
+  .title-podcasts {
+    font-size: 55px !important;
+  }
+
+  .title-musiques {
+    font-size: 55px !important;
+  }
+}
+
+/* --- VERSION MOBILE (Téléphone) --- */
+@media (max-width: 768px) {
+  .title-promo {
+    font-size: 50px !important;
+  }
+
+  .title-immersion {
+    font-size: 50px !important;
+  }
+
+  .title-souvenirs {
+    font-size: 50px !important;
+  }
+
+  .title-podcasts {
+    font-size: 50px !important;
+  }
+
+  .title-musiques {
+    font-size: 50px !important;
   }
 }

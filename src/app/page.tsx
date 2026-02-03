@@ -55,7 +55,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <div className="hidden md:flex items-center gap-4">
+                    <div className="flex items-center gap-2 md:gap-4">
                         {/* Instagram - Funky Rounded */}
                         <a href="https://www.instagram.com/feelprod" target="_blank" rel="noopener noreferrer" className="social-icon group">
                             <svg className="w-7 h-7 text-gray-400 hover:text-[#E1306C] transition-colors duration-300 transform group-hover:scale-110 group-hover:rotate-12" viewBox="0 0 24 24" fill="currentColor">
@@ -157,7 +157,7 @@ export default function Home() {
             <SectionWithParallax id="evasion" theme="theme-arcade" className="pb-2 md:pb-24">
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
-                        <h2 className="service-logo">PROMO</h2>
+                        <h2 className="service-logo title-promo">PROMO</h2>
                         <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Nouveaux regards</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
@@ -192,7 +192,7 @@ export default function Home() {
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#F7E733" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo">IMMERSION</h2>
+                            <h2 className="service-logo title-immersion">IMMERSION</h2>
                         </a>
                         <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Au cœur de l'action.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
@@ -228,7 +228,7 @@ export default function Home() {
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#FF9F1C" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo">Souvenirs</h2>
+                            <h2 className="service-logo title-souvenirs">Souvenirs</h2>
                         </a>
                         <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Des moments inoubliables.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
@@ -258,12 +258,12 @@ export default function Home() {
             {/* Podcast Section */}
             {/* --- CONTROLE TRANSITION TABLETTE --- : Modifiez "md:-mt-[6vh]" ci-dessous pour remonter/descendre le bloc sur ordi */}
             <section className="py-0 !pt-0 overflow-hidden bg-white -mt-4 md:-mt-[8vh] relative z-10">
-                <div className="w-full h-[01vh]" /> {/* <--- MODIFIEZ ICI (Changez 0 pour 10) */}
+                <div className="w-full h-[03vh]" /> {/* <--- MODIFIEZ ICI (Changez 0 pour 10) */}
 
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo" style={{ fontSize: '65px' }}>
+                            <h2 className="service-logo title-podcasts">
                                 PODCASTS
                             </h2>
                         </a>
@@ -292,7 +292,7 @@ export default function Home() {
                         ]}
                     />
                 </Reveal>
-                <div className="w-full h-[04vh]" /> {/* ESPACE BAS PODCAST - Ajustez pour l'écart avec Musiques */}
+                <div className="w-full h-[03vh]" /> {/* ESPACE BAS PODCAST - Ajustez pour l'écart avec Musiques */}
             </section>
 
             {/* Music Section */}
@@ -304,7 +304,7 @@ export default function Home() {
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo" style={{ fontSize: '60px' }}>
+                            <h2 className="service-logo title-musiques">
                                 MUSIQUES
                             </h2>
                         </a>
