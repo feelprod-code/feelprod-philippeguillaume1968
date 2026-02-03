@@ -537,9 +537,13 @@ footer {
    TABLEAU DE BORD : RÉGLAGES DU SITE (RÉPONSE AUX DEMANDES)
    ============================================================ */
 
-/* --- 1. TAILLES DES TITRES (FONT-SIZE) --- */
+/* ============================================================
+   TABLEAU DE BORD : RÉGLAGES DU SITE (REFONTE TOTALE)
+   ============================================================ */
 
-/* VERSION DESKTOP */
+/* ------------------------------------------------------------
+   💻 1. VERSION DESKTOP (Ordinateur)
+   ------------------------------------------------------------ */
 .title-promo {
   font-size: 70px;
 }
@@ -560,74 +564,6 @@ footer {
   font-size: 65px;
 }
 
-/* --- VERSION TABLETTE --- */
-@media (min-width: 769px) and (max-width: 1366px) {
-  .service-section {
-    padding-top: 60vh !important;
-  }
-
-  .spacing-section-top {
-    height: 3vh;
-  }
-
-  .title-promo {
-    font-size: 60px !important;
-  }
-
-  .title-immersion {
-    font-size: 55px !important;
-  }
-
-  .title-souvenirs {
-    font-size: 55px !important;
-  }
-
-  .title-podcasts {
-    font-size: 55px !important;
-  }
-
-  .title-musiques {
-    font-size: 55px !important;
-  }
-}
-
-/* VERSION MOBILE */
-@media (max-width: 768px) {
-  .title-promo {
-    font-size: 50px !important;
-  }
-
-  .title-immersion {
-    font-size: 50px !important;
-  }
-
-  .title-souvenirs {
-    font-size: 50px !important;
-  }
-
-  .title-podcasts {
-    font-size: 50px !important;
-  }
-
-  .title-musiques {
-    font-size: 50px !important;
-  }
-}
-
-
-/* --- 2. ESPACES SOUS LES VIGNETTES --- */
-
-/* --- VERSION DESKTOP (Ordinateur) --- */
-.service-section {
-  padding-top: 65vh;
-}
-
-/* Espace vidéo de fond */
-.spacing-section-top {
-  height: 5vh;
-}
-
-/* Espace interne haut (Podcast/Musique) */
 .espace-sous-promo {
   height: 4vh;
 }
@@ -640,58 +576,10 @@ footer {
   height: 0vh;
 }
 
-/* VERSION TABLETTE */
-@media (min-width: 769px) and (max-width: 1366px) {
-  .espace-sous-promo {
-    height: 3vh !important;
-  }
-
-  .espace-sous-immersion {
-    height: 3vh !important;
-  }
-
-  .espace-sous-souvenirs {
-    height: 2vh !important;
-  }
-
-  /* <--- TABLETTE SOUS SOUVENIRS */
-  .espace-sous-podcasts {
-    height: 3vh !important;
-  }
+.espace-sous-podcasts {
+  height: 4vh;
 }
 
-/* --- VERSION MOBILE (Téléphone) --- */
-@media (max-width: 768px) {
-  .service-section {
-    padding-top: 42vh !important;
-  }
-
-  .spacing-section-top {
-    height: 0vh;
-  }
-
-  .espace-sous-promo {
-    height: 20px !important;
-  }
-
-  .espace-sous-immersion {
-    height: 20px !important;
-  }
-
-  .espace-sous-souvenirs {
-    height: 0px !important;
-  }
-
-  /* <--- MOBILE SOUS SOUVENIRS */
-  .espace-sous-podcasts {
-    height: 0px !important;
-  }
-}
-
-
-/* --- 3. MARGES ENTRE TITRE ET VIGNETTES --- */
-
-/* VERSION DESKTOP */
 .header-promo {
   margin-bottom: 4vh;
 }
@@ -712,97 +600,198 @@ footer {
   margin-bottom: 4vh;
 }
 
-/* VERSION TABLETTE */
-@media (min-width: 769px) and (max-width: 1366px) {
-  .header-promo {
-    margin-bottom: 3vh !important;
-  }
-
-  .header-immersion {
-    margin-bottom: 3vh !important;
-  }
-
-  .header-souvenirs {
-    margin-bottom: 15vh !important;
-  }
-
-  .header-podcasts {
-    margin-bottom: 3vh !important;
-  }
-
-  .header-musiques {
-    margin-bottom: 3vh !important;
-  }
+.service-section {
+  padding-top: 65vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  color: #1d1d1f;
+  padding-bottom: 50px;
 }
 
-/* VERSION MOBILE */
-@media (max-width: 768px) {
-  .header-promo {
-    margin-bottom: 20px !important;
-  }
-
-  .header-immersion {
-    margin-bottom: 20px !important;
-  }
-
-  .header-souvenirs {
-    margin-bottom: 20px !important;
-  }
-
-  .header-podcasts {
-    margin-bottom: 20px !important;
-  }
-
-  /* <--- BAISSER VIGNETTES PODCASTS */
-  .header-musiques {
-    margin-bottom: 20px !important;
-  }
+.spacing-section-top {
+  height: 5vh;
 }
 
-
-/* --- 4. CHEVAUCHEMENT DES SECTIONS (MONTÉE DU BLOC) --- */
-
-.section-podcast-container,
-.section-musiques-container {
+.section-podcast-container {
+  margin-top: -8vh;
   background: white;
   position: relative;
   z-index: 10;
   width: 100%;
 }
 
-.section-podcast-container {
-  margin-top: -8vh;
-}
-
-/* Desktop Podcast */
 .section-musiques-container {
   margin-top: -10vh;
+  background: white;
+  position: relative;
+  z-index: 10;
+  width: 100%;
 }
 
-/* Desktop Musiques */
 
-/* VERSION TABLETTE */
+/* ------------------------------------------------------------
+   🛋️ 2. VERSION TABLETTE (769px à 1366px)
+   ------------------------------------------------------------ */
 @media (min-width: 769px) and (max-width: 1366px) {
+
+  /* Tailles titres */
+  .title-promo {
+    font-size: 60px !important;
+  }
+
+  .title-immersion {
+    font-size: 55px !important;
+  }
+
+  .title-souvenirs {
+    font-size: 55px !important;
+  }
+
+  .title-podcasts {
+    font-size: 55px !important;
+  }
+
+  .title-musiques {
+    font-size: 55px !important;
+  }
+
+  /* Espace sous les vignettes (écarte la section suivante) */
+  .espace-sous-promo {
+    height: 3vh !important;
+  }
+
+  .espace-sous-immersion {
+    height: 3vh !important;
+  }
+
+  .espace-sous-souvenirs {
+    height: 2vh !important;
+  }
+
+  .espace-sous-podcasts {
+    height: 3vh !important;
+  }
+
+  /* Marge Titre -> Vignettes (Espace interne section) */
+  .header-promo {
+    margin-bottom: 3vh !important;
+  }
+
+  .header-immersion {
+    margin-bottom: 3vh !important;
+  }
+
+  .header-souvenirs {
+    margin-bottom: 4vh !important;
+  }
+
+  /* <--- RÉGLAGE ICI */
+  .header-podcasts {
+    margin-bottom: 3vh !important;
+  }
+
+  .header-musiques {
+    margin-bottom: 3vh !important;
+  }
+
+  /* Structure & Chevauchement */
+  .service-section {
+    padding-top: 60vh !important;
+  }
+
+  .spacing-section-top {
+    height: 3vh !important;
+  }
+
   .section-podcast-container {
     margin-top: -5vh !important;
   }
 
-  /* Tablette Podcast vs Souvenirs */
   .section-musiques-container {
     margin-top: -5vh !important;
   }
 }
 
-/* VERSION MOBILE */
+
+/* ------------------------------------------------------------
+   📱 3. VERSION MOBILE (Jusqu'à 768px)
+   ------------------------------------------------------------ */
 @media (max-width: 768px) {
+
+  /* Tailles titres */
+  .title-promo {
+    font-size: 50px !important;
+  }
+
+  .title-immersion {
+    font-size: 50px !important;
+  }
+
+  .title-souvenirs {
+    font-size: 50px !important;
+  }
+
+  .title-podcasts {
+    font-size: 50px !important;
+  }
+
+  .title-musiques {
+    font-size: 50px !important;
+  }
+
+  /* Espace sous les vignettes */
+  .espace-sous-promo {
+    height: 20px !important;
+  }
+
+  .espace-sous-immersion {
+    height: 20px !important;
+  }
+
+  .espace-sous-souvenirs {
+    height: 0px !important;
+  }
+
+  .espace-sous-podcasts {
+    height: 0px !important;
+  }
+
+  /* Marge Titre -> Vignettes */
+  .header-promo {
+    margin-bottom: 20px !important;
+  }
+
+  .header-immersion {
+    margin-bottom: 20px !important;
+  }
+
+  .header-souvenirs {
+    margin-bottom: 20px !important;
+  }
+
+  .header-podcasts {
+    margin-bottom: 20px !important;
+  }
+
+  .header-musiques {
+    margin-bottom: 20px !important;
+  }
+
+  /* Structure & Chevauchement */
+  .service-section {
+    padding-top: 42vh !important;
+  }
+
+  .spacing-section-top {
+    height: 0vh !important;
+  }
+
   .section-podcast-container {
     margin-top: -20px !important;
   }
 
-  /* Mobile Podcast */
   .section-musiques-container {
     margin-top: -60px !important;
   }
-
-  /* Mobile Musiques */
 }
