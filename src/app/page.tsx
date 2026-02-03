@@ -134,14 +134,12 @@ export default function Home() {
             <SectionWithParallax id="evasion" theme="theme-arcade" className="pb-2 md:pb-24">
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
-                        <a href="#" className="comic-link">
-                            <h2 className="service-logo">Évasion</h2>
-                        </a>
-                        <p className="service-tagline !mb-4">Explorer de nouveaux horizons.</p>
+                        <h2 className="service-logo">PROMO</h2>
+                        <p className="service-tagline !mb-4">Nouveaux regards</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                                Plongez dans des univers virtuels fascinants et laissez-vous emporter par l'imaginaire.
-                                Une expérience visuelle unique au cœur du jeu vidéo.
+                                Partez à la découverte d'artistes et de lieux d'exception sous un angle inédit.
+                                Un voyage visuel pour révéler l'essence de chaque rencontre.
                             </p>
                         </div>
                     </Reveal>
@@ -171,13 +169,13 @@ export default function Home() {
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#F7E733" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo">Adrénaline</h2>
+                            <h2 className="service-logo">REPORTAGES</h2>
                         </a>
-                        <p className="service-tagline !mb-4">L&#39;action à l&#39;état pur.</p>
+                        <p className="service-tagline !mb-4">Au cœur de l'action.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                                Vivez l'intensité du mouvement et la performance.
-                                Des images percutantes pour ressentir toute l'énergie du sport.
+                                Des carnavals vibrants aux compétitions sportives intenses.
+                                Nous capturons l'énergie de chaque événement pour en restituer toute la force.
                             </p>
                         </div>
                     </Reveal>
@@ -209,7 +207,7 @@ export default function Home() {
                         <a href="#" className="comic-link">
                             <h2 className="service-logo">Souvenirs</h2>
                         </a>
-                        <p className="service-tagline !mb-4">Des moments inoubliables.</p>
+                        <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Des moments inoubliables.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 Revivez vos plus beaux souvenirs avec émotion et authenticité.
@@ -242,7 +240,7 @@ export default function Home() {
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo">
+                            <h2 className="service-logo" style={{ fontSize: '65px' }}>
                                 PODCASTS
                             </h2>
                         </a>
@@ -283,7 +281,7 @@ export default function Home() {
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo">
+                            <h2 className="service-logo" style={{ fontSize: '60px' }}>
                                 MUSIQUES
                             </h2>
                         </a>
