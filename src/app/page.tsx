@@ -169,7 +169,7 @@ export default function Home() {
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#F7E733" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo">REPORTAGES</h2>
+                            <h2 className="service-logo">IMMERSION</h2>
                         </a>
                         <p className="service-tagline !mb-4">Au cœur de l'action.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
