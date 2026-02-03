@@ -288,8 +288,8 @@ export default function Home() {
                         <p className="service-tagline text-gray-500" style={{ fontSize: '20px' }}>FeelProd Vibes</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                                Une sélection musicale pour accompagner vos projets.
-                                Des ambiances uniques créées pour sublimer l'image.
+                                L'alliance de l'intelligence artificielle et de la créativité pour donner vie à des bandes originales uniques.
+                                Du plaisir de créer à une qualité sonore exceptionnelle pour sublimer vos films et ambiances.
                             </p>
                         </div>
                         <div className="w-full h-[01vh]" /> {/* ESPACE SOUS TEXTE - Ajustez h-[...] */}
