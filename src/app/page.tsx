@@ -135,7 +135,7 @@ export default function Home() {
                 <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
                         <h2 className="service-logo">PROMO</h2>
-                        <p className="service-tagline !mb-4">Nouveaux regards</p>
+                        <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Nouveaux regards</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 Partez à la découverte d'artistes et de lieux d'exception sous un angle inédit.
@@ -171,7 +171,7 @@ export default function Home() {
                         <a href="#" className="comic-link">
                             <h2 className="service-logo">IMMERSION</h2>
                         </a>
-                        <p className="service-tagline !mb-4">Au cœur de l'action.</p>
+                        <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Au cœur de l'action.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 Des carnavals vibrants aux compétitions sportives intenses.
@@ -210,8 +210,8 @@ export default function Home() {
                         <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Des moments inoubliables.</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                                Revivez vos plus beaux souvenirs avec émotion et authenticité.
-                                Nous capturons ces instants précieux pour les rendre éternels.
+                                La magie de l'iPhone pour capturer l'authenticité en toute discrétion.
+                                Immortalisez vos souvenirs avec la simplicité comme seul témoin.
                             </p>
                         </div>
                     </Reveal>
