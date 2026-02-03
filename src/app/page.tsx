@@ -247,8 +247,8 @@ export default function Home() {
                         <p className="service-tagline text-gray-500" style={{ fontSize: '20px' }}>La santé autrement...</p>
                         <div className="bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 mt-0 mb-8 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                                Laissez-vous guider par des voix qui soignent et apaisent.
-                                Une exploration sonore au cœur du bien-être et de l'humain.
+                                L'alliance de la technique et de la thérapie au service de la transmission.
+                                La lumière comme langage commun pour éclairer un message profond.
                             </p>
                         </div>
                     </Reveal>
