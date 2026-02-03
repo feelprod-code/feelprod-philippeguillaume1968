@@ -242,7 +242,7 @@ export default function Home() {
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo" style={{ fontSize: '55px' }}>
+                            <h2 className="service-logo">
                                 PODCASTS
                             </h2>
                         </a>
@@ -283,7 +283,7 @@ export default function Home() {
                 <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo" style={{ fontSize: '55px' }}>
+                            <h2 className="service-logo">
                                 MUSIQUES
                             </h2>
                         </a>
