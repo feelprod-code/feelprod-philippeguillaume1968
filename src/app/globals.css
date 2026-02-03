@@ -561,7 +561,7 @@ footer {
 }
 
 /* --- VERSION TABLETTE --- */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1366px) {
   .service-section {
     padding-top: 60vh !important;
   }
@@ -624,7 +624,7 @@ footer {
 
 /* Espace vidéo de fond */
 .spacing-section-top {
-  height: 0vh;
+  height: 5vh;
 }
 
 /* Espace interne haut (Podcast/Musique) */
@@ -640,9 +640,24 @@ footer {
   height: 0vh;
 }
 
-/* <--- ESPACE SOUS SOUVENIRS */
-.espace-sous-podcasts {
-  height: 4vh;
+/* VERSION TABLETTE */
+@media (min-width: 769px) and (max-width: 1366px) {
+  .espace-sous-promo {
+    height: 3vh !important;
+  }
+
+  .espace-sous-immersion {
+    height: 3vh !important;
+  }
+
+  .espace-sous-souvenirs {
+    height: 2vh !important;
+  }
+
+  /* <--- TABLETTE SOUS SOUVENIRS */
+  .espace-sous-podcasts {
+    height: 3vh !important;
+  }
 }
 
 /* --- VERSION MOBILE (Téléphone) --- */
@@ -652,7 +667,7 @@ footer {
   }
 
   .spacing-section-top {
-    height: 2vh;
+    height: 0vh;
   }
 
   .espace-sous-promo {
@@ -664,30 +679,84 @@ footer {
   }
 
   .espace-sous-souvenirs {
-    height: 2px !important;
+    height: 0px !important;
   }
 
   /* <--- MOBILE SOUS SOUVENIRS */
   .espace-sous-podcasts {
-    height: 20px !important;
+    height: 0px !important;
   }
 }
 
 
 /* --- 3. MARGES ENTRE TITRE ET VIGNETTES --- */
 
-.section-header {
+/* VERSION DESKTOP */
+.header-promo {
   margin-bottom: 4vh;
 }
 
-/* Desktop */
+.header-immersion {
+  margin-bottom: 4vh;
+}
 
+.header-souvenirs {
+  margin-bottom: 4vh;
+}
+
+.header-podcasts {
+  margin-bottom: 4vh;
+}
+
+.header-musiques {
+  margin-bottom: 4vh;
+}
+
+/* VERSION TABLETTE */
+@media (min-width: 769px) and (max-width: 1366px) {
+  .header-promo {
+    margin-bottom: 3vh !important;
+  }
+
+  .header-immersion {
+    margin-bottom: 3vh !important;
+  }
+
+  .header-souvenirs {
+    margin-bottom: 15vh !important;
+  }
+
+  .header-podcasts {
+    margin-bottom: 3vh !important;
+  }
+
+  .header-musiques {
+    margin-bottom: 3vh !important;
+  }
+}
+
+/* VERSION MOBILE */
 @media (max-width: 768px) {
-  .section-header {
+  .header-promo {
     margin-bottom: 20px !important;
   }
 
-  /* Mobile */
+  .header-immersion {
+    margin-bottom: 20px !important;
+  }
+
+  .header-souvenirs {
+    margin-bottom: 20px !important;
+  }
+
+  .header-podcasts {
+    margin-bottom: 20px !important;
+  }
+
+  /* <--- BAISSER VIGNETTES PODCASTS */
+  .header-musiques {
+    margin-bottom: 20px !important;
+  }
 }
 
 
@@ -712,14 +781,27 @@ footer {
 
 /* Desktop Musiques */
 
+/* VERSION TABLETTE */
+@media (min-width: 769px) and (max-width: 1366px) {
+  .section-podcast-container {
+    margin-top: -5vh !important;
+  }
+
+  /* Tablette Podcast vs Souvenirs */
+  .section-musiques-container {
+    margin-top: -5vh !important;
+  }
+}
+
+/* VERSION MOBILE */
 @media (max-width: 768px) {
   .section-podcast-container {
-    margin-top: -18px !important;
+    margin-top: -20px !important;
   }
 
   /* Mobile Podcast */
   .section-musiques-container {
-    margin-top: 0px !important;
+    margin-top: -60px !important;
   }
 
   /* Mobile Musiques */

@@ -155,7 +155,7 @@ export default function Home() {
             {/* Divers Section */}
             {/* Divers Section */}
             <SectionWithParallax id="evasion" theme="theme-arcade" className="pb-2 md:pb-24">
-                <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
+                <div className="section-header header-promo pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
                         <h2 className="service-logo title-promo">PROMO</h2>
                         <p className="service-tagline !mb-4" style={{ fontSize: '20px' }}>Nouveaux regards</p>
@@ -189,7 +189,7 @@ export default function Home() {
 
             {/* Sport Section */}
             <SectionWithParallax id="adrenaline" theme="theme-music" zoomVideo>
-                <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#F7E733" } as React.CSSProperties}>
+                <div className="section-header header-immersion pr-[5%]" style={{ "--comic-color": "#F7E733" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo title-immersion">IMMERSION</h2>
@@ -225,7 +225,7 @@ export default function Home() {
             {/* Spectacle Section */}
             {/* Spectacle Section */}
             <SectionWithParallax id="souvenirs" theme="theme-tv" className="souvenirs-only md:pt-0">
-                <div className="section-header !mb-[04vh] pr-[5%]" style={{ "--comic-color": "#FF9F1C" } as React.CSSProperties}>
+                <div className="section-header header-souvenirs pr-[5%]" style={{ "--comic-color": "#FF9F1C" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo title-souvenirs">Souvenirs</h2>
@@ -260,7 +260,7 @@ export default function Home() {
             <section className="section-podcast-container">
                 <div className="spacing-section-top" /> {/* ESPACE HAUT PODCAST */}
 
-                <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
+                <div className="section-header header-podcasts px-[5%]" style={{ "--comic-color": "#4CAF50" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo title-podcasts">
@@ -301,7 +301,7 @@ export default function Home() {
             <section className="section-musiques-container">
                 <div className="spacing-section-top" /> {/* ESPACE HAUT MUSIQUE */}
 
-                <div className="section-header px-[5%] mb-4 !mt-0" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
+                <div className="section-header header-musiques px-[5%]" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo title-musiques">
