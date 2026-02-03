@@ -269,7 +269,6 @@ section {
   overflow: hidden;
   background-color: #fff;
   color: #1d1d1f;
-  padding-top: 65vh;
   padding-bottom: 50px;
 }
 
@@ -470,8 +469,7 @@ footer {
 
   .service-section {
     justify-content: flex-start;
-    padding-top: 42vh;
-    /* Tighter for other sections: Text starts just below video */
+    padding-top: 42vh !important;
     padding-bottom: 20px;
     min-height: auto;
   }
@@ -531,7 +529,7 @@ footer {
 
   .hero-section,
   .service-section {
-    padding-top: 60vh;
+    padding-top: 60vh !important;
   }
 }
 
@@ -562,8 +560,16 @@ footer {
   font-size: 65px;
 }
 
-/* VERSION TABLETTE */
+/* --- VERSION TABLETTE --- */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .service-section {
+    padding-top: 60vh !important;
+  }
+
+  .spacing-section-top {
+    height: 3vh;
+  }
+
   .title-promo {
     font-size: 60px !important;
   }
@@ -611,7 +617,17 @@ footer {
 
 /* --- 2. ESPACES SOUS LES VIGNETTES --- */
 
-/* VERSION DESKTOP */
+/* --- VERSION DESKTOP (Ordinateur) --- */
+.service-section {
+  padding-top: 65vh;
+}
+
+/* Espace vidéo de fond */
+.spacing-section-top {
+  height: 0vh;
+}
+
+/* Espace interne haut (Podcast/Musique) */
 .espace-sous-promo {
   height: 4vh;
 }
@@ -629,8 +645,16 @@ footer {
   height: 4vh;
 }
 
-/* VERSION MOBILE */
+/* --- VERSION MOBILE (Téléphone) --- */
 @media (max-width: 768px) {
+  .service-section {
+    padding-top: 42vh !important;
+  }
+
+  .spacing-section-top {
+    height: 2vh;
+  }
+
   .espace-sous-promo {
     height: 20px !important;
   }
