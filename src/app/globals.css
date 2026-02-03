@@ -518,21 +518,6 @@ footer {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  h1 {
-    font-size: 60px;
-  }
-
-  .service-section .service-logo {
-    font-size: 60px;
-  }
-
-  .hero-section,
-  .service-section {
-    padding-top: 60vh !important;
-  }
-}
-
 /* ============================================================
    TABLEAU DE BORD : RÉGLAGES DU SITE (REFONTE ISOLÉE)
    ============================================================ */
@@ -548,6 +533,11 @@ footer {
   padding-bottom: 50px;
 }
 
+/* ============================================================
+   🎛️ LE GRAND TABLEAU DE BORD : CONTRÔLE TOTAL DES ESPACES
+   ============================================================ */
+
+/* --- STRUCTURE FIXE --- */
 .section-podcast-container,
 .section-musiques-container {
   background: white;
@@ -557,249 +547,326 @@ footer {
 }
 
 /* ------------------------------------------------------------
-   💻 1. VERSION DESKTOP ONLY (Plus de 1024px)
+   💻 1. VERSION DESKTOP ONLY (Plus de 1366px)
    ------------------------------------------------------------ */
-@media (min-width: 1025px) {
-
-  /* Tailles titres */
-  .title-promo {
-    font-size: 70px;
-  }
-
-  .title-immersion {
-    font-size: 70px;
-  }
-
-  .title-souvenirs {
-    font-size: 65px;
-  }
-
-  .title-podcasts {
-    font-size: 65px;
-  }
-
-  .title-musiques {
-    font-size: 65px;
-  }
-
-  /* Espace sous les vignettes */
-  .espace-sous-promo {
-    height: 4vh;
-  }
-
-  .espace-sous-immersion {
-    height: 4vh;
-  }
-
-  .espace-sous-souvenirs {
-    height: 0vh;
-  }
-
-  .espace-sous-podcasts {
-    height: 4vh;
-  }
-
-  /* Marge Titre -> Vignettes */
-  .header-promo {
-    margin-bottom: 4vh;
-  }
-
-  .header-immersion {
-    margin-bottom: 4vh;
-  }
-
-  .header-souvenirs {
-    margin-bottom: 4vh;
-  }
-
-  .header-podcasts {
-    margin-bottom: 4vh;
-  }
-
-  .header-musiques {
-    margin-bottom: 4vh;
-  }
-
-  /* Structure & Chevauchement */
+@media (min-width: 1367px) {
   .service-section {
     padding-top: 65vh;
-  }
-
-  .spacing-section-top {
-    height: 5vh;
-  }
-
-  .section-podcast-container {
-    margin-top: -8vh;
-  }
-
-  .section-musiques-container {
-    margin-top: -10vh;
-  }
-}
-
-
-/* ------------------------------------------------------------
-   🛋️ 2. VERSION TABLETTE ONLY (769px à 1024px)
-   ------------------------------------------------------------ */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  /* Tailles titres */
-  .title-promo {
-    font-size: 60px;
-  }
-
-  .title-immersion {
-    font-size: 55px;
-  }
-
-  .title-souvenirs {
-    font-size: 55px;
-  }
-
-  .title-podcasts {
-    font-size: 55px;
-  }
-
-  .title-musiques {
-    font-size: 55px;
-  }
-
-  /* Espace sous les vignettes */
-  .espace-sous-promo {
-    height: 3vh;
-  }
-
-  .espace-sous-immersion {
-    height: 3vh;
-  }
-
-  .espace-sous-souvenirs {
-    height: 0vh;
-  }
-
-  .espace-sous-podcasts {
-    height: 0vh;
-  }
-
-  /* Marge Titre -> Vignettes */
-  .header-promo {
-    margin-bottom: 3vh;
-  }
-
-  .header-immersion {
-    margin-bottom: 3vh;
-  }
-
-  .header-souvenirs {
-    margin-bottom: 4vh;
-  }
-
-  .header-podcasts {
-    margin-bottom: 3vh;
-  }
-
-  .header-musiques {
-    margin-bottom: 3vh;
-  }
-
-  /* Structure & Chevauchement */
-  .service-section {
-    padding-top: 60vh;
-  }
-
-  .spacing-section-top {
-    height: 0vh;
-  }
-
-  .section-podcast-container {
-    margin-top: -5vh;
-  }
-
-  .section-musiques-container {
-    margin-top: -6vh;
-  }
-}
-
-
-/* ------------------------------------------------------------
-   📱 3. VERSION MOBILE ONLY (Jusqu'à 768px)
-   ------------------------------------------------------------ */
-@media (max-width: 768px) {
-
-  /* Tailles titres */
-  .title-promo {
-    font-size: 50px;
-  }
-
-  .title-immersion {
-    font-size: 50px;
-  }
-
-  .title-souvenirs {
-    font-size: 50px;
-  }
-
-  .title-podcasts {
-    font-size: 50px;
-  }
-
-  .title-musiques {
-    font-size: 50px;
-  }
-
-  /* Espace sous les vignettes */
-  .espace-sous-promo {
-    height: 20px;
-  }
-
-  .espace-sous-immersion {
-    height: 20px;
-  }
-
-  .espace-sous-souvenirs {
-    height: 2px;
-  }
-
-  .espace-sous-podcasts {
-    height: 0px;
-  }
-
-  /* Marge Titre -> Vignettes */
-  .header-promo {
-    margin-bottom: 20px;
-  }
-
-  .header-immersion {
-    margin-bottom: 20px;
-  }
-
-  .header-souvenirs {
-    margin-bottom: 20px;
-  }
-
-  .header-podcasts {
-    margin-bottom: 20px;
-  }
-
-  .header-musiques {
-    margin-bottom: 20px;
-  }
-
-  /* Structure & Chevauchement */
-  .service-section {
-    padding-top: 42vh;
   }
 
   .spacing-section-top {
     height: 2vh;
   }
 
-  .section-podcast-container {
-    margin-top: -18px;
+  /* SECTION: PROMO */
+  .title-promo {
+    font-size: 70px;
+    margin-bottom: 1vh;
   }
 
+  .subtitle-promo {
+    margin-bottom: 2vh;
+  }
+
+  .explanation-promo {
+    margin-bottom: 4vh;
+  }
+
+  .espace-sous-promo {
+    height: 4vh;
+  }
+
+  /* SECTION: IMMERSION */
+  .title-immersion {
+    font-size: 70px;
+    margin-bottom: 1vh;
+  }
+
+  .subtitle-immersion {
+    margin-bottom: 2vh;
+  }
+
+  .explanation-immersion {
+    margin-bottom: 4vh;
+  }
+
+  .espace-sous-immersion {
+    height: 4vh;
+  }
+
+  /* SECTION: SOUVENIRS */
+  .title-souvenirs {
+    font-size: 65px;
+    margin-bottom: 1vh;
+  }
+
+  .subtitle-souvenirs {
+    margin-bottom: 2vh;
+  }
+
+  .explanation-souvenirs {
+    margin-bottom: 4vh;
+  }
+
+  .espace-sous-souvenirs {
+    height: 0vh;
+  }
+
+  /* SECTION: PODCASTS */
+  .section-podcast-container {
+    margin-top: -4vh;
+  }
+
+  .title-podcasts {
+    font-size: 65px;
+    margin-bottom: 1vh;
+  }
+
+  .subtitle-podcasts {
+    margin-bottom: 2vh;
+  }
+
+  .explanation-podcasts {
+    margin-bottom: 4vh;
+  }
+
+  .espace-sous-podcasts {
+    height: 0vh;
+  }
+
+  /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: 0px;
+    margin-top: -5vh;
+  }
+
+  .title-musiques {
+    font-size: 65px;
+    margin-bottom: 1vh;
+  }
+
+  .subtitle-musiques {
+    margin-bottom: 2vh;
+  }
+
+  .explanation-musiques {
+    margin-bottom: 4vh;
+  }
+}
+
+/* ------------------------------------------------------------
+   🛋️ 2. VERSION TABLETTE ONLY (769px à 1366px)
+   ------------------------------------------------------------ */
+@media (min-width: 769px) and (max-width: 1366px) {
+  .service-section {
+    padding-top: 60vh !important;
+  }
+
+  .spacing-section-top {
+    height: 0vh !important;
+  }
+
+  /* SECTION: PROMO */
+  .title-promo {
+    font-size: 60px !important;
+    margin-bottom: 0.5vh !important;
+  }
+
+  .subtitle-promo {
+    margin-bottom: 1vh !important;
+  }
+
+  .explanation-promo {
+    margin-bottom: 5vh !important;
+  }
+
+  .espace-sous-promo {
+    height: 3vh !important;
+  }
+
+  /* SECTION: IMMERSION */
+  .title-immersion {
+    font-size: 55px !important;
+    margin-bottom: 0.5vh !important;
+  }
+
+  .subtitle-immersion {
+    margin-bottom: 1vh !important;
+  }
+
+  .explanation-immersion {
+    margin-bottom: 5vh !important;
+  }
+
+  .espace-sous-immersion {
+    height: 3vh !important;
+  }
+
+  /* SECTION: SOUVENIRS */
+  .service-section-souvenirs {
+    padding-top: 70vh !important;
+  }
+
+  .title-souvenirs {
+    font-size: 55px !important;
+    margin-bottom: 0.5vh !important;
+  }
+
+  .subtitle-souvenirs {
+    margin-bottom: 1vh !important;
+  }
+
+  .explanation-souvenirs {
+    margin-bottom: 8vh !important;
+  }
+
+  .espace-sous-souvenirs {
+    height: 3vh !important;
+  }
+
+  /* SECTION: PODCASTS */
+  .section-podcast-container {
+    margin-top: -5vh !important;
+  }
+
+  .title-podcasts {
+    font-size: 55px !important;
+    margin-bottom: 0.5vh !important;
+  }
+
+  .subtitle-podcasts {
+    margin-bottom: 1vh !important;
+  }
+
+  .explanation-podcasts {
+    margin-bottom: 2vh !important;
+  }
+
+  .espace-sous-podcasts {
+    height: 0vh !important;
+  }
+
+  /* SECTION: MUSIQUES */
+  .section-musiques-container {
+    margin-top: -9vh !important;
+  }
+
+  .title-musiques {
+    font-size: 55px !important;
+    margin-bottom: 0.5vh !important;
+  }
+
+  .subtitle-musiques {
+    margin-bottom: 1vh !important;
+  }
+
+  .explanation-musiques {
+    margin-bottom: 8vh !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   📱 3. VERSION MOBILE ONLY (Jusqu'à 768px)
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .service-section {
+    padding-top: 42vh !important;
+  }
+
+  .spacing-section-top {
+    height: 0vh !important;
+  }
+
+  /* SECTION: PROMO */
+  .title-promo {
+    font-size: 50px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .subtitle-promo {
+    margin-bottom: 5px !important;
+  }
+
+  .explanation-promo {
+    margin-bottom: 20px !important;
+  }
+
+  .espace-sous-promo {
+    height: 20px !important;
+  }
+
+  /* SECTION: IMMERSION */
+  .title-immersion {
+    font-size: 50px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .subtitle-immersion {
+    margin-bottom: 5px !important;
+  }
+
+  .explanation-immersion {
+    margin-bottom: 20px !important;
+  }
+
+  .espace-sous-immersion {
+    height: 20px !important;
+  }
+
+  /* SECTION: SOUVENIRS */
+  .title-souvenirs {
+    font-size: 50px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .subtitle-souvenirs {
+    margin-bottom: 5px !important;
+  }
+
+  .explanation-souvenirs {
+    margin-bottom: 20px !important;
+  }
+
+  .espace-sous-souvenirs {
+    height: 2px !important;
+  }
+
+  /* SECTION: PODCASTS */
+  .section-podcast-container {
+    margin-top: -60px !important;
+  }
+
+  .title-podcasts {
+    font-size: 50px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .subtitle-podcasts {
+    margin-bottom: 5px !important;
+  }
+
+  .explanation-podcasts {
+    margin-bottom: 5px !important;
+  }
+
+  .espace-sous-podcasts {
+    height: 0px !important;
+  }
+
+  /* SECTION: MUSIQUES */
+  .section-musiques-container {
+    margin-top: -80px !important;
+  }
+
+  .title-musiques {
+    font-size: 50px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .subtitle-musiques {
+    margin-bottom: 5px !important;
+  }
+
+  .explanation-musiques {
+    margin-bottom: 0px !important;
   }
 }
