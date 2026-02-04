@@ -116,26 +116,39 @@ export default function Home() {
 
                 <div className="hero-content relative z-10">
                     {/* Version Mobile - Image Droite + Titre ecarte gauche et plus bas */}
-                    <div className="md:hidden flex flex-col justify-center relative w-full h-full">
+                    <div className="md:hidden flex flex-col relative w-full pt-[45vh] overflow-visible">
+                        {/* TITRE INDÉPENDANT (Ancré GAUCHE - Absolute) */}
                         <Reveal delay={0.2}>
                             <div
-                                className="hero-bd-title z-20 relative self-start"
-                                style={{ marginLeft: '10%', marginTop: '2rem', marginBottom: '-30px' }}
+                                className="hero-bd-title z-20 absolute top-0 left-0"
+                                style={{
+                                    transform: 'translateX(var(--hero-title-x)) translateY(var(--hero-title-y)) rotate(var(--hero-title-rotate))',
+                                }}
                             >
-                                <span>LA VIE</span>
-                                <span>EN MOUVEMENT</span>
+                                <span style={{ fontSize: 'var(--hero-title-size)' }}>LA VIE</span>
+                                <span style={{ fontSize: 'var(--hero-title-size)' }}>EN MOUVEMENT</span>
                             </div>
                         </Reveal>
+
+                        {/* IMAGE FLUIDE - Positionnement par MARGES (Impacte le flux) */}
                         <Reveal delay={0.3}>
-                            <div className="flex justify-end w-full pr-4">
+                            <div className="flex justify-end w-full relative z-10">
                                 <img
                                     src="/assets/images/COUVfeel.png"
                                     alt="FeelProd"
                                     className="h-auto object-contain"
-                                    style={{ width: '65%', opacity: 0.95 }}
+                                    style={{
+                                        width: 'var(--hero-img-size)',
+                                        marginTop: 'var(--hero-img-y)',  /* Vrai espace au-dessus */
+                                        marginRight: 'var(--hero-img-x)', /* Vrai espace à droite */
+                                        opacity: 0.95
+                                    }}
                                 />
                             </div>
                         </Reveal>
+
+                        {/* ESPACE BLANC GARANTI (Spacer) - Tout Petit (h-6) */}
+                        <div className="w-full h-6 bg-transparent"></div>
                     </div>
 
                     {/* Version Desktop - Texte */}

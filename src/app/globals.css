@@ -11,6 +11,31 @@
   --tv-bg: #000;
   --music-bg: #fa233b;
   --arcade-bg: #fca00b;
+
+  /* --- REGLAGES HERO MOBILE (INDÉPENDANTS & FLUIDES) --- */
+
+  /* === 1. IMAGE (COUVFEEL) === */
+  /* Ancrée à DROITE. X=0 = Bord Droit. */
+  --hero-img-size: clamp(75%, 20vw + 60%, 85%);
+  --hero-img-x: 0px;
+  --hero-img-y: clamp(90px, 10vw + 58px, 130px);
+
+  /* === 2. TITRE (TEXTE) === */
+  /* Ancré à GAUCHE. X=0 = Bord Gauche. */
+  --hero-title-size: clamp(36px, 5vw + 20px, 55px);
+  --hero-title-x: clamp(30px, 8vw + 4px, 60px);
+  /* 30px à gauche au départ */
+  --hero-title-y: clamp(20px, 10vw - 12px, 60px);
+
+  --hero-title-rotate: -6deg;
+}
+
+/* --- VERSION TABLETTE / DESKTOP --- */
+@media (min-width: 1024px) {
+  :root {
+    --hero-title-size: 150px;
+    --hero-img-width: 45%;
+  }
 }
 
 body {
@@ -474,11 +499,6 @@ footer {
     min-height: auto;
   }
 
-  /* Add spacing between header and carousel in Souvenirs section */
-  .souvenirs-only .section-header {
-    margin-bottom: 40px !important;
-  }
-
   .horizontal-scroll-container {
     min-height: 200px;
     padding-bottom: 40px;
@@ -558,6 +578,11 @@ footer {
     height: 2vh;
   }
 
+  /* LOCK HEADER MARGIN */
+  .section-header {
+    margin-bottom: 0vh !important;
+  }
+
   /* SECTION: PROMO */
   .title-promo {
     font-size: 70px;
@@ -609,7 +634,7 @@ footer {
   }
 
   .espace-sous-souvenirs {
-    height: 0vh;
+    height: 4vh;
   }
 
   /* SECTION: PODCASTS */
@@ -631,7 +656,7 @@ footer {
   }
 
   .espace-sous-podcasts {
-    height: 0vh;
+    height: 4vh;
   }
 
   /* SECTION: MUSIQUES */
@@ -651,6 +676,10 @@ footer {
   .explanation-musiques {
     margin-bottom: 4vh;
   }
+
+  .espace-sous-musiques {
+    height: 4vh;
+  }
 }
 
 /* ------------------------------------------------------------
@@ -663,6 +692,11 @@ footer {
 
   .spacing-section-top {
     height: 0vh !important;
+  }
+
+  /* LOCK HEADER MARGIN */
+  .section-header {
+    margin-bottom: 0vh !important;
   }
 
   /* SECTION: PROMO */
@@ -716,7 +750,7 @@ footer {
   }
 
   .explanation-souvenirs {
-    margin-bottom: 8vh !important;
+    margin-bottom: 5vh !important;
   }
 
   .espace-sous-souvenirs {
@@ -738,11 +772,11 @@ footer {
   }
 
   .explanation-podcasts {
-    margin-bottom: 2vh !important;
+    margin-bottom: 5vh !important;
   }
 
   .espace-sous-podcasts {
-    height: 0vh !important;
+    height: 3vh !important;
   }
 
   /* SECTION: MUSIQUES */
@@ -760,7 +794,11 @@ footer {
   }
 
   .explanation-musiques {
-    margin-bottom: 8vh !important;
+    margin-bottom: 5vh !important;
+  }
+
+  .espace-sous-musiques {
+    height: 3vh !important;
   }
 }
 
@@ -774,6 +812,11 @@ footer {
 
   .spacing-section-top {
     height: 0vh !important;
+  }
+
+  /* FORCE HEADER MARGIN MOBILE */
+  .section-header {
+    margin-bottom: 20px !important;
   }
 
   /* SECTION: PROMO */
@@ -791,7 +834,7 @@ footer {
   }
 
   .espace-sous-promo {
-    height: 20px !important;
+    height: 0px !important;
   }
 
   /* SECTION: IMMERSION */
@@ -809,7 +852,7 @@ footer {
   }
 
   .espace-sous-immersion {
-    height: 20px !important;
+    height: 0px !important;
   }
 
   /* SECTION: SOUVENIRS */
@@ -826,13 +869,20 @@ footer {
     margin-bottom: 20px !important;
   }
 
+  /* Correction de l'écart Header : on force 0 ou une petite valeur pour coller à Immersion */
+  .header-souvenirs {
+    margin-bottom: 20px !important;
+    padding-right: 5%;
+    /* Garder le padding existant */
+  }
+
   .espace-sous-souvenirs {
-    height: 2px !important;
+    height: 0px !important;
   }
 
   /* SECTION: PODCASTS */
   .section-podcast-container {
-    margin-top: -60px !important;
+    margin-top: -50px !important;
   }
 
   .title-podcasts {
@@ -845,7 +895,7 @@ footer {
   }
 
   .explanation-podcasts {
-    margin-bottom: 5px !important;
+    margin-bottom: 20px !important;
   }
 
   .espace-sous-podcasts {
