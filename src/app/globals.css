@@ -365,11 +365,33 @@ section {
   /* Match title rotation */
 }
 
+/* Explanation Box - Glassmorphism Refinement */
+.explanation-box {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  /* Un liseret subtil qui utilise la couleur du theme tres legerement */
+  border-color: color-mix(in srgb, var(--comic-color, #ffffff) 40%, rgba(255, 255, 255, 0.8));
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.02),
+    inset 0 0 12px rgba(255, 255, 255, 0.5);
+  color: #000;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.explanation-box:hover {
+  background: #ffffff !important;
+  border-color: var(--comic-color);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
 /* Comic Link */
 .comic-link {
   text-decoration: none;
   display: inline-block;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .comic-link:hover {
@@ -662,7 +684,8 @@ footer {
 
   /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: 0vh;
+    margin-top: 7vh;
+    padding-top: 0px !important;
   }
 
   .title-musiques {
@@ -782,7 +805,8 @@ footer {
 
   /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: 0vh !important;
+    margin-top: 7vh !important;
+    padding-top: 0px !important;
   }
 
   .title-musiques {
@@ -906,7 +930,8 @@ footer {
 
   /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: 0px !important;
+    margin-top: 7vh !important;
+    padding-top: 0px !important;
   }
 
   .title-musiques {

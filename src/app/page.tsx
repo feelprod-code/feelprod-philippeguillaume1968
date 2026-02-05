@@ -170,9 +170,11 @@ export default function Home() {
             <SectionWithParallax id="evasion" theme="theme-arcade" className="pb-2 md:pb-24">
                 <div className="section-header header-promo pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
-                        <h2 className="service-logo title-promo">Promo</h2>
+                        <a href="#" className="comic-link">
+                            <h2 className="service-logo title-promo">Promo</h2>
+                        </a>
                         <p className="service-tagline subtitle-promo" style={{ fontSize: '20px' }}>Nouveaux regards</p>
-                        <div className="explanation-box explanation-promo bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
+                        <div className="explanation-box explanation-promo relative z-10 mx-auto w-[90%] rounded-xl p-6 text-center md:w-[70%] lg:w-[50%] bg-white/95">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 Partez à la découverte d'artistes et de lieux d'exception sous un angle inédit.
                                 Un voyage visuel pour révéler l'essence de chaque rencontre.
@@ -208,7 +210,7 @@ export default function Home() {
                             <h2 className="service-logo title-immersion">Immersion</h2>
                         </a>
                         <p className="service-tagline subtitle-immersion" style={{ fontSize: '20px' }}>Au cœur de l'action.</p>
-                        <div className="explanation-box explanation-immersion bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
+                        <div className="explanation-box explanation-immersion relative z-10 mx-auto w-[90%] rounded-xl p-6 text-center md:w-[70%] lg:w-[50%] bg-white/95">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 Des carnavals vibrants aux compétitions sportives intenses.
                                 Nous capturons l'énergie de chaque événement pour en restituer toute la force.
@@ -244,7 +246,7 @@ export default function Home() {
                             <h2 className="service-logo title-souvenirs">Souvenirs</h2>
                         </a>
                         <p className="service-tagline subtitle-souvenirs" style={{ fontSize: '20px' }}>Des moments inoubliables.</p>
-                        <div className="explanation-box explanation-souvenirs bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
+                        <div className="explanation-box explanation-souvenirs relative z-10 mx-auto w-[90%] rounded-xl p-6 text-center md:w-[70%] lg:w-[50%] bg-white/95">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 La magie de l'iPhone pour capturer l'authenticité en toute discrétion.
                                 Immortalisez vos souvenirs avec la simplicité comme seul témoin.
@@ -281,7 +283,7 @@ export default function Home() {
                             </h2>
                         </a>
                         <p className="service-tagline subtitle-podcasts text-gray-500" style={{ fontSize: '20px' }}>La santé autrement...</p>
-                        <div className="explanation-box explanation-podcasts bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
+                        <div className="explanation-box explanation-podcasts relative z-10 mx-auto w-[90%] rounded-xl p-6 text-center md:w-[70%] lg:w-[50%] bg-white/95">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 L'alliance de la technique et de la thérapie au service de la transmission.
                                 La lumière comme langage commun pour éclairer un message profond.
@@ -320,7 +322,7 @@ export default function Home() {
                             <h2 className="service-logo title-musiques">Musiques</h2>
                         </a>
                         <p className="service-tagline subtitle-musiques text-gray-500" style={{ fontSize: '20px' }}>Vibration sonore.</p>
-                        <div className="explanation-box explanation-musiques bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
+                        <div className="explanation-box explanation-musiques relative z-10 mx-auto w-[90%] rounded-xl p-6 text-center md:w-[70%] lg:w-[50%] bg-white/95">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
                                 La création musicale comme fil conducteur de l'émotion visuelle.
                                 Chaque note est pensée pour sublimer l'image et renforcer l'expérience.
