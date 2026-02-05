@@ -222,7 +222,7 @@ export default function Home() {
                         onOpen={handleOpenModal}
                         items={[
                             { videoId: "dp8Tt0_H7is", image: "/assets/images/7-BAGARTLAND.png", alt: "BAGART PLAN" },
-                            { videoId: "5XSxn3IJvG8", image: "/assets/images/8-BARRIOCARNAVAL.png", alt: "BARRIO CARNAVAL" },
+                            { videoId: "5XSxn3IJvG8", image: "/assets/images/8-BARRIOCARNAVAL1.png", alt: "BARRIO CARNAVAL" },
                             { videoId: "GsFDEIkVxAo", image: "/assets/images/9-KARMA.png", alt: "KARMA" },
                             { videoId: "3nkt9iLfyfc", image: "/assets/images/10-MORSANG.png", alt: "MORSANG" },
                             { videoId: "iCkE_gYsLXo", image: "/assets/images/11-bvaw.png", alt: "BVAW" },

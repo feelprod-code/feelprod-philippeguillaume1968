@@ -1,86 +1,159 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-
-const images = [
-    { src: "/assets/images/steadyphil.JPG", position: "center 70%", scale: 1.30, finalScale: 1 },
-    { src: "/assets/images/travelingphil-2.jpg", position: "center 20%", scale: 4, finalScale: 2 },
-    { src: "/assets/images/barriophil.jpg", position: "center 80%", scale: 1.25, finalScale: 1 },
-    { src: "/assets/images/pont.jpeg", position: "center 60%", scale: 1.25, finalScale: 1 },
-    { src: "/assets/images/stabbvaw.JPG", position: "center 80%", scale: 1.25, finalScale: 1 },
-    { src: "/assets/images/barrio stab.jpg", position: "center 80%", scale: 1.25, finalScale: 1 },
-    { src: "/assets/images/barriohaut.jpg", position: "center 90%", scale: 1.25, finalScale: 1 },
-    { src: "/assets/images/pont alex.jpg", position: "center 60%", scale: 1.25, finalScale: 1 },
-];
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from "@/components/Navbar";
 
 export default function AboutPage() {
-    const [index, setIndex] = useState(0);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setIndex((prev) => (prev + 1) % images.length);
-        }, 5000);
-        return () => clearInterval(timer);
-    }, []);
+    // Scroll-driven opacities pour sections (Opal-style)
+    const heroOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
+    const section1Opacity = useTransform(scrollYProgress, [0.15, 0.25, 0.4], [0, 1, 0]);
+    const section2Opacity = useTransform(scrollYProgress, [0.35, 0.45, 0.6], [0, 1, 0]);
+    const section3Opacity = useTransform(scrollYProgress, [0.55, 0.65, 0.85], [0, 1, 1]);
+
+    // Parallax subtil pour images
+    const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.1, 1.2]);
+    const imageY = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
     return (
-        <main className="bg-white min-h-screen">
-            {/* Navigation */}
-            <nav className="global-nav">
-                <div className="nav-content">
-                    <Link href="/" className="nav-title hover:opacity-70 transition-opacity">FEELPROD</Link>
-                </div>
+        <main ref={containerRef} className="bg-white relative">
+            <Navbar />
 
-                {/* Hamburger Button */}
-                <button
-                    className="hamburger-button"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Menu"
+            {/* Sticky Navigation avec mix-blend */}
+            <div className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-between px-6 mix-blend-difference pointer-events-none">
+                <span className="text-white font-bold text-xl">FEELPROD</span>
+            </div>
+
+            {/* SECTION HERO (Sticky) */}
+            <section className="h-[200vh] relative">
+                <motion.div
+                    style={{ opacity: heroOpacity }}
+                    className="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-6"
                 >
-                    <span className={`hamburger-bar ${isMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></span>
-                    <span className={`hamburger-bar ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`hamburger-bar ${isMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></span>
-                </button>
+                    <h1 className="text-7xl md:text-[12rem] font-bold tracking-tighter leading-none">
+                        FEELPROD
+                    </h1>
+                    <p className="text-2xl md:text-3xl font-light tracking-widest uppercase text-neutral-400 mt-6">
+                        L'Émotion par le Mouvement
+                    </p>
+                </motion.div>
+            </section>
 
-                {/* Mobile Menu Overlay */}
-                <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
-                    <Link href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</Link>
-                    <Link href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</Link>
-                    <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</Link>
-                </div>
-            </nav>
+            {/* SECTION 1: VISION (Sticky Text + Background Image) */}
+            <section className="h-[300vh] relative bg-white">
+                {/* Image Background Fixe avec Parallax */}
+                <motion.div
+                    style={{ y: imageY }}
+                    className="sticky top-0 h-screen w-full overflow-hidden"
+                >
+                    <motion.img
+                        style={{ scale: imageScale }}
+                        src="/assets/images/ap_pont.jpeg"
+                        alt="Paris"
+                        className="w-full h-full object-cover grayscale opacity-30"
+                    />
+                </motion.div>
 
-            {/* Hero Slideshow Section - 16/9 with fade */}
-            <section className="relative w-full aspect-video overflow-hidden" style={{ marginTop: '80px' }}>
-                <AnimatePresence mode="popLayout">
+                {/* Text Overlay Sticky */}
+                <motion.div
+                    style={{ opacity: section1Opacity }}
+                    className="sticky top-0 h-screen flex items-center justify-center pointer-events-none"
+                >
+                    <div className="max-w-4xl px-6 text-center">
+                        <h2 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+                            Opal was founded in 2020 <br />with a singular idea.
+                        </h2>
+                        <p className="text-2xl md:text-3xl font-light text-neutral-600 leading-relaxed">
+                            Capturer l'invisible dans chaque battement.
+                        </p>
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* SECTION 2: MISSION (Sticky Text + Nouvelle Image) */}
+            <section className="h-[300vh] relative bg-white">
+                {/* Grid d'images qui apparaissent */}
+                <div className="sticky top-0 h-screen grid grid-cols-2 gap-4 p-4">
                     <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: images[index].scale }}
-                        animate={{ opacity: 1, scale: images[index].finalScale }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 2.5, ease: "easeInOut" }}
-                        className="absolute inset-0 w-full h-full"
+                        style={{
+                            scale: useTransform(scrollYProgress, [0.4, 0.5], [0.8, 1]),
+                            opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1])
+                        }}
+                        className="overflow-hidden"
                     >
-                        <img
-                            src={images[index].src}
-                            alt="Philippe Guillaume"
-                            className="w-full h-full object-cover grayscale"
-                            style={{ objectPosition: images[index].position }}
-                        />
-
-                        {/* Gradient Fades */}
-                        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/30 to-transparent"></div>
-                        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
+                        <img src="/assets/images/ap_steadyphil.JPG" alt="Steadycam" className="w-full h-full object-cover grayscale" />
                     </motion.div>
-                </AnimatePresence>
+                    <motion.div
+                        style={{
+                            scale: useTransform(scrollYProgress, [0.45, 0.55], [0.8, 1]),
+                            opacity: useTransform(scrollYProgress, [0.45, 0.55], [0, 1])
+                        }}
+                        className="overflow-hidden"
+                    >
+                        <img src="/assets/images/ap_stabbvaw.JPG" alt="Stabilisation" className="w-full h-full object-cover grayscale" />
+                    </motion.div>
+                    <motion.div
+                        style={{
+                            scale: useTransform(scrollYProgress, [0.5, 0.6], [0.8, 1]),
+                            opacity: useTransform(scrollYProgress, [0.5, 0.6], [0, 1])
+                        }}
+                        className="overflow-hidden"
+                    >
+                        <img src="/assets/images/ap_barriophil.jpg" alt="En action" className="w-full h-full object-cover grayscale" />
+                    </motion.div>
+                    <motion.div
+                        style={{
+                            scale: useTransform(scrollYProgress, [0.55, 0.65], [0.8, 1]),
+                            opacity: useTransform(scrollYProgress, [0.55, 0.65], [0, 1])
+                        }}
+                        className="overflow-hidden"
+                    >
+                        <img src="/assets/images/ap_pont alex.jpg" alt="Pont" className="w-full h-full object-cover grayscale" />
+                    </motion.div>
+                </div>
+
+                {/* Texte par-dessus */}
+                <motion.div
+                    style={{ opacity: section2Opacity }}
+                    className="sticky top-0 h-screen flex items-center justify-center pointer-events-none"
+                >
+                    <div className="max-w-4xl px-6 text-center">
+                        <h2 className="text-5xl md:text-8xl font-bold leading-tight text-white mix-blend-difference">
+                            The objects you use most often, <br />should be the best things you own.
+                        </h2>
+                    </div>
+                </motion.div>
             </section>
 
-            {/* Content Section - EMPTY FOR NOW */}
-            <section className="w-full bg-white relative z-10 px-6 py-20 min-h-[50vh]">
-                {/* Waiting for new text content */}
+            {/* SECTION 3: PHILOSOPHY (Sticky Final) */}
+            <section className="h-[200vh] relative bg-neutral-900">
+                <motion.div
+                    style={{ opacity: section3Opacity }}
+                    className="sticky top-0 h-screen flex items-center justify-center text-white px-6"
+                >
+                    <div className="max-w-5xl text-center">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-tight">
+                            We believe that if you are surrounded by quality, <br />each day is a bit better.
+                        </h2>
+                        <p className="text-xl md:text-2xl font-light text-neutral-400 mt-10">
+                            Here's to more better days.
+                        </p>
+                        <div className="mt-20">
+                            <a href="/contact" className="inline-block text-lg uppercase tracking-[0.3em] border-b-2 border-white pb-2 hover:opacity-50 transition-opacity">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                </motion.div>
             </section>
+
+            {/* Spacer pour la fin du scroll */}
+            <div className="h-screen" />
 
         </main>
     );
