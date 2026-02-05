@@ -345,6 +345,7 @@ section {
   line-height: 0.9;
   transform: rotate(-1deg);
   display: inline-block;
+  text-transform: none !important;
 }
 
 .service-tagline {
@@ -634,12 +635,12 @@ footer {
   }
 
   .espace-sous-souvenirs {
-    height: 4vh;
+    height: 0vh;
   }
 
   /* SECTION: PODCASTS */
   .section-podcast-container {
-    margin-top: -4vh;
+    margin-top: 0vh;
   }
 
   .title-podcasts {
@@ -656,12 +657,12 @@ footer {
   }
 
   .espace-sous-podcasts {
-    height: 4vh;
+    height: 0vh;
   }
 
   /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: -5vh;
+    margin-top: 0vh;
   }
 
   .title-musiques {
@@ -678,7 +679,7 @@ footer {
   }
 
   .espace-sous-musiques {
-    height: 4vh;
+    height: 0vh;
   }
 }
 
@@ -754,12 +755,12 @@ footer {
   }
 
   .espace-sous-souvenirs {
-    height: 3vh !important;
+    height: 0vh !important;
   }
 
   /* SECTION: PODCASTS */
   .section-podcast-container {
-    margin-top: -5vh !important;
+    margin-top: 0vh !important;
   }
 
   .title-podcasts {
@@ -776,12 +777,12 @@ footer {
   }
 
   .espace-sous-podcasts {
-    height: 3vh !important;
+    height: 0vh !important;
   }
 
   /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: -9vh !important;
+    margin-top: 0vh !important;
   }
 
   .title-musiques {
@@ -798,7 +799,7 @@ footer {
   }
 
   .espace-sous-musiques {
-    height: 3vh !important;
+    height: 0vh !important;
   }
 }
 
@@ -882,7 +883,8 @@ footer {
 
   /* SECTION: PODCASTS */
   .section-podcast-container {
-    margin-top: -50px !important;
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
   }
 
   .title-podcasts {
@@ -904,7 +906,7 @@ footer {
 
   /* SECTION: MUSIQUES */
   .section-musiques-container {
-    margin-top: -80px !important;
+    margin-top: 0px !important;
   }
 
   .title-musiques {
@@ -917,6 +919,14 @@ footer {
   }
 
   .explanation-musiques {
-    margin-bottom: 0px !important;
+    margin-bottom: 20px !important;
   }
+}
+
+/* --- GLOBAL OVERRIDE : SUPPRESSION PADDING BAS SECTIONS --- */
+/* Applique padding-bottom: 0px à toutes les sections demandées, sur tous les écrans */
+.souvenirs-only,
+.section-podcast-container,
+.section-musiques-container {
+  padding-bottom: 0px !important;
 }

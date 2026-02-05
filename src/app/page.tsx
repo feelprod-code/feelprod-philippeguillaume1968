@@ -93,6 +93,7 @@ export default function Home() {
                     <a href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</a>
                     <a href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</a>
                     <a href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</a>
+                    <a href="/test-spacing" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>PAGE TEST</a>
                 </div>
             </motion.nav>
 
@@ -170,7 +171,7 @@ export default function Home() {
             <SectionWithParallax id="evasion" theme="theme-arcade" className="pb-2 md:pb-24">
                 <div className="section-header header-promo pr-[5%]" style={{ "--comic-color": "#4CC9F0" } as React.CSSProperties}>
                     <Reveal>
-                        <h2 className="service-logo title-promo">PROMO</h2>
+                        <h2 className="service-logo title-promo">Promo</h2>
                         <p className="service-tagline subtitle-promo" style={{ fontSize: '20px' }}>Nouveaux regards</p>
                         <div className="explanation-box explanation-promo bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
@@ -205,7 +206,7 @@ export default function Home() {
                 <div className="section-header header-immersion pr-[5%]" style={{ "--comic-color": "#F7E733" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo title-immersion">IMMERSION</h2>
+                            <h2 className="service-logo title-immersion">Immersion</h2>
                         </a>
                         <p className="service-tagline subtitle-immersion" style={{ fontSize: '20px' }}>Au cœur de l'action.</p>
                         <div className="explanation-box explanation-immersion bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">
@@ -277,7 +278,7 @@ export default function Home() {
                     <Reveal>
                         <a href="#" className="comic-link">
                             <h2 className="service-logo title-podcasts">
-                                PODCASTS
+                                Podcasts
                             </h2>
                         </a>
                         <p className="service-tagline subtitle-podcasts text-gray-500" style={{ fontSize: '20px' }}>La santé autrement...</p>
@@ -317,7 +318,7 @@ export default function Home() {
                 <div className="section-header header-musiques px-[5%]" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
                     <Reveal>
                         <a href="#" className="comic-link">
-                            <h2 className="service-logo title-musiques">MUSIQUES</h2>
+                            <h2 className="service-logo title-musiques">Musiques</h2>
                         </a>
                         <p className="service-tagline subtitle-musiques text-gray-500" style={{ fontSize: '20px' }}>Vibration sonore.</p>
                         <div className="explanation-box explanation-musiques bg-white/95 text-black w-[90%] md:w-[70%] lg:w-[50%] mx-auto p-6 rounded-xl shadow-lg relative z-10 text-center backdrop-blur-sm">

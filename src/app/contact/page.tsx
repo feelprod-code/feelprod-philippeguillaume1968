@@ -1,9 +1,11 @@
 "use client";
+// Force Rebuild Contact
 import React, { useState } from "react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import { CreativeTechCollage } from "@/components/CreativeTechCollage";
 
 export default function ContactPage() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -22,184 +24,127 @@ export default function ContactPage() {
 
     if (isSubmitted) {
         return (
-            <main className="bg-white min-h-screen text-black font-sans">
-                <nav className="global-nav">
-                    <div className="nav-content">
-                        <Link href="/" className="nav-title hover:opacity-70 transition-opacity">FEELPROD</Link>
-                    </div>
-                </nav>
-
-                <div className="min-h-screen flex items-center justify-center px-6">
-                    <div className="text-center">
-                        <h2 className="text-6xl md:text-7xl font-['Bangers'] mb-8">MESSAGE REÇU</h2>
-                        <p className="text-xl text-gray-600 mb-12">
-                            Merci {formData.firstName}, je reviens vers vous très vite.
-                        </p>
-                        <button
-                            onClick={() => setIsSubmitted(false)}
-                            className="text-sm uppercase tracking-widest underline hover:no-underline transition-all"
-                        >
-                            Nouveau message
-                        </button>
-                    </div>
+            <main className="bg-white min-h-screen text-black font-sans flex items-center justify-center p-4">
+                <div className="text-center relative border-4 border-black p-10 bg-yellow-400 shadow-[12px_12px_0px_#000] rotate-1">
+                    <h2 className="text-6xl md:text-8xl font-black mb-4 uppercase transform -rotate-2" style={{ fontFamily: 'var(--font-comic), sans-serif' }}>
+                        BOOM ! 💥
+                    </h2>
+                    <p className="text-2xl font-bold border-t-4 border-black pt-4 mt-4">
+                        Message bien reçu, {formData.firstName}.<br />
+                        On dérush ça et on vous rappelle.
+                    </p>
+                    <button
+                        onClick={() => setIsSubmitted(false)}
+                        className="mt-8 bg-black text-white font-bold px-6 py-3 rounded-full hover:bg-white hover:text-black hover:border-black border-2 border-transparent transition-all"
+                    >
+                        Nouveau message
+                    </button>
                 </div>
             </main>
         );
     }
 
     return (
-        <main className="bg-white min-h-screen text-black font-sans">
-            {/* Navigation */}
-            <nav className="global-nav">
-                <div className="nav-content">
-                    <Link href="/" className="nav-title hover:opacity-70 transition-opacity">FEELPROD</Link>
+        <main className="bg-white min-h-screen text-black font-sans pb-20 overflow-x-hidden">
+            <Navbar />
+
+            <div className="pt-32 px-4 md:px-10 max-w-7xl mx-auto relative flex flex-col items-center">
+
+                {/* 1. INTRO + COLLAGE */}
+                <div className="text-center mb-0 md:mb-10 relative z-10">
+                    <h1 className="text-5xl md:text-8xl font-black mb-4 uppercase tracking-tighter transform -rotate-1" style={{ fontFamily: 'var(--font-comic), sans-serif' }}>
+                        LET'S CREATE !
+                    </h1>
+                    <p className="text-xl md:text-2xl font-medium text-gray-600 max-w-2xl mx-auto">
+                        Votre vision. Notre technique. <span className="text-purple-600 font-bold">L'alchimie parfaite.</span>
+                    </p>
                 </div>
 
-                <button
-                    className="hamburger-button"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Menu"
-                >
-                    <span className={`hamburger-bar ${isMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></span>
-                    <span className={`hamburger-bar ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`hamburger-bar ${isMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></span>
-                </button>
+                {/* ANIMATION CREATIVE */}
+                <CreativeTechCollage />
 
-                <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
-                    <Link href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</Link>
-                    <Link href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</Link>
-                    <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</Link>
-                </div>
-            </nav>
-            {/* Flex container to properly center everything */}
-            <div className="min-h-screen flex items-start justify-center pt-96 md:pt-56 pb-32 px-10 md:px-6">
-                <div className="w-full max-w-[650px]">
+                {/* 2. FORMULAIRE STYLE BD (Chevauchement léger) */}
+                <div className="w-[90%] md:w-full max-w-2xl mt-[-50px] md:mt-[-100px] relative z-40">
+                    <div className="relative border-[3px] border-black bg-white p-6 md:p-10 shadow-[12px_12px_0px_#000000] rounded-3xl" style={{ boxShadow: '12px 12px 0px #000' }}>
+                        {/* HEADER FORM */}
+                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-yellow-400 border-[3px] border-black px-6 py-2 rounded-full shadow-[4px_4px_0px_#000]">
+                            <span className="font-black text-lg uppercase tracking-widest text-black">SIGNAL D'APPEL</span>
+                        </div>
 
-                    {/* Title - Centered above card */}
-                    <div className="text-center mb-12" style={{ paddingTop: '128px' }}>
-                        <h1 className="text-4xl md:text-5xl font-medium mb-4">
-                            Une question, un projet ?
-                        </h1>
-                        <p className="text-2xl md:text-3xl text-gray-700">
-                            À vous d'entrer en scène !
-                        </p>
-                    </div>
-
-                    {/* Form Card - Exact rounded corners and spacing from AZ Video */}
-                    <div
-                        className="bg-[#f9f9f9] rounded-[20px] p-8 md:p-10 shadow-sm md:mx-0"
-                        style={{ marginLeft: '64px', marginRight: '64px' }}
-                    >
-                        <form onSubmit={handleSubmit} className="space-y-6">
-
-                            {/* Row 1: First Name + Last Name (2 columns) */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Prénom
-                                    </label>
+                        <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="font-bold text-xs uppercase px-2 text-gray-500">Prénom</label>
                                     <input
                                         type="text"
                                         required
                                         value={formData.firstName}
                                         onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-                                        placeholder="John"
-                                        className="w-full px-4 py-3 text-base bg-white border border-gray-200 rounded-[10px] focus:outline-none focus:border-gray-400 transition-colors"
+                                        className="w-full bg-gray-50 border-2 border-black rounded-xl p-3 focus:ring-4 focus:ring-yellow-400 focus:border-black transition-all outline-none font-bold"
+                                        placeholder="Bruce"
                                     />
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Nom
-                                    </label>
+                                <div className="space-y-1">
+                                    <label className="font-bold text-xs uppercase px-2 text-gray-500">Nom</label>
                                     <input
                                         type="text"
                                         required
                                         value={formData.lastName}
                                         onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-                                        placeholder="Doe"
-                                        className="w-full px-4 py-3 text-base bg-white border border-gray-200 rounded-[10px] focus:outline-none focus:border-gray-400 transition-colors"
+                                        className="w-full bg-gray-50 border-2 border-black rounded-xl p-3 focus:ring-4 focus:ring-yellow-400 focus:border-black transition-all outline-none font-bold"
+                                        placeholder="Wayne"
                                     />
                                 </div>
                             </div>
 
-                            {/* Email (Full width) */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Adresse e-mail
-                                </label>
-                                <input
-                                    type="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={e => setFormData({ ...formData, email: e.target.value })}
-                                    placeholder="jdoe@gmail.com"
-                                    className="w-full px-4 py-3 text-base bg-white border border-gray-200 rounded-[10px] focus:outline-none focus:border-gray-400 transition-colors"
-                                />
+                            {/* Email / Tel */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="font-bold text-xs uppercase px-2 text-gray-500">Email</label>
+                                    <input
+                                        type="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={e => setFormData({ ...formData, email: e.target.value })}
+                                        className="w-full bg-gray-50 border-2 border-black rounded-xl p-3 focus:ring-4 focus:ring-yellow-400 focus:border-black transition-all outline-none font-bold"
+                                        placeholder="batman@gotham.city"
+                                    />
+                                </div>
+                                <div className="space-y-1">
+                                    <label className="font-bold text-xs uppercase px-2 text-gray-500">Téléphone</label>
+                                    <input
+                                        type="tel"
+                                        value={formData.phone}
+                                        onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                                        className="w-full bg-gray-50 border-2 border-black rounded-xl p-3 focus:ring-4 focus:ring-yellow-400 focus:border-black transition-all outline-none font-bold"
+                                        placeholder="06..."
+                                    />
+                                </div>
                             </div>
 
-                            {/* Phone (Full width) */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Numéro de téléphone
-                                </label>
-                                <input
-                                    type="tel"
-                                    value={formData.phone}
-                                    onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                                    placeholder="+33 6 12 34 56 78"
-                                    className="w-full px-4 py-3 text-base bg-white border border-gray-200 rounded-[10px] focus:outline-none focus:border-gray-400 transition-colors"
-                                />
-                            </div>
-
-                            {/* Message (Full width) */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Description de votre projet
-                                </label>
+                            <div className="space-y-1">
+                                <label className="font-bold text-xs uppercase px-2 text-gray-500">Projet</label>
                                 <textarea
+                                    rows={4}
                                     required
                                     value={formData.message}
                                     onChange={e => setFormData({ ...formData, message: e.target.value })}
-                                    placeholder="Racontez-nous en quelques lignes votre projet..."
-                                    rows={5}
-                                    className="w-full px-4 py-3 text-base bg-white border border-gray-200 rounded-[10px] focus:outline-none focus:border-gray-400 transition-colors resize-none"
-                                />
+                                    className="w-full bg-gray-50 border-2 border-black rounded-xl p-3 focus:ring-4 focus:ring-yellow-400 focus:border-black transition-all outline-none font-medium"
+                                    placeholder="Racontez-nous tout..."
+                                ></textarea>
                             </div>
 
-                            {/* Budget (Full width) */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Budget estimé
-                                </label>
-                                <select
-                                    value={formData.budget}
-                                    onChange={e => setFormData({ ...formData, budget: e.target.value })}
-                                    className="w-full px-4 py-3 text-base bg-white border border-gray-200 rounded-[10px] focus:outline-none focus:border-gray-400 transition-colors"
-                                >
-                                    <option value="">Sélectionner...</option>
-                                    <option value="< 1000€">Moins de 1 000€</option>
-                                    <option value="1000-3000€">1 000€ - 3 000€</option>
-                                    <option value="3000-5000€">3 000€ - 5 000€</option>
-                                    <option value="5000-10000€">5 000€ - 10 000€</option>
-                                    <option value="> 10000€">Plus de 10 000€</option>
-                                </select>
-                            </div>
-
-                            {/* Submit Button - Full width pill */}
-                            <div className="pt-4">
-                                <button
-                                    type="submit"
-                                    className="w-full px-8 py-4 bg-black text-white font-semibold text-base rounded-full hover:bg-gray-800 transition-all"
-                                >
-                                    Envoyer ma demande
-                                </button>
-                            </div>
-
+                            <button
+                                type="submit"
+                                className="w-full bg-black text-white font-black text-xl py-4 rounded-xl border-2 border-transparent hover:bg-yellow-400 hover:text-black hover:border-black transition-all shadow-[8px_8px_0px_#666] hover:shadow-[4px_4px_0px_#000] transform hover:translate-y-1 active:translate-y-2 active:shadow-none"
+                            >
+                                ENVOYER LE SIGNAL ! 🚀
+                            </button>
                         </form>
                     </div>
-
                 </div>
+
             </div>
         </main>
-    );
+    )
 }

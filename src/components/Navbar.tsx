@@ -28,6 +28,7 @@ export default function Navbar() {
                 <Link href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</Link>
                 <Link href="/work" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>WORK</Link>
                 <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</Link>
+                <Link href="/test-spacing" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>PAGE TEST</Link>
             </div>
         </nav>
     );
