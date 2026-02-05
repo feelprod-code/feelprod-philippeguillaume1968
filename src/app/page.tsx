@@ -212,8 +212,8 @@ export default function Home() {
                         <p className="service-tagline subtitle-immersion" style={{ fontSize: '20px' }}>Au cœur de l'action.</p>
                         <div className="explanation-box explanation-immersion relative z-10 mx-auto w-[90%] rounded-xl p-6 text-center md:w-[70%] lg:w-[50%] bg-white/95">
                             <p className="text-sm leading-relaxed font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                                Des carnavals vibrants à l'exigence de la protection rapprochée.
-                                Nous plongeons au cœur de l'intensité pour capturer l'adrénaline, la maîtrise et la force de chaque mission.
+                                Des carnavals et du sport à la protection rapprochée.
+                                Nous plongeons au cœur de l'action pour capturer l'intensité et la force de chaque instant.
                             </p>
                         </div>
                     </Reveal>
