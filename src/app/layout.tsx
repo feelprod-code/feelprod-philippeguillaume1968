@@ -10,8 +10,8 @@ const luckiestGuy = Luckiest_Guy({ weight: "400", subsets: ["latin"], variable: 
 const chewy = Chewy({ weight: "400", subsets: ["latin"], variable: "--font-chewy" });
 
 export const metadata: Metadata = {
-  title: "Apple Services Clone",
-  description: "Créateur d'émotions visuelles",
+  title: "FeelProd | Créateur d'Émotions Visuelles",
+  description: "Portfolio immersif de production audiovisuelle.",
 };
 
 export default function RootLayout({

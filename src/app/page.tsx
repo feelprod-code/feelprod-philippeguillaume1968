@@ -93,7 +93,6 @@ export default function Home() {
                     <a href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</a>
                     <a href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</a>
                     <a href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</a>
-                    <a href="/test-spacing" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>PAGE TEST</a>
                 </div>
             </motion.nav>
 
