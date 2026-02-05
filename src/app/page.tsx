@@ -189,7 +189,7 @@ export default function Home() {
                             { videoId: "AGUxUQ5bwXk", image: "/assets/images/2-BARRIOLATINOSALSA.png", alt: "BARRIO LATINO SALSA" },
                             { videoId: "STp41rTjP-Q", image: "/assets/images/3-LARTISTEVENT.png", alt: "L ARTIST EVENT" },
                             { videoId: "WELgM9kD69A", image: "/assets/images/4-ALEX.png", alt: "ALEX" },
-                            { videoId: "sZX2ws_vSQI", image: "/assets/images/5-SALSA4.png", alt: "SALSA 4" },
+                            { videoId: "sZX2ws_vSQI", image: "/assets/images/5-SALSA41.png", alt: "SALSA 4" },
                             { videoId: "LjPaIVq8weg", image: "/assets/images/6-LAURE.png", alt: "LAURE" },
                             { videoId: "N_f-Oepxyco", image: "/assets/images/21-ELYSEE 63.png", alt: "ELYSEE 63" },
                             { videoId: "p9kzlJa5rA4", image: "/assets/images/20-Aguila.jpg", alt: "AGUILA" },
