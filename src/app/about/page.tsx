@@ -57,10 +57,11 @@ export default function AboutPage() {
 
                 {/* Titre Parallaxe */}
                 <div className={`
+                    absolute bottom-0 left-0 w-full z-10
                     container mx-auto px-4 sm:px-6 lg:px-8 
-                    relative h-full flex items-end justify-center 
                     pb-24 
                     md:pb-32
+                    flex justify-center
                 `}>
                     <motion.h1
                         initial={{ opacity: 0, y: 50 }}
