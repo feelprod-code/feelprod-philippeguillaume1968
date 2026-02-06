@@ -116,8 +116,8 @@ export default function AboutPage() {
                         >
                             <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
                                 <img
-                                    src="/assets/images/ap_pont alex.jpg"
-                                    alt="Pont Alexandre III"
+                                    src="/assets/images/ap_blonde.png"
+                                    alt="Portrait"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
