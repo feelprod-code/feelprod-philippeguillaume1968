@@ -93,8 +93,8 @@ export default function AboutPageDebug() {
                     <img src="/assets/images/ap_barrio stab.jpg" className="w-full h-full object-cover about-hero-img" />
                     <div className="absolute inset-0 bg-black/40"></div>
                 </motion.div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 px-4 flex justify-center flex-col items-center w-[90%] md:w-full" style={{ paddingBottom: '200px' }}>
-                    <motion.h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-none" style={{ fontFamily: 'var(--font-luckiest-guy)' }}>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 px-4 flex justify-center flex-col items-center w-[90%] md:w-full dbg-col" style={{ paddingBottom: '200px' }}>
+                    <motion.h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-none dbg-title" style={{ fontFamily: 'var(--font-luckiest-guy)' }}>
                         L'ART DU<br />MOUVEMENT
                     </motion.h1>
                 </div>
@@ -174,11 +174,11 @@ export default function AboutPageDebug() {
                 {/* SPACER 2 (Début de section D en Prod) */}
                 <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 2"></div>
 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4 mt-0 dbg-box" data-label="TITRE D (mt-0)">
-                    <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4 mt-0 dbg-box dbg-col" data-label="TITRE D (mt-0)">
+                    <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1d1d1f] dbg-title" style={{ fontFamily: 'var(--font-chewy)' }}>
                         Dans l'Instant
                     </motion.h2>
-                    <p className="text-center text-gray-600 text-lg">Les images en mouvement</p>
+                    <p className="text-center text-gray-600 text-lg dbg-text">Les images en mouvement</p>
                 </div>
 
                 <div className="flex justify-center px-4">
