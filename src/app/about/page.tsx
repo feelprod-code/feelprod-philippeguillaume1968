@@ -48,7 +48,7 @@ export default function AboutPage() {
                     <img
                         src="/assets/images/ap_barrio stab.jpg"
                         alt="Action en mouvement"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                     />
                     {/* Overlay sombre pour contraste texte */}
                     <div className="absolute inset-0 bg-black/40"></div>
