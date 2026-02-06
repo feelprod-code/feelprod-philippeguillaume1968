@@ -90,7 +90,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
-                        className="lg:sticky lg:top-32 w-[90%] md:w-full mx-auto"
+                        className="lg:sticky lg:top-32"
                     >
                         <motion.h2
                             variants={fadeInUp}
@@ -180,7 +180,7 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2 w-[90%] md:w-full mx-auto"
+                            className="order-1 lg:order-2"
                         >
                             <motion.h2
                                 variants={fadeInUp}
@@ -251,7 +251,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-4xl mx-auto text-center w-[90%] md:w-full"
+                    className="max-w-4xl mx-auto text-center"
                 >
                     <blockquote className="text-3xl md:text-4xl font-light italic text-gray-800 leading-relaxed">
                         "Nous ne capturons pas des images.<br />
