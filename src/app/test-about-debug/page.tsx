@@ -15,7 +15,7 @@ const debugStyles = `
   
   /* BOX SPATIALE (Cadre autour d'une section ou élément) */
   .dbg-box {
-      outline: 2px dashed rgba(0,0,255,0.3);
+      border: 4px solid blue !important; /* EPAISSI */
       position: relative;
   }
   .dbg-box::after {
