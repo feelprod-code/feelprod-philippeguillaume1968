@@ -26,6 +26,7 @@ export default function Navbar() {
             <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
                 <Link href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>ACCUEIL</Link>
                 <Link href="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>À PROPOS</Link>
+                <Link href="/test-about-debug" className="mobile-nav-link text-red-500 font-bold" onClick={() => setIsMenuOpen(false)}>TEST DEBUG 🚨</Link>
                 <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>CONTACT</Link>
             </div>
         </nav>
