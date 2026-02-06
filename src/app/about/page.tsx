@@ -137,7 +137,7 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
-            <section className="bg-gray-50 relative z-10 pt-0 pb-24 md:pt-0 md:pb-32">
+            <section className="bg-white relative z-10 pt-0 pb-24 md:pt-0 md:pb-32">
                 {/* Spacer 1 (Déplacé ici pour collage parfait) */}
                 <div className="leading-none text-[0px] m-0 p-0">
                     <div className="spacer-mobile h-6 md:h-12 lg:h-16 !mb-0"></div>
