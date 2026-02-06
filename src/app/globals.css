@@ -85,8 +85,8 @@ body {
 
 /* About Page Bloc C - Pont Alexandre Image (fond, gauche) */
 .about-pont-img {
-  /* Décalage vers la gauche dans le cadre */
-  object-position: 150% 50%;
+  /* Recentré à 50% */
+  object-position: 50% 50%;
 }
 
 /* About Page Bloc C - Steadyphil Image (premier plan, droite) */
