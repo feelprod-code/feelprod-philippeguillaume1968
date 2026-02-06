@@ -59,6 +59,11 @@ const debugStyles = `
       background: magenta; color: white; font-size: 10px; padding: 0 4px;
       z-index: 100;
   }
+
+  /* Nouveaux styles pour cadres de contenu */
+  .dbg-title { border: 2px dashed green !important; }
+  .dbg-text { border: 1px dashed red !important; }
+  .dbg-col { border: 2px solid cyan !important; }
 `;
 
 export default function AboutPageDebug() {
@@ -144,17 +149,17 @@ export default function AboutPageDebug() {
                                 <img src="/assets/images/ap_stabbvaw.JPG" className="w-full h-full object-cover about-steady-img" />
                             </div>
                         </div>
-                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start -translate-y-10 relative z-50">
-                            <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start -translate-y-10 relative z-50 dbg-col">
+                            <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C] dbg-title" style={{ fontFamily: 'var(--font-chewy)' }}>
                                 Corps & Caméra
                             </motion.h2>
-                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6 dbg-text">
                                 La fluidité n'est pas un hasard. Elle naît de la fusion entre l'opérateur et son outil.
                             </motion.p>
-                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6 dbg-text">
                                 Être au cœur de l'action sans la perturber.
                             </motion.p>
-                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 dbg-text">
                                 Le corps s'efface... <span className="font-bold text-black">transformer le réel en récit visuel</span>.
                             </motion.p>
                         </div>
