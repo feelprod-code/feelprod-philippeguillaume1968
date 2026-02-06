@@ -60,13 +60,13 @@ body {
 /* About Page Hero Image Positioning */
 .about-hero-img {
   /* Mobile: Décalage vers la gauche pour voir l'opérateur */
-  object-position: 35% 50%;
+  object-position: 65% 50%;
 }
 
 @media (min-width: 768px) {
   .about-hero-img {
     /* Desktop: Centré */
-    object-position: 30% 50%;
+    object-position: 50% 50%;
   }
 }
 
