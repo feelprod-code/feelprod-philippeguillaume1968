@@ -61,7 +61,7 @@ export default function AboutPage() {
                     container px-4 sm:px-6 lg:px-8 
                     md:pb-32
                     flex justify-center
-                    w-[90%] md:w-full mx-auto left-0 right-0
+                    w-full px-[5%] md:w-full md:px-0 mx-auto left-0 right-0
                 `}
                     style={{ paddingBottom: '200px' }} /* <--- CHANGEZ CETTE VALEUR POUR LE MOBILE (ex: 50px ou 200px) */
                 >
@@ -90,7 +90,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
-                        className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
+                        className="lg:sticky lg:top-32 w-full px-[5%] md:px-0"
                     >
                         <motion.h2
                             variants={fadeInUp}
@@ -180,7 +180,7 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
+                            className="order-1 lg:order-2 w-full px-[5%] md:px-0"
                         >
                             <motion.h2
                                 variants={fadeInUp}
