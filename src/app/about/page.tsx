@@ -80,8 +80,8 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ==================== BLOC B : L'ORIGINE (Texte Gauche / Image Droite) ==================== */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            {/* ==================== BLOC B : L'ORIGINE ==================== */}
+            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                     {/* Colonne Texte */}
@@ -140,7 +140,7 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
-            <section className="bg-gray-50 py-24 md:py-32">
+            <section className="bg-gray-50 relative z-10 py-24 md:py-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -215,7 +215,7 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
-            <section className="pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden">
+            <section className="bg-white relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -251,10 +251,10 @@ export default function AboutPage() {
             </section>
 
             {/* Spacer Ajustable avant Outro */}
-            <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+            <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
 
             {/* ==================== OUTRO : Citation ==================== */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center">
+            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
