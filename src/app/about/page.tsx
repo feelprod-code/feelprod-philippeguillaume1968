@@ -61,7 +61,7 @@ export default function AboutPage() {
                     container px-4 sm:px-6 lg:px-8 
                     md:pb-32
                     flex justify-center
-                    w-full px-[5%] md:w-full md:px-0 mx-auto left-0 right-0
+                    w-[90%] md:w-full mx-auto
                 `}
                     style={{ paddingBottom: '200px' }} /* <--- CHANGEZ CETTE VALEUR POUR LE MOBILE (ex: 50px ou 200px) */
                 >
@@ -90,7 +90,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
-                        className="lg:sticky lg:top-32 w-full px-[5%] md:px-0"
+                        className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
                     >
                         <motion.h2
                             variants={fadeInUp}
@@ -134,6 +134,9 @@ export default function AboutPage() {
                 </div>
 
                 {/* Spacer de sécurité */}
+
+                {/* Spacer Ajustable */}
+                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
@@ -180,7 +183,7 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2 w-full px-[5%] md:px-0"
+                            className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
                         >
                             <motion.h2
                                 variants={fadeInUp}
@@ -206,6 +209,9 @@ export default function AboutPage() {
                 </div>
 
                 {/* Spacer de sécurité */}
+
+                {/* Spacer Ajustable */}
+                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
@@ -244,6 +250,9 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Spacer Ajustable avant Outro */}
+            <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+
             {/* ==================== OUTRO : Citation ==================== */}
             <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
                 <motion.div
@@ -251,9 +260,9 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-4xl mx-auto text-center w-[90%] md:w-full"
+                    className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%]"
                 >
-                    <blockquote className="text-3xl md:text-4xl font-light italic text-gray-800 leading-relaxed">
+                    <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">
                         "Nous ne capturons pas des images.<br />
                         Nous sculptons des <span className="font-bold text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>émotions</span>."
                     </blockquote>
