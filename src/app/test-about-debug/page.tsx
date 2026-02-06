@@ -5,41 +5,49 @@ import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
 // ==========================================
-// MODE DIAGNOSTIC ACTIVÉ
+// MODE DIAGNOSTIC AVANCÉ (ESPACES)
 // ==========================================
 const debugStyles = `
   /* Révélateur de structure */
   .debug-mode * { 
-      outline: 1px solid rgba(255, 0, 0, 0.3) !important; 
+      outline: 1px solid rgba(255, 0, 0, 0.1) !important; 
   }
   .debug-mode section { 
-      border: 4px solid blue !important;
+      border: 2px solid blue !important;
       position: relative;
   }
-  .debug-mode section::after {
-      content: 'SECTION';
+  
+  /* LABEL SECTION */
+  .debug-mode [data-label]::after {
+      content: attr(data-label);
       position: absolute;
       top: 0; right: 0;
       background: blue; color: white;
       font-size: 10px; padding: 2px;
+      z-index: 100;
   }
-  .debug-mode .container { 
-      border: 4px solid green !important; 
-      background: rgba(0, 255, 0, 0.05);
-  }
-  /* CIBLE LES CLASSES TAILWIND w-[90%] avec échappement CSS */
-  .debug-mode .w-\\[90\\%\\] {
-      background: rgba(255, 255, 0, 0.5) !important; /* JAUNE BIEN VISIBLE */
-      border: 4px dashed orange !important;
-      position: relative;
-  }
-  .debug-mode .w-\\[90\\%\\]::before {
-      content: 'ZONE 90%';
+  
+  /* VISUALISATION DES PADDINGS (LES BLANCS) */
+  /* Padding Haut */
+  .debug-mode section::before {
+      content: '↕️ ESPACE HAUT (Padding Top)';
+      display: block;
+      height: 20px; /* Indication visuelle seulement, ne change pas la taille réelle */
+      background: rgba(0, 255, 0, 0.1); /* Vert très clair */
+      color: green;
+      font-size: 10px;
+      text-align: center;
       position: absolute;
-      top: -20px; left: 0;
-      background: orange; color: black;
-      font-weight: bold; font-size: 12px;
+      top: 0; left: 0; right: 0;
+      border-bottom: 1px dashed green;
   }
+
+  /* Padding Bas (On utilise un div interne pour le simuler ou on le met en bas) */
+  /* Note: difficile de cibler le padding bas avec ::after car déjà utilisé par label. 
+     On va ajouter des divs explicites dans le JSX pour montrer les espaces PADDING */
+
+  
+  /* SPACERS VIOLETS */
   .debug-mode .spacer-mobile {
       background: repeating-linear-gradient(
         45deg,
@@ -49,187 +57,129 @@ const debugStyles = `
         rgba(255,0,255,0.4) 20px
       );
       outline: 2px solid magenta !important;
+      position: relative;
+      min-height: 20px; /* Pour être sûr de voir le texte même si h-0 */
   }
-  .debug-mode .spacer-mobile::after {
-      content: 'SPACER';
+  .debug-mode .spacer-mobile::before {
+      content: attr(data-name);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
       color: magenta;
-      font-size: 10px;
-      display: block;
-      text-align: center;
+      font-weight: bold;
+      font-size: 11px;
+      background: rgba(255,255,255,0.8);
+      padding: 0 4px;
+      white-space: nowrap;
   }
 `;
 
 export default function AboutPageDebug() {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    const fadeInUp: Variants = {
-        hidden: { opacity: 0.5, y: 0 },
-        visible: { opacity: 1, y: 0 }
-    };
-
-    const staggerContainer: Variants = {
-        hidden: { opacity: 1 },
-        visible: { opacity: 1 }
-    };
-
     return (
-        <main ref={containerRef} className="bg-white min-h-screen debug-mode">
+        <main className="bg-white min-h-screen debug-mode">
             <style>{debugStyles}</style>
             <Navbar />
 
             <div className="fixed top-20 left-4 z-50 bg-black text-white p-4 rounded shadow-xl text-xs font-mono">
-                <h1 className="text-xl font-bold text-yellow-500 mb-2">MODE DEBUG</h1>
-                <p><span className="text-red-400">🟥 Rouge</span> = Limites</p>
-                <p><span className="text-blue-400">🟦 Bleu</span> = Sections</p>
-                <p><span className="text-green-400">🟩 Vert</span> = Containers</p>
-                <p><span className="text-yellow-400">🟨 Jaune</span> = Texte (w-90)</p>
-                <p><span className="text-purple-400">🟪 Violet</span> = Spacers</p>
+                <h1 className="text-xl font-bold text-yellow-500 mb-2">MODE DEBUG ESPACES</h1>
+                <p>🟦 Bleu = Limite Section</p>
+                <p>🟪 Violet = SPACER (Barre Rose)</p>
+                <p>🟩 Zone Verte = Le "Blanc" interne (Padding)</p>
             </div>
 
-            {/* ==================== BLOC A : HERO SECTION ==================== */}
-            <section className="relative h-screen overflow-hidden">
-                <motion.div className="absolute inset-0">
-                    <img
-                        src="/assets/images/ap_barrio stab.jpg"
-                        alt="Action en mouvement"
-                        className="w-full h-full object-cover about-hero-img"
-                    />
-                    <div className="absolute inset-0 bg-black/40"></div>
-                </motion.div>
-
-                {/* Titre Parallaxe */}
-                <div className={`
-                    absolute bottom-0 left-1/2 -translate-x-1/2 z-10
-                    px-4 sm:px-6 lg:px-8 
-                    md:pb-32
-                    flex justify-center flex-col items-center
-                    w-[90%] md:w-full
-                `}
-                    style={{ paddingBottom: '200px' }}
-                >
-                    <motion.h1
-                        className="text-6xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-none"
-                        style={{ fontFamily: 'var(--font-luckiest-guy)' }}
-                    >
-                        L'ART DU<br />MOUVEMENT
-                    </motion.h1>
+            {/* ==================== BLOC A : HERO ==================== */}
+            <section className="relative h-screen overflow-hidden" data-label="BLOC A">
+                <div className="absolute inset-0">
+                    <img src="/assets/images/ap_barrio stab.jpg" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[90%] text-center pb-32">
+                    <h1 className="text-6xl text-white font-bold">L'ART DU<br />MOUVEMENT</h1>
                 </div>
             </section>
 
-            {/* ==================== BLOC B : L'ORIGINE ==================== */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    <motion.div className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
-                        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>
-                            Tout a commencé par...
-                        </motion.h2>
-                        <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                            Un regard différent. Une volonté de capturer non pas ce qui est visible, mais ce qui est ressenti.
-                        </p>
-                        <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                            Nous ne sommes pas de simples observateurs. Nous sommes des traducteurs d'instants.
-                        </p>
-                    </motion.div>
+            {/* ==================== BLOC B : ORIGINE ==================== */}
+            <section className="container mx-auto px-4 py-24 md:py-32" data-label="BLOC B">
+                {/* Visualisation Padding Haut */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mb-4">
+                    ⬆️ ESPACE BLANC HAUT (Padding Top: py-24)
+                </div>
 
-                    <div className="relative">
-                        <div className="sticky top-32">
-                            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                                <img src="/assets/images/ap_blonde.png" alt="Portrait" className="w-full h-full object-cover about-blonde-img" />
-                            </div>
-                        </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div className="w-[90%] mx-auto justify-self-center">
+                        <h2 className="text-4xl font-bold text-[#FF9F1C] mb-6">Tout a commencé par...</h2>
+                        <p className="text-gray-700">Texte bloc B...</p>
                     </div>
+                    <div><img src="/assets/images/ap_blonde.png" className="w-full rounded-2xl" /></div>
                 </div>
 
-                {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+                {/* Visualisation Padding Bas */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mt-4">
+                    ⬇️ ESPACE BLANC BAS (Padding Bottom: py-24)
+                </div>
+
+                {/* SPACER 1 */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16 mt-4" data-name="SPACER 1 (La Barre Rose)"></div>
             </section>
 
-            {/* ==================== BLOC C : LA FUSION ==================== */}
-            <section className="bg-gray-50 py-24 md:py-32">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                        <div className="relative h-[500px] md:h-[600px] order-2 lg:order-1">
-                            <div className="absolute left-0 top-0 w-[60%] h-[75%] rounded-xl overflow-hidden shadow-lg border-4 border-white">
-                                <img src="/assets/images/ap_pont alex.jpg" alt="Architecture" className="w-full h-full object-cover grayscale about-pont-img" />
-                            </div>
-                            <div className="absolute right-0 bottom-0 w-[65%] h-[80%] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10">
-                                <img src="/assets/images/ap_stabbvaw.JPG" alt="Stabilisation" className="w-full h-full object-cover about-steady-img" />
-                            </div>
-                        </div>
-
-                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
-                                Corps & Caméra
-                            </h2>
-                            <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                                La fluidité n'est pas un hasard. Elle naît de la fusion entre l'opérateur et son outil.
-                            </p>
-                            <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                                Être au cœur de l'action sans la perturber. C'est cette présence invisible qui permet de capter l'authenticité brute.
-                            </p>
-                        </div>
-                    </div>
+            {/* ==================== BLOC C : FUSION ==================== */}
+            <section className="bg-gray-50 py-24 md:py-32" data-label="BLOC C">
+                {/* Visualisation Padding Haut */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mb-4">
+                    ⬆️ ESPACE BLANC HAUT (Padding Top: py-24) <br /> "SOUS L'ESPACE ROSE précédents"
                 </div>
 
-                {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
+                <div className="container mx-auto px-4">
+                    <p className="text-center">Contenu Bloc C (Corps & Caméra)...</p>
+                </div>
+
+                {/* Visualisation Padding Bas */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mt-4">
+                    ⬇️ ESPACE BLANC BAS (Padding Bottom: py-24)
+                </div>
+
+                {/* SPACER 2 */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16 mt-4" data-name="SPACER 2 (La Barre Rose)"></div>
             </section>
 
-            {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
-            <section className="pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1d1d1f]"
-                        style={{ fontFamily: 'var(--font-chewy)' }}
-                    >
-                        Dans l'Instant
-                    </motion.h2>
-                    <p className="text-center text-gray-600 text-lg">Les images en mouvement</p>
+            {/* ==================== BLOC D : GALERIE ==================== */}
+            <section className="pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden" data-label="BLOC D : GALERIE">
+                {/* Visualisation Padding Haut */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mb-4">
+                    ⬆️ ESPACE BLANC HAUT (Actuellement: pt-0 / RIEN) <br />
+                    (Si vous voyez du blanc, c'est le Spacer Rose du dessus)
                 </div>
 
-                {/* Image unique centrée */}
-                <div className="flex justify-center px-4">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="w-full max-w-5xl"
-                    >
-                        <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                            <img
-                                src="/assets/images/ap_barriophil.jpg"
-                                alt="Vision du cadre"
-                                className="w-full h-full object-cover about-cine-img"
-                            />
-                        </div>
-                    </motion.div>
+                <div className="container mx-auto px-4 mb-0">
+                    <h2 className="text-4xl font-bold text-center mb-4">Dans l'Instant</h2>
+                    <p className="text-center mb-4">Les images en mouvement</p>
                 </div>
 
-                {/* Spacer Ajustable avant Outro */}
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
+                <div className="flex justify-center"><div className="w-full h-64 bg-gray-300 rounded">IMAGE VIDEO</div></div>
+
+                {/* Visualisation Padding Bas */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mt-4">
+                    ⬇️ ESPACE BLANC BAS (Actuellement: pb-0) <br /> "AU-DESSUS DE L'ESPACE ROSE suivant"
+                </div>
+
+                {/* SPACER 3 */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16 mt-4" data-name="SPACER 3 (La Barre Rose)"></div>
             </section>
 
             {/* ==================== OUTRO ==================== */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center">
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
+            <section className="pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center" data-label="OUTRO">
+                {/* Visualisation Padding Haut */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mb-4">
+                    ⬆️ ESPACE BLANC HAUT (Actuellement: pt-0)
+                </div>
 
-                <motion.div
-                    className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%]"
-                >
-                    <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">
-                        "Nous ne capturons pas des images.<br />
-                        Nous sculptons des <span className="font-bold text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>émotions</span>."
-                    </blockquote>
-                </motion.div>
+                <div className="spacer-mobile h-6 mb-4" data-name="SPACER INTERNE (Doublon?)"></div>
+
+                <blockquote className="text-2xl italic text-center">"Nous sculptons des émotions"</blockquote>
+
+                {/* Visualisation Padding Bas */}
+                <div className="w-full text-center text-green-600 bg-green-100 border border-green-500 text-xs py-1 mt-4">
+                    ⬇️ ESPACE BLANC BAS (Padding Bottom: pb-24)
+                </div>
             </section>
 
         </main>
