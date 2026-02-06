@@ -251,7 +251,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-4xl mx-auto text-center"
+                    className="max-w-4xl mx-auto text-center w-[90%] md:w-full"
                 >
                     <blockquote className="text-3xl md:text-4xl font-light italic text-gray-800 leading-relaxed">
                         "Nous ne capturons pas des images.<br />

@@ -27,13 +27,13 @@ const debugStyles = `
       border: 4px solid green !important; 
       background: rgba(0, 255, 0, 0.05);
   }
-  .debug-mode .px-6 {
+  .debug-mode .debug-zone-90 {
       background: rgba(255, 255, 0, 0.5) !important; /* JAUNE BIEN VISIBLE */
       border: 4px dashed orange !important;
       position: relative;
   }
-  .debug-mode .px-6::before {
-      content: 'PADDING 6 (Mobile)';
+  .debug-mode .debug-zone-90::before {
+      content: 'ZONE 90% (Centrée)';
       position: absolute;
       top: -20px; left: 0;
       background: orange; color: black;
@@ -99,7 +99,8 @@ export default function AboutPageDebug() {
                     md:pb-32
                     flex justify-center
                     flex justify-center
-                    w-full px-6 md:w-full md:px-0 mx-auto left-0 right-0
+                    w-[90%] md:w-full mx-auto left-0 right-0
+                    debug-zone-90
                 `}
                     style={{ paddingBottom: '200px' }}
                 >
@@ -115,7 +116,7 @@ export default function AboutPageDebug() {
             {/* ==================== BLOC B : L'ORIGINE ==================== */}
             <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    <motion.div className="lg:sticky lg:top-32 w-full px-6 md:px-0 mx-auto">
+                    <motion.div className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 debug-zone-90">
                         <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>
                             Tout a commencé par...
                         </motion.h2>
@@ -150,7 +151,7 @@ export default function AboutPageDebug() {
                             </div>
                         </div>
 
-                        <div className="order-1 lg:order-2 w-full px-6 md:px-0 mx-auto">
+                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 debug-zone-90">
                             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
                                 Corps & Caméra
                             </h2>
