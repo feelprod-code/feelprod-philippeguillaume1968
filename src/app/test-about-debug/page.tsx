@@ -103,11 +103,11 @@ export default function AboutPageDebug() {
 
                 {/* Titre Parallaxe */}
                 <div className={`
-                    absolute bottom-0 inset-x-0 z-10
-                    container px-4 sm:px-6 lg:px-8 
+                    absolute bottom-0 left-1/2 -translate-x-1/2 z-10
+                    px-4 sm:px-6 lg:px-8 
                     md:pb-32
                     flex justify-center flex-col items-center
-                    w-[90%] md:w-full mx-auto
+                    w-[90%] md:w-full
                 `}
                     style={{ paddingBottom: '200px' }}
                 >
