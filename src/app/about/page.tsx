@@ -140,7 +140,7 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
-            <section className="bg-gray-50 relative z-10 py-24 md:py-32">
+            <section className="bg-gray-50 relative z-10 pt-8 pb-24 md:pt-12 md:pb-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 

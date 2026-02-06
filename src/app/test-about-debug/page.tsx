@@ -134,8 +134,8 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC C : FUSION ==================== */}
-            <section className="bg-purple-100 relative z-10 py-24 md:py-32 dbg-box" data-label="SECTION C (VIOLET)">
-                <div className="dbg-space-visu top-0 h-24 md:h-32">PADDING HAUT SECTION C</div>
+            <section className="bg-purple-100 relative z-10 pt-8 pb-24 md:pt-12 md:pb-32 dbg-box" data-label="SECTION C (VIOLET)">
+                <div className="dbg-space-visu top-0 h-8 md:h-12">PADDING HAUT SECTION C (-2/3)</div>
 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
