@@ -145,7 +145,7 @@ export default function AboutPage() {
                                 className="absolute left-0 top-0 w-[60%] h-[75%] rounded-xl overflow-hidden shadow-lg border-4 border-white"
                             >
                                 <img
-                                    src="/assets/images/ap_pont.jpeg"
+                                    src="/assets/images/ap_pont alex.jpg"
                                     alt="Architecture"
                                     className="w-full h-full object-cover grayscale"
                                 />
@@ -160,8 +160,8 @@ export default function AboutPage() {
                                 className="absolute right-0 bottom-0 w-[65%] h-[80%] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10"
                             >
                                 <img
-                                    src="/assets/images/ap_barrio stab.jpg"
-                                    alt="Action Steadicam"
+                                    src="/assets/images/ap_steadyphil.JPG"
+                                    alt="Opérateur Steadicam"
                                     className="w-full h-full object-cover"
                                 />
                             </motion.div>
@@ -218,31 +218,23 @@ export default function AboutPage() {
                     <p className="text-center text-gray-600 text-lg">Les images en mouvement</p>
                 </div>
 
-                {/* Bande d'images horizontale (Simple version - Grid responsive) */}
-                <div className="flex gap-4 md:gap-6 px-4 overflow-x-auto pb-8 scrollbar-hide">
-                    {[
-                        { src: "/assets/images/ap_barriohaut.jpg", alt: "Perspective Haute" },
-                        { src: "/assets/images/ap_barriophil.jpg", alt: "Contrôle Manuel" },
-                        { src: "/assets/images/ap_stabbvaw.JPG", alt: "Stabilisation" },
-                        { src: "/assets/images/ap_steadyphil 1.JPG", alt: "En Action" }
-                    ].map((image, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="flex-shrink-0 w-[280px] md:w-[350px]"
-                        >
-                            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border-4 border-white">
-                                <img
-                                    src={image.src}
-                                    alt={image.alt}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
+                {/* Image unique centrée */}
+                <div className="flex justify-center px-4">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="w-full max-w-2xl"
+                    >
+                        <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                            <img
+                                src="/assets/images/ap_barriophil.jpg"
+                                alt="Vision du cadre"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
