@@ -144,7 +144,7 @@ export default function AboutPageDebug() {
                                 <img src="/assets/images/ap_stabbvaw.JPG" className="w-full h-full object-cover about-steady-img" />
                             </div>
                         </div>
-                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
+                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start -translate-y-10 relative z-50">
                             <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C] -mt-10" style={{ fontFamily: 'var(--font-chewy)' }}>
                                 Corps & Caméra
                             </motion.h2>

@@ -182,7 +182,7 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
+                            className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start -translate-y-10 relative z-50"
                         >
                             <motion.h2
                                 variants={fadeInUp}
