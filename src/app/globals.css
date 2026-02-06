@@ -95,6 +95,12 @@ body {
   object-position: 15% 50%;
 }
 
+/* About Page Finale - Image Cinémascope */
+.about-cine-img {
+  /* Recadrage vertical : 50% X (Centre), 35% Y (Un peu plus haut) */
+  object-position: 50% 35%;
+}
+
 
 
 /* Typography */

@@ -231,7 +231,7 @@ export default function AboutPage() {
                             <img
                                 src="/assets/images/ap_barriophil.jpg"
                                 alt="Vision du cadre"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover about-cine-img"
                             />
                         </div>
                     </motion.div>
