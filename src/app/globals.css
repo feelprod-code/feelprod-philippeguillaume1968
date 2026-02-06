@@ -70,6 +70,19 @@ body {
   }
 }
 
+/* About Page Blonde Image Positioning */
+.about-blonde-img {
+  /* Mobile: Décalage vers la gauche pour voir le sujet */
+  object-position: 30% 50%;
+}
+
+@media (min-width: 768px) {
+  .about-blonde-img {
+    /* Desktop: Centré */
+    object-position: 50% 50%;
+  }
+}
+
 
 
 /* Typography */

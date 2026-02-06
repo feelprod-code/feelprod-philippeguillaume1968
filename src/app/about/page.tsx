@@ -118,7 +118,7 @@ export default function AboutPage() {
                                 <img
                                     src="/assets/images/ap_blonde.png"
                                     alt="Portrait"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover about-blonde-img"
                                 />
                             </div>
                         </motion.div>
