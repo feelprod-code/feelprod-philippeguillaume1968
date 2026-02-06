@@ -90,7 +90,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
-                        className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0"
+                        className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
                     >
                         <motion.h2
                             variants={fadeInUp}
@@ -180,7 +180,7 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0"
+                            className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start"
                         >
                             <motion.h2
                                 variants={fadeInUp}
