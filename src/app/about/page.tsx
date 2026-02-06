@@ -81,8 +81,8 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC B : L'ORIGINE ==================== */}
-            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-0 md:pt-32 md:pb-0 flex flex-col">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start w-full">
+            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-0 md:pt-32 md:pb-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                     {/* Colonne Texte */}
                     <motion.div
@@ -134,13 +134,15 @@ export default function AboutPage() {
                 </div>
 
                 {/* Spacer de sécurité */}
-
-                {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16 !mb-0"></div>
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
-            <section className="bg-gray-50 relative z-10 pt-8 pb-24 md:pt-12 md:pb-32">
+            <section className="bg-gray-50 relative z-10 pt-0 pb-24 md:pt-0 md:pb-32">
+                {/* Spacer 1 (Déplacé ici pour collage parfait) */}
+                <div className="leading-none text-[0px] m-0 p-0">
+                    <div className="spacer-mobile h-6 md:h-12 lg:h-16 !mb-0"></div>
+                </div>
+
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
