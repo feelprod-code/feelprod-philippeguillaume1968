@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
     });
 
     // Animation variants pour les textes
-    const fadeInUp = {
+    const fadeInUp: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
@@ -21,7 +21,7 @@ export default function AboutPage() {
         }
     };
 
-    const staggerContainer = {
+    const staggerContainer: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -46,8 +46,8 @@ export default function AboutPage() {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                 >
                     <img
-                        src="/assets/images/ap_steadyphil.JPG"
-                        alt="Opérateur Steadicam"
+                        src="/assets/images/ap_barrio stab.jpg"
+                        alt="Action en mouvement"
                         className="w-full h-full object-cover"
                     />
                     {/* Overlay sombre pour contraste texte */}
