@@ -106,17 +106,17 @@ export default function AboutPageDebug() {
                 <div className="dbg-space-visu top-0 h-24 md:h-32" style={{ content: '"PADDING HAUT B"' }}>PADDING HAUT SECTION B</div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    <motion.div className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
-                        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                    <motion.div className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start dbg-col">
+                        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C] dbg-title" style={{ fontFamily: 'var(--font-chewy)' }}>
                             Tout a commencé par...
                         </motion.h2>
-                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6 dbg-text">
                             Un regard différent. Une volonté de capturer non pas ce qui est visible, mais ce qui est ressenti.
                         </motion.p>
-                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6 dbg-text">
                             Nous ne sommes pas de simples observateurs. Nous sommes des traducteurs d'instants.
                         </motion.p>
-                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 dbg-text">
                             Que ce soit au cœur d'un concert... <span className="font-bold text-black">le point où l'image devient vivante</span>.
                         </motion.p>
                     </motion.div>
@@ -195,10 +195,10 @@ export default function AboutPageDebug() {
                 {/* SPACER 3 (Début de section Outro en Prod) */}
                 <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 3"></div>
 
-                <motion.div className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%]" style={{ marginTop: 0 }}>
-                    <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">
+                <motion.div className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%] dbg-col" style={{ marginTop: 0 }}>
+                    <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed dbg-text">
                         "Nous ne capturons pas des images.<br />
-                        Nous sculptons des <span className="font-bold text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>émotions</span>."
+                        Nous sculptons des <span className="font-bold text-[#FF9F1C] dbg-title" style={{ fontFamily: 'var(--font-chewy)' }}>émotions</span>."
                     </blockquote>
                 </motion.div>
 
