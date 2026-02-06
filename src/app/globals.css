@@ -74,6 +74,8 @@ body {
 .about-blonde-img {
   /* Mobile: Décalage vers la DROITE pour voir le sujet */
   object-position: 57% 50%;
+  transform: scale(1.0);
+  /* ZOOM : Modifiez 1.0 (ex: 1.2 pour +20%) */
 }
 
 @media (min-width: 768px) {
@@ -87,18 +89,24 @@ body {
 .about-pont-img {
   /* Recentré à 50% */
   object-position: 50% 50%;
+  transform: scale(1.0);
+  /* ZOOM : Modifiez 1.0 pour grossir l'image */
 }
 
 /* About Page Bloc C - Steadyphil Image (premier plan, droite) */
 .about-steady-img {
   /* Recentré à 50% */
   object-position: 50% 50%;
+  transform: scale(1.0);
+  /* ZOOM : Modifiez 1.0 pour grossir l'image */
 }
 
 /* About Page Finale - Image Cinémascope */
 .about-cine-img {
   /* Recadrage vertical : 50% X (Centre), 35% Y (Un peu plus haut) */
   object-position: 50% 35%;
+  transform: scale(1.0);
+  /* ZOOM : Modifiez 1.0 pour grossir l'image */
 }
 
 
