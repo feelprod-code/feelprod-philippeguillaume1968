@@ -227,7 +227,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.8 }}
                         className="w-full max-w-5xl"
                     >
-                        <div className="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                        <div className="aspect-[2.35/1] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
                             <img
                                 src="/assets/images/ap_barriophil.jpg"
                                 alt="Vision du cadre"
