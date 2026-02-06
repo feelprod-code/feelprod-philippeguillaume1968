@@ -91,8 +91,8 @@ body {
 
 /* About Page Bloc C - Steadyphil Image (premier plan, droite) */
 .about-steady-img {
-  /* Décalage COMPLETEMENT A DROITE L'INVERSE */
-  object-position: 100% 50%;
+  /* Recentré à 50% */
+  object-position: 50% 50%;
 }
 
 /* About Page Finale - Image Cinémascope */
