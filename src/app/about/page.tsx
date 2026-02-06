@@ -225,7 +225,7 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="w-full max-w-2xl"
+                        className="w-full max-w-5xl"
                     >
                         <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
                             <img
