@@ -122,7 +122,7 @@ export default function AboutPage() {
                             transition={{ duration: 0.8 }}
                             className="sticky top-32"
                         >
-                            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                            <div className="aspect-[3/4] rounded-2xl overflow-hidden border-8 border-white">
                                 <img
                                     src="/assets/images/ap_blonde.png"
                                     alt="Portrait"

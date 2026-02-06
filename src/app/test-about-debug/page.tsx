@@ -117,7 +117,7 @@ export default function AboutPageDebug() {
                     </motion.div>
                     <div className="relative">
                         <div className="sticky top-32">
-                            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                            <div className="aspect-[3/4] rounded-2xl overflow-hidden border-8 border-white">
                                 <img src="/assets/images/ap_blonde.png" className="w-full h-full object-cover about-blonde-img" />
                             </div>
                         </div>
