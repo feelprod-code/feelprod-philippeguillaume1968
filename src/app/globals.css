@@ -73,7 +73,7 @@ body {
 /* About Page Blonde Image Positioning */
 .about-blonde-img {
   /* Mobile: Décalage vers la DROITE pour voir le sujet */
-  object-position: 70% 50%;
+  object-position: 57% 50%;
 }
 
 @media (min-width: 768px) {
