@@ -57,10 +57,10 @@ export default function AboutPage() {
 
                 {/* Titre Parallaxe */}
                 <div className={`
-                    absolute bottom-0 left-0 z-10
+                    absolute bottom-0 inset-x-0 z-10
                     container px-4 sm:px-6 lg:px-8 
                     md:pb-32
-                    flex justify-center
+                    flex justify-center flex-col items-center
                     w-[90%] md:w-full mx-auto
                 `}
                     style={{ paddingBottom: '200px' }} /* <--- CHANGEZ CETTE VALEUR POUR LE MOBILE (ex: 50px ou 200px) */
@@ -254,7 +254,7 @@ export default function AboutPage() {
             <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
 
             {/* ==================== OUTRO : Citation ==================== */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
