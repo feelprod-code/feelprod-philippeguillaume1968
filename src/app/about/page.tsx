@@ -186,7 +186,7 @@ export default function AboutPage() {
                         >
                             <motion.h2
                                 variants={fadeInUp}
-                                className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f] -mt-5"
+                                className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f] -mt-10"
                                 style={{ fontFamily: 'var(--font-chewy)' }}
                             >
                                 Corps & Caméra

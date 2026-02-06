@@ -145,7 +145,7 @@ export default function AboutPageDebug() {
                             </div>
                         </div>
                         <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
-                            <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C] -mt-5" style={{ fontFamily: 'var(--font-chewy)' }}>
+                            <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C] -mt-10" style={{ fontFamily: 'var(--font-chewy)' }}>
                                 Corps & Caméra
                             </motion.h2>
                             <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
