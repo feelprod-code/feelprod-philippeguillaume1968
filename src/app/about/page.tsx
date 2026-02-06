@@ -65,11 +65,11 @@ export default function AboutPage() {
                 </motion.div>
             </section>
 
-            {/* --- SECTION 1: LA PHILOSOPHIE (Image SteadyPhil) --- */}
-            <section className="px-6 md:px-12 mb-24 md:mb-32">
+            {/* --- SECTION 1: LA PHILOSOPHIE (Image Oeil/Viseur) --- */}
+            <section className="px-6 md:px-12 mb-32 md:mb-48">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 
-                    {/* Image Animated Wrapper */}
+                    {/* Image Animated Wrapper (Recadrée pour cacher le bas) */}
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:order-1 order-2">
                         <motion.div
                             initial="hidden"
@@ -79,9 +79,10 @@ export default function AboutPage() {
                             className="w-full h-full"
                         >
                             <img
-                                src="/assets/images/ap_steadyphil.JPG"
+                                src="/assets/images/ap_barriophil.jpg"
                                 alt="Philosophie de l'image"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover object-top" // Focus haut pour cacher texte bas
+                                style={{ objectPosition: 'center 20%' }} // Fine tuning pour couper le bas texte
                             />
                         </motion.div>
                     </div>
@@ -107,8 +108,8 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* --- SECTION 2: LA TECHNIQUE (Double Image Verticale) --- */}
-            <section className="px-6 md:px-12 mb-24 md:mb-32 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10">
+            {/* --- SECTION 2: LE COLLAGE (Superposition) --- */}
+            <section className="px-6 md:px-12 mb-32 md:mb-48 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10 overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
 
                     {/* Text Content */}
@@ -117,6 +118,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={staggerContainer}
+                        className="relative z-20" // Au dessus si besoin
                     >
                         <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
                             Corps & Caméra
@@ -129,35 +131,37 @@ export default function AboutPage() {
                         </motion.p>
                     </motion.div>
 
-                    {/* Image Grid (Double Vertical 9:16) */}
-                    <div className="flex gap-4 md:gap-8 justify-center h-[500px] md:h-[600px]">
-                        {/* Image 1: Pont Alex (N&B, 9:16) */}
+                    {/* Image Collage (Superposition Artistique) */}
+                    <div className="relative h-[600px] w-full flex items-center justify-center">
+
+                        {/* Image 1: Pont Alex (Arrière plan - Gauche) */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -50, rotate: -2 }}
+                            whileInView={{ opacity: 1, x: 0, rotate: -2 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-1/2 h-full rounded-2xl overflow-hidden shadow-lg"
+                            className="absolute left-0 top-0 w-[55%] h-[90%] rounded-xl overflow-hidden shadow-xl z-0 border-4 border-white"
                         >
                             <img
                                 src="/assets/images/ap_pont alex.jpg"
                                 alt="Pont Alexandre III"
-                                className="w-full h-full object-cover grayscale" // Forced Grayscale
+                                className="w-full h-full object-cover grayscale"
                             />
                         </motion.div>
 
-                        {/* Image 2: Barrio Stab (Couleur, 9:16, légèrement décalée) */}
+                        {/* Image 2: Barrio Stab (Premier plan - Droite - Format Naturel) */}
                         <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="relative w-1/2 h-full rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-12" // Décalage vertical
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="absolute right-0 bottom-10 w-[60%] h-auto rounded-xl overflow-hidden shadow-2xl z-10 border-4 border-white"
+                            style={{ aspectRatio: 'auto' }} // Garder le ratio naturel
                         >
                             <img
                                 src="/assets/images/ap_barrio stab.jpg"
                                 alt="Stabilisation Action"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover" // Cover pour remplir le block défini ou contain si on veut vraiment tout
                             />
                         </motion.div>
                     </div>
