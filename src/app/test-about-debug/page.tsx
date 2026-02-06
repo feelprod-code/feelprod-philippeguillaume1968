@@ -123,17 +123,16 @@ export default function AboutPageDebug() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <p className="text-center">Contenu Bloc C...</p>
                 </div>
-
-                {/* SPACER 2 */}
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16" data-name="SPACER 2"></div>
             </section>
 
-            {/* ==================== BLOC D : GALERIE ==================== */}
+            {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
             {/* J'AI MIS pt-0 ICI. Donc le haut de D colle au bas de C (qui a pb-32).
                 Donc entre Spacer 2 et Titre D, il y a le pb-32 de la section C !
                 VOILÀ LE BLANC.
             */}
             <section className="bg-white relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden" data-label="BLOC D">
+                {/* SPACER 2 (Déplacé ici pour toucher le titre) */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16" data-name="SPACER 2"></div>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4 mt-0">
                     <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>Dans l'Instant</h2>
                     <p className="text-center text-gray-600 text-lg">Les images en mouvement</p>
@@ -145,15 +144,13 @@ export default function AboutPageDebug() {
                     </div>
                 </div>
 
-                {/* SPACER 3 (DANS SECTION D, qui a pb-0. Donc Spacer 3 touche le bas de D).
-                    Mais il est suivi de Outro. */}
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16" data-name="SPACER 3"></div>
             </section>
 
             {/* ==================== OUTRO ==================== */}
             {/* pt-0. Donc touche le bas de D (Spacer 3). C'est bon. */}
             <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center" data-label="OUTRO">
-                {/* J'ai supprimé le spacer interne ici */}
+                {/* SPACER 3 (Déplacé ici pour toucher la citation) */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16" data-name="SPACER 3"></div>
 
                 <div className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%]">
                     <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">

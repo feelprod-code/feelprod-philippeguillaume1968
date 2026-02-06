@@ -208,14 +208,13 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                {/* Spacer de sécurité */}
 
-                {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
             <section className="bg-white relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden">
+                {/* Spacer Ajustable (Déplacé ici pour toucher le titre) */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4 mt-0">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -250,11 +249,12 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Spacer Ajustable avant Outro */}
-            <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
+
 
             {/* ==================== OUTRO : Citation ==================== */}
             <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center">
+                {/* Spacer Ajustable (Déplacé ici pour toucher la citation) */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
