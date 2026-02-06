@@ -160,8 +160,8 @@ export default function AboutPage() {
                                 className="absolute right-0 bottom-0 w-[65%] h-[80%] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10"
                             >
                                 <img
-                                    src="/assets/images/ap_steadyphil.JPG"
-                                    alt="Opérateur Steadicam"
+                                    src="/assets/images/ap_stabbvaw.JPG"
+                                    alt="Stabilisation"
                                     className="w-full h-full object-cover about-steady-img"
                                 />
                             </motion.div>
