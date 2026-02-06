@@ -57,12 +57,13 @@ export default function AboutPage() {
 
                 {/* Titre Parallaxe */}
                 <div className={`
-                    absolute bottom-0 left-0 w-full z-10
-                    container mx-auto px-4 sm:px-6 lg:px-8 
+                    absolute bottom-0 left-0 z-10
+                    container px-4 sm:px-6 lg:px-8 
                     md:pb-32
                     flex justify-center
+                    w-[90%] md:w-full mx-auto left-0 right-0
                 `}
-                    style={{ paddingBottom: '120px' }} /* <--- CHANGEZ CETTE VALEUR POUR LE MOBILE (ex: 50px ou 200px) */
+                    style={{ paddingBottom: '200px' }} /* <--- CHANGEZ CETTE VALEUR POUR LE MOBILE (ex: 50px ou 200px) */
                 >
                     <motion.h1
                         initial={{ opacity: 0, y: 50 }}
@@ -89,7 +90,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
-                        className="lg:sticky lg:top-32"
+                        className="lg:sticky lg:top-32 w-[90%] md:w-full mx-auto"
                     >
                         <motion.h2
                             variants={fadeInUp}
@@ -133,7 +134,6 @@ export default function AboutPage() {
                 </div>
 
                 {/* Spacer de sécurité */}
-                <div className="h-12 md:h-24"></div>
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
@@ -180,7 +180,7 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2"
+                            className="order-1 lg:order-2 w-[90%] md:w-full mx-auto"
                         >
                             <motion.h2
                                 variants={fadeInUp}
@@ -206,7 +206,6 @@ export default function AboutPage() {
                 </div>
 
                 {/* Spacer de sécurité */}
-                <div className="h-12 md:h-24"></div>
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
@@ -252,7 +251,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-4xl mx-auto text-center"
+                    className="max-w-4xl mx-auto text-center w-[90%] md:w-full"
                 >
                     <blockquote className="text-3xl md:text-4xl font-light italic text-gray-800 leading-relaxed">
                         "Nous ne capturons pas des images.<br />
@@ -262,7 +261,6 @@ export default function AboutPage() {
             </section>
 
             {/* Spacer Final */}
-            <div className="h-24"></div>
         </main>
     );
 }
