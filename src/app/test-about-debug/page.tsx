@@ -128,8 +128,8 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC C : FUSION ==================== */}
-            <section className="bg-purple-100 relative z-10 pt-12 pb-24 md:pt-16 md:pb-32 dbg-box" data-label="SECTION C (VIOLET)">
-                <div className="dbg-space-visu top-0 h-12 md:h-16">PADDING HAUT C (pt-12/16)</div>
+            <section className="bg-purple-100 relative z-10 pt-0 pb-24 md:pt-0 md:pb-32 dbg-box" data-label="SECTION C (VIOLET)">
+                <div className="dbg-space-visu top-0 h-0 border-b-2 border-red-500 text-red-500">❌ PADDING HAUT C (pt-0)</div>
 
                 {/* Spacer 1 (Déplacé ici) */}
 

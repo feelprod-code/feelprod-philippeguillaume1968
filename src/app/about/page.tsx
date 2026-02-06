@@ -137,7 +137,7 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
-            <section className="bg-white relative z-10 pt-12 pb-24 md:pt-16 md:pb-32">
+            <section className="bg-white relative z-10 pt-0 pb-24 md:pt-0 md:pb-32">
 
 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
