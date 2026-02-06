@@ -142,12 +142,12 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="absolute left-0 top-0 w-[90%] h-[90%] rounded-xl overflow-hidden shadow-lg border-4 border-white"
+                                className="absolute left-0 top-0 w-[60%] h-[75%] rounded-xl overflow-hidden shadow-lg border-4 border-white"
                             >
                                 <img
                                     src="/assets/images/ap_pont alex.jpg"
                                     alt="Architecture"
-                                    className="w-full h-full object-cover grayscale about-pont-img scale-125"
+                                    className="w-full h-full object-cover grayscale about-pont-img"
                                 />
                             </motion.div>
 
