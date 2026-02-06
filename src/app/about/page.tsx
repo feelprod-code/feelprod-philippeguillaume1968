@@ -49,7 +49,8 @@ export default function AboutPage() {
                         src="/assets/images/ap_barrio stab.jpg"
                         alt="Action en mouvement"
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: '50% 50%' }} // Ajustez la 1ère valeur: 30%=gauche, 70%=droite
+                        style={{ objectPosition: '50% 50%' }}
+                    // IMAGE: ap_barrio stab.jpg | AXE X: 50% (0%=gauche, 100%=droite)
                     />
                     {/* Overlay sombre pour contraste texte */}
                     <div className="absolute inset-0 bg-black/40"></div>
