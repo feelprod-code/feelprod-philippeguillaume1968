@@ -66,7 +66,7 @@ body {
 @media (min-width: 768px) {
   .about-hero-img {
     /* Desktop: Centré */
-    object-position: 50% 50%;
+    object-position: 30% 50%;
   }
 }
 
@@ -88,16 +88,16 @@ body {
 /* About Page Bloc C - Pont Alexandre Image (fond, gauche) */
 .about-pont-img {
   /* Recentré à 50% */
-  object-position: 50% 50%;
-  transform: scale(1.0);
+  object-position: 100% 50%;
+  transform: scale(1.5);
   /* ZOOM : Modifiez 1.0 pour grossir l'image */
 }
 
 /* About Page Bloc C - Steadyphil Image (premier plan, droite) */
 .about-steady-img {
   /* Recentré à 50% */
-  object-position: 50% 50%;
-  transform: scale(1.0);
+  object-position: 105% 50%;
+  transform: scale(1.1);
   /* ZOOM : Modifiez 1.0 pour grossir l'image */
 }
 
