@@ -176,7 +176,7 @@ export default function AboutPageDebug() {
                 </div>
 
                 {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
@@ -215,12 +215,12 @@ export default function AboutPageDebug() {
                 </div>
 
                 {/* Spacer Ajustable avant Outro */}
-                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
             </section>
 
             {/* ==================== OUTRO ==================== */}
             <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center">
-                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
 
                 <motion.div
                     className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%]"

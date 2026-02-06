@@ -136,7 +136,7 @@ export default function AboutPage() {
                 {/* Spacer de sécurité */}
 
                 {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
             </section>
 
             {/* ==================== BLOC C : LA FUSION (Image Gauche / Texte Droite) ==================== */}
@@ -211,7 +211,7 @@ export default function AboutPage() {
                 {/* Spacer de sécurité */}
 
                 {/* Spacer Ajustable */}
-                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16"></div>
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
