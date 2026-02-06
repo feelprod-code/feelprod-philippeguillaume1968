@@ -1,159 +1,238 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { motion, Variants } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
+// --- ANIMATION VARIANTS (STITCH STYLE) ---
+const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: "easeOut" }
+    }
+};
+
+const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1
+        }
+    }
+};
+
+const imageReveal: Variants = {
+    hidden: { scale: 0.95, opacity: 0 },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: { duration: 1.2, ease: "easeOut" }
+    }
+};
+
 export default function AboutPage() {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    // Scroll-driven opacities pour sections (Opal-style)
-    const heroOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
-    const section1Opacity = useTransform(scrollYProgress, [0.15, 0.25, 0.4], [0, 1, 0]);
-    const section2Opacity = useTransform(scrollYProgress, [0.35, 0.45, 0.6], [0, 1, 0]);
-    const section3Opacity = useTransform(scrollYProgress, [0.55, 0.65, 0.85], [0, 1, 1]);
-
-    // Parallax subtil pour images
-    const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.1, 1.2]);
-    const imageY = useTransform(scrollYProgress, [0, 1], [0, -200]);
-
     return (
-        <main ref={containerRef} className="bg-white relative">
+        <main className="bg-white min-h-screen pt-32 pb-20">
             <Navbar />
 
-            {/* Sticky Navigation avec mix-blend */}
-            <div className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-between px-6 mix-blend-difference pointer-events-none">
-                <span className="text-white font-bold text-xl">FEELPROD</span>
-            </div>
-
-            {/* SECTION HERO (Sticky) */}
-            <section className="h-[200vh] relative">
+            {/* --- HEADER SECTION --- */}
+            <section className="px-[5%] mb-24 md:mb-32 mt-10">
                 <motion.div
-                    style={{ opacity: heroOpacity }}
-                    className="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                    className="max-w-4xl mx-auto text-center"
                 >
-                    <h1 className="text-7xl md:text-[12rem] font-bold tracking-tighter leading-none">
-                        FEELPROD
-                    </h1>
-                    <p className="text-2xl md:text-3xl font-light tracking-widest uppercase text-neutral-400 mt-6">
-                        L'Émotion par le Mouvement
-                    </p>
+                    <motion.h1
+                        variants={fadeInUp}
+                        className="text-6xl md:text-8xl font-light tracking-tight text-[#1d1d1f] mb-8"
+                        style={{ fontFamily: 'var(--font-comic)' }}
+                    >
+                        L'ART DU<br />MOUVEMENT
+                    </motion.h1>
+                    <motion.div variants={fadeInUp} className="h-1 w-24 bg-black mx-auto mb-8"></motion.div>
+                    <motion.p
+                        variants={fadeInUp}
+                        className="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-2xl mx-auto"
+                        style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
+                    >
+                        Plus qu'une image, une vibration. Nous capturons l'énergie de l'instant pour la rendre éternelle.
+                    </motion.p>
                 </motion.div>
             </section>
 
-            {/* SECTION 1: VISION (Sticky Text + Background Image) */}
-            <section className="h-[300vh] relative bg-white">
-                {/* Image Background Fixe avec Parallax */}
-                <motion.div
-                    style={{ y: imageY }}
-                    className="sticky top-0 h-screen w-full overflow-hidden"
-                >
-                    <motion.img
-                        style={{ scale: imageScale }}
-                        src="/assets/images/ap_pont.jpeg"
-                        alt="Paris"
-                        className="w-full h-full object-cover grayscale opacity-30"
-                    />
-                </motion.div>
+            {/* --- SECTION 1: LA PHILOSOPHIE (Image Pont) --- */}
+            <section className="px-[5%] mb-24 md:mb-32">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 
-                {/* Text Overlay Sticky */}
-                <motion.div
-                    style={{ opacity: section1Opacity }}
-                    className="sticky top-0 h-screen flex items-center justify-center pointer-events-none"
-                >
-                    <div className="max-w-4xl px-6 text-center">
-                        <h2 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                            Opal was founded in 2020 <br />with a singular idea.
-                        </h2>
-                        <p className="text-2xl md:text-3xl font-light text-neutral-600 leading-relaxed">
-                            Capturer l'invisible dans chaque battement.
-                        </p>
+                    {/* Image Animated Wrapper */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:order-1 order-2">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-10%" }}
+                            variants={imageReveal}
+                            className="w-full h-full"
+                        >
+                            <img
+                                src="/assets/images/ap_pont.jpeg"
+                                alt="Perspective Urbaine"
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.div>
                     </div>
-                </motion.div>
-            </section>
 
-            {/* SECTION 2: MISSION (Sticky Text + Nouvelle Image) */}
-            <section className="h-[300vh] relative bg-white">
-                {/* Grid d'images qui apparaissent */}
-                <div className="sticky top-0 h-screen grid grid-cols-2 gap-4 p-4">
+                    {/* Text Content */}
                     <motion.div
-                        style={{
-                            scale: useTransform(scrollYProgress, [0.4, 0.5], [0.8, 1]),
-                            opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1])
-                        }}
-                        className="overflow-hidden"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={staggerContainer}
+                        className="md:order-2 order-1"
                     >
-                        <img src="/assets/images/ap_steadyphil.JPG" alt="Steadycam" className="w-full h-full object-cover grayscale" />
-                    </motion.div>
-                    <motion.div
-                        style={{
-                            scale: useTransform(scrollYProgress, [0.45, 0.55], [0.8, 1]),
-                            opacity: useTransform(scrollYProgress, [0.45, 0.55], [0, 1])
-                        }}
-                        className="overflow-hidden"
-                    >
-                        <img src="/assets/images/ap_stabbvaw.JPG" alt="Stabilisation" className="w-full h-full object-cover grayscale" />
-                    </motion.div>
-                    <motion.div
-                        style={{
-                            scale: useTransform(scrollYProgress, [0.5, 0.6], [0.8, 1]),
-                            opacity: useTransform(scrollYProgress, [0.5, 0.6], [0, 1])
-                        }}
-                        className="overflow-hidden"
-                    >
-                        <img src="/assets/images/ap_barriophil.jpg" alt="En action" className="w-full h-full object-cover grayscale" />
-                    </motion.div>
-                    <motion.div
-                        style={{
-                            scale: useTransform(scrollYProgress, [0.55, 0.65], [0.8, 1]),
-                            opacity: useTransform(scrollYProgress, [0.55, 0.65], [0, 1])
-                        }}
-                        className="overflow-hidden"
-                    >
-                        <img src="/assets/images/ap_pont alex.jpg" alt="Pont" className="w-full h-full object-cover grayscale" />
+                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                            Sculpter le Temps
+                        </motion.h2>
+                        <motion.p variants={fadeInUp} className="text-lg leading-relaxed text-gray-700 mb-6 font-light">
+                            Dans un monde où tout s'accélère, nous choisissons de donner du poids à chaque seconde. Notre approche n'est pas seulement technique, elle est sensorielle.
+                        </motion.p>
+                        <motion.p variants={fadeInUp} className="text-lg leading-relaxed text-gray-700 font-light">
+                            Que ce soit l'architecture majestueuse d'un pont parisien ou l'effervescence d'une foule, nous cherchons la ligne de fuite, le point d'équilibre. L'image ne doit pas seulement être vue, elle doit être ressentie.
+                        </motion.p>
                     </motion.div>
                 </div>
-
-                {/* Texte par-dessus */}
-                <motion.div
-                    style={{ opacity: section2Opacity }}
-                    className="sticky top-0 h-screen flex items-center justify-center pointer-events-none"
-                >
-                    <div className="max-w-4xl px-6 text-center">
-                        <h2 className="text-5xl md:text-8xl font-bold leading-tight text-white mix-blend-difference">
-                            The objects you use most often, <br />should be the best things you own.
-                        </h2>
-                    </div>
-                </motion.div>
             </section>
 
-            {/* SECTION 3: PHILOSOPHY (Sticky Final) */}
-            <section className="h-[200vh] relative bg-neutral-900">
-                <motion.div
-                    style={{ opacity: section3Opacity }}
-                    className="sticky top-0 h-screen flex items-center justify-center text-white px-6"
-                >
-                    <div className="max-w-5xl text-center">
-                        <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-tight">
-                            We believe that if you are surrounded by quality, <br />each day is a bit better.
-                        </h2>
-                        <p className="text-xl md:text-2xl font-light text-neutral-400 mt-10">
-                            Here's to more better days.
-                        </p>
-                        <div className="mt-20">
-                            <a href="/contact" className="inline-block text-lg uppercase tracking-[0.3em] border-b-2 border-white pb-2 hover:opacity-50 transition-opacity">
-                                Get in Touch
-                            </a>
-                        </div>
+            {/* --- SECTION 2: LA TECHNIQUE (Image Steady/Phil) --- */}
+            <section className="px-[5%] mb-24 md:mb-32 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+
+                    {/* Text Content */}
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={staggerContainer}
+                    >
+                        <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                            Corps & Caméra
+                        </motion.h2>
+                        <motion.p variants={fadeInUp} className="text-lg leading-relaxed text-gray-700 mb-6 font-light">
+                            La fluidité n'est pas un hasard. Elle naît de la fusion entre l'opérateur et son outil. Le steadicam n'est plus un accessoire, il devient une extension du regard.
+                        </motion.p>
+                        <motion.p variants={fadeInUp} className="text-lg leading-relaxed text-gray-700 font-light">
+                            Être au cœur de l'action sans la perturber. C'est cette présence invisible qui permet de capter l'authenticité brute. Une danse subtile entre le cadreur et le sujet, où chaque mouvement est une respiration.
+                        </motion.p>
+                    </motion.div>
+
+                    {/* Image Grid (Collage Style) */}
+                    <div className="relative h-[600px] w-full">
+                        {/* Image 1 (Back) */}
+                        <motion.div
+                            initial={{ opacity: 0, rotate: -5, x: -50 }}
+                            whileInView={{ opacity: 1, rotate: -3, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="absolute top-0 left-0 w-[70%] h-[70%] z-10 rounded-xl overflow-hidden shadow-xl"
+                        >
+                            <img
+                                src="/assets/images/ap_steadyphil.JPG"
+                                alt="Steadicam Operator"
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.div>
+
+                        {/* Image 2 (Front) */}
+                        <motion.div
+                            initial={{ opacity: 0, rotate: 5, y: 50 }}
+                            whileInView={{ opacity: 1, rotate: 3, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                            className="absolute bottom-0 right-0 w-[65%] h-[65%] z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-white"
+                        >
+                            <img
+                                src="/assets/images/ap_barrio stab.jpg"
+                                alt="Action Shot"
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.div>
                     </div>
-                </motion.div>
+
+                </div>
             </section>
 
-            {/* Spacer pour la fin du scroll */}
-            <div className="h-screen" />
+            {/* --- SECTION 3: HAUTEUR & VISION (Image Barrio Haut) --- */}
+            <section className="px-[5%] mb-24">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                    className="max-w-5xl mx-auto text-center mb-16"
+                >
+                    <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                        Changer de Perspective
+                    </motion.h2>
+                    <motion.p variants={fadeInUp} className="text-xl font-light text-gray-600 max-w-3xl mx-auto">
+                        Prendre de la hauteur pour comprendre l'ensemble.
+                    </motion.p>
+                </motion.div>
+
+                <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
+                    <motion.div
+                        initial={{ scale: 1.1 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="w-full h-full"
+                    >
+                        <img
+                            src="/assets/images/ap_barriohaut.jpg"
+                            alt="Vue en hauteur"
+                            className="w-full h-full object-cover"
+                        />
+                    </motion.div>
+
+                    {/* Overlay Text */}
+                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                        <motion.span
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.5, duration: 0.8 }}
+                            className="text-white text-3xl md:text-5xl font-bold tracking-widest uppercase text-center drop-shadow-lg"
+                            style={{ fontFamily: 'var(--font-comic)' }}
+                        >
+                            Immersion Totale
+                        </motion.span>
+                    </div>
+                </div>
+            </section>
+
+            {/* --- CALL TO ACTION --- */}
+            <section className="py-20 text-center bg-[#1d1d1f] text-white">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
+                    <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-8" style={{ fontFamily: 'var(--font-comic)' }}>
+                        PRÊT À CRÉER ?
+                    </motion.h2>
+                    <motion.div variants={fadeInUp}>
+                        <a
+                            href="/contact"
+                            className="inline-block px-10 py-4 bg-white text-black font-bold text-lg rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-cyan-500/50"
+                        >
+                            PARLONS DE VOTRE PROJET
+                        </a>
+                    </motion.div>
+                </motion.div>
+            </section>
 
         </main>
     );
