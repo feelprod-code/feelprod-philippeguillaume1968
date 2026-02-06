@@ -142,7 +142,7 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="absolute left-0 top-0 w-[60%] h-[75%] rounded-xl overflow-hidden shadow-lg border-4 border-white"
+                                className="absolute left-10 top-10 w-[60%] h-[75%] rounded-xl overflow-hidden shadow-lg border-4 border-white"
                             >
                                 <img
                                     src="/assets/images/ap_pont alex.jpg"
@@ -157,7 +157,7 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="absolute right-0 bottom-0 w-[65%] h-[80%] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10"
+                                className="absolute right-10 bottom-10 w-[65%] h-[80%] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10"
                             >
                                 <img
                                     src="/assets/images/ap_steadyphil.JPG"
