@@ -151,8 +151,22 @@ Ne jamais laisser un espace vide sans explication.
 
 ---
 
-## 9. RÈGLE DES 90% (FIABILITÉ LARGEUR MOBILE)
-L'expérience montre que sur mobile, utiliser `mx-auto` + `px-4` sur un conteneur enfant est parfois instable (le contenu colle au bord si le contexte parent est mal défini).
+## 9. La Règle des 90% (Sécurité Mobile Absolue)
+Sur mobile, ne fiez jamais aux paddings du parent pour le texte.
+Forcez le conteneur de texte à :
+`w-[90%] mx-auto`
+
+Cela garantit mathématiquement 5% de marge à gauche et à droite, quoi qu'il arrive.
+
+#### 🚨 9.1 L'EXCEPTION GRILLE (CRITIQUE) 🚨
+Si l'élément est enfant direct d'un `display: grid`, `mx-auto` **NE SUFFIT PAS**. Vous devez forcer l'alignement de cellule.
+**Pattern PROHIBÉ en Grid qui cause le "Collé à gauche" :**
+❌ `w-[90%] mx-auto` (Insuffisant en Grid)
+
+**Pattern OBLIGATOIRE en Grid :**
+✅ `w-[90%] mx-auto justify-self-center lg:justify-self-start`
+
+*Note : Sur desktop, n'oubliez pas de remettre `justify-self-start` ou `center` selon le design voulu.*
 
 ### LA SOLUTION ROBUSTE :
 Pour garantir des marges latérales parfaites sur mobile sans tâtonner :
