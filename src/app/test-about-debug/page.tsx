@@ -179,6 +179,45 @@ export default function AboutPageDebug() {
                 <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
             </section>
 
+            {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
+            <section className="pb-24 pt-0 md:pb-32 md:pt-0 overflow-hidden">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1d1d1f]"
+                        style={{ fontFamily: 'var(--font-chewy)' }}
+                    >
+                        Dans l'Instant
+                    </motion.h2>
+                    <p className="text-center text-gray-600 text-lg">Les images en mouvement</p>
+                </div>
+
+                {/* Image unique centrée */}
+                <div className="flex justify-center px-4">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="w-full max-w-5xl"
+                    >
+                        <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                            <img
+                                src="/assets/images/ap_barriophil.jpg"
+                                alt="Vision du cadre"
+                                className="w-full h-full object-cover about-cine-img"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Spacer Ajustable avant Outro */}
+                <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
+            </section>
+
             {/* ==================== OUTRO ==================== */}
             <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center">
                 <div className="spacer-mobile h-12 md:h-24 lg:h-32"></div>
