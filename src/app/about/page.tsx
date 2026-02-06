@@ -35,11 +35,11 @@ const imageReveal: Variants = {
 
 export default function AboutPage() {
     return (
-        <main className="bg-white min-h-screen pt-32 pb-20">
+        <main className="bg-white min-h-screen pt-48 pb-20">
             <Navbar />
 
             {/* --- HEADER SECTION --- */}
-            <section className="px-[5%] mb-24 md:mb-32 mt-10">
+            <section className="px-6 md:px-12 mb-24 md:mb-32 mt-10">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -66,7 +66,7 @@ export default function AboutPage() {
             </section>
 
             {/* --- SECTION 1: LA PHILOSOPHIE (Image Pont) --- */}
-            <section className="px-[5%] mb-24 md:mb-32">
+            <section className="px-6 md:px-12 mb-24 md:mb-32">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 
                     {/* Image Animated Wrapper */}
@@ -108,7 +108,7 @@ export default function AboutPage() {
             </section>
 
             {/* --- SECTION 2: LA TECHNIQUE (Image Steady/Phil) --- */}
-            <section className="px-[5%] mb-24 md:mb-32 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10">
+            <section className="px-6 md:px-12 mb-24 md:mb-32 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 
                     {/* Text Content */}
@@ -166,7 +166,7 @@ export default function AboutPage() {
             </section>
 
             {/* --- SECTION 3: HAUTEUR & VISION (Image Barrio Haut) --- */}
-            <section className="px-[5%] mb-24">
+            <section className="px-6 md:px-12 mb-24">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
