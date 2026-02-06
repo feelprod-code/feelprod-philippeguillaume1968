@@ -27,9 +27,17 @@ const debugStyles = `
       border: 4px solid green !important; 
       background: rgba(0, 255, 0, 0.05);
   }
-  .debug-mode .w-\[90\%\] {
-      background: rgba(255, 255, 0, 0.2) !important;
-      border: 2px dashed orange !important;
+  .debug-mode div[class*="w-[90%]"] {
+      background: rgba(255, 255, 0, 0.5) !important; /* JAUNE BIEN VISIBLE */
+      border: 4px dashed orange !important;
+      position: relative;
+  }
+  .debug-mode div[class*="w-[90%]"]::before {
+      content: 'ZONE 90%';
+      position: absolute;
+      top: -20px; left: 0;
+      background: orange; color: black;
+      font-weight: bold; font-size: 12px;
   }
   .debug-mode .pb-24, .debug-mode .pb-32 {
       background: repeating-linear-gradient(
