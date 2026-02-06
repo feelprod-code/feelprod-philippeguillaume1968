@@ -366,25 +366,30 @@ section {
 }
 
 /* Explanation Box - Glassmorphism Refinement */
+/* Explanation Box - SOFT POP STYLE (Plus fin, sans contour noir) */
 .explanation-box {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  /* Un liseret subtil qui utilise la couleur du theme tres legerement */
-  border-color: color-mix(in srgb, var(--comic-color, #ffffff) 40%, rgba(255, 255, 255, 0.8));
-  box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.02),
-    inset 0 0 12px rgba(255, 255, 255, 0.5);
-  color: #000;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #ffffff !important;
+  /* Fond Blanc Pur */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* Bordure ultra-légère pour la structure */
+  border-radius: 12px;
+
+  /* L'OMBRE BD COLORÉE (Plus fine) */
+  /* Utilise la couleur de la section mais en plus doux */
+  box-shadow: 4px 4px 0px var(--comic-color, rgba(0, 0, 0, 0.1));
+
+  color: #1d1d1f;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translate(0, 0);
 }
 
 .explanation-box:hover {
-  background: #ffffff !important;
+  /* Au survol, on 'soulève' légèrement la carte */
+  transform: translate(-1px, -1px);
+  /* L'ombre grandit un tout petit peu et devient plus présente */
+  box-shadow: 6px 6px 0px var(--comic-color, rgba(0, 0, 0, 0.1));
   border-color: var(--comic-color);
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  /* La bordure prend subtilement la couleur au survol */
 }
 
 /* Comic Link */
