@@ -32,12 +32,20 @@ const debugStyles = `
   .dbg-space-visu {
       position: absolute;
       left: 0; width: 100%;
-      background: rgba(0, 255, 0, 0.2); /* VERT = Espace à supprimer ? */
+      /* HACHURES VERTES TRANSPARENTES */
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 128, 0, 0.15),
+        rgba(0, 128, 0, 0.15) 10px,
+        transparent 10px,
+        transparent 20px
+      );
       border-top: 1px dotted green;
       border-bottom: 1px dotted green;
       display: flex; align-items: center; justify-content: center;
       color: green; font-weight: bold; font-size: 10px;
       pointer-events: none;
+      z-index: 50;
   }
   
   /* SPACER (Violet) */
@@ -120,6 +128,9 @@ export default function AboutPageDebug() {
 
                 {/* Spacer Ajustable (ENTRE B ET C) - ATTENTION il est DANS la section B en prod */}
                 <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 1"></div>
+
+                {/* Visualisation Padding Bas B */}
+                <div className="dbg-space-visu bottom-0 h-24 md:h-32" style={{ content: '"PADDING BAS B"' }}>⬇️ PADDING BAS B (py-24/32)</div>
             </section>
 
             {/* ==================== BLOC C : FUSION ==================== */}
@@ -152,6 +163,8 @@ export default function AboutPageDebug() {
                         </div>
                     </div>
                 </div>
+                {/* Visualisation Padding Bas C */}
+                <div className="dbg-space-visu bottom-0 h-24 md:h-32">⬇️ PADDING BAS C (py-24/32)</div>
             </section>
 
             {/* ==================== BLOC D : GALERIE ==================== */}
@@ -186,6 +199,9 @@ export default function AboutPageDebug() {
                         Nous sculptons des <span className="font-bold text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>émotions</span>."
                     </blockquote>
                 </motion.div>
+
+                {/* Visualisation Padding Bas */}
+                <div className="dbg-space-visu bottom-0 h-24 md:h-32">⬇️ PADDING BAS OUTRO (pb-32)</div>
             </section>
         </main>
     );
