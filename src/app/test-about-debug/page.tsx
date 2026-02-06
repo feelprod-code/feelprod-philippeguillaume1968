@@ -5,189 +5,188 @@ import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
 // ==========================================
-// MODE TABLE DE MIXAGE (CONTROLE TOTAL)
+// MODE DEBUG : CALQUES SUR PROD
 // ==========================================
-const mixStyles = `
-  /* Structure de base */
-  .mixer-mode section {
-      position: relative;
-      border: 2px solid #ddd;
-  }
-  
-  /* INDICATEURS DE PADDING (BLEU CIEL) */
-  .mixer-pad-top, .mixer-pad-bot {
-      background: rgba(0, 255, 255, 0.2);
-      border-top: 1px dashed cyan;
-      border-bottom: 1px dashed cyan;
-      color: #008B8B;
-      font-size: 10px;
-      font-family: monospace;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      position: relative;
-      z-index: 50;
-  }
-  .mixer-pad-top::before { content: attr(data-id) " [PADDING HAUT]"; font-weight: bold; }
-  .mixer-pad-bot::before { content: attr(data-id) " [PADDING BAS]"; font-weight: bold; }
+// Ce fichier est une COPIE EXACTE de la PROD, avec des indicateurs visuels superposés.
 
-  /* INDICATEURS DE MARGE (ORANGE) */
-  .mixer-margin {
-      background: rgba(255, 165, 0, 0.2);
-      border: 1px dashed orange;
-      color: #D2691E;
-      font-size: 10px;
-      text-align: center;
-      width: 100%;
-      display: block;
+const debugStyles = `
+  /* Les calques de debug ne doivent pas perturber le layout (position absolute ou outline) */
+  .debug-overlay { pointer-events: none; z-index: 9999; }
+  
+  /* BOX SPATIALE (Cadre autour d'une section ou élément) */
+  .dbg-box {
+      outline: 2px dashed rgba(0,0,255,0.3);
       position: relative;
   }
-  .mixer-margin::after { content: attr(data-id); font-weight: bold; display: block; }
-  
-  /* SPACERS STRUCTURELS (ROSE) */
-  .mixer-spacer {
-      background: repeating-linear-gradient(45deg, #ff00ff20, #ff00ff20 10px, #ff00ff40 10px, #ff00ff40 20px);
-      outline: 2px solid magenta;
-      color: magenta;
-      font-weight: bold;
-      text-align: center;
-      font-size: 11px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  .mixer-spacer::after { content: attr(data-id); background: white; padding: 0 4px; }
-
-  /* ETIQUETTE SECTION */
-  .mixer-label {
+  .dbg-box::after {
+      content: attr(data-label);
       position: absolute;
       top: 0; right: 0;
-      background: black;
-      color: white;
-      font-size: 12px;
-      padding: 4px;
+      background: blue; color: white;
+      font-size: 10px; padding: 1px 4px;
+      opacity: 0.7;
+  }
+
+  /* VISUALISATION DES MARGES/PADDING (Zone colorée) */
+  /* On utilise des divs 'fantômes' en absolute pour montrer l'espace */
+  .dbg-space-visu {
+      position: absolute;
+      left: 0; width: 100%;
+      background: rgba(0, 255, 0, 0.2); /* VERT = Espace à supprimer ? */
+      border-top: 1px dotted green;
+      border-bottom: 1px dotted green;
+      display: flex; align-items: center; justify-content: center;
+      color: green; font-weight: bold; font-size: 10px;
+      pointer-events: none;
+  }
+  
+  /* SPACER (Violet) */
+  .dbg-spacer {
+      outline: 2px solid magenta;
+      position: relative;
+  }
+  .dbg-spacer::before {
+      content: attr(data-id);
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      background: magenta; color: white; font-size: 10px; padding: 0 4px;
       z-index: 100;
   }
 `;
 
 export default function AboutPageDebug() {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
+
+    // Variantes animations (identiques Prod)
+    const fadeInUp: Variants = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } };
+    const staggerContainer: Variants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15 } } };
+
     return (
-        <main className="bg-white min-h-screen mixer-mode">
-            <style>{mixStyles}</style>
+        <main ref={containerRef} className="bg-white min-h-screen relative">
+            <style>{debugStyles}</style>
             <Navbar />
 
             <div className="fixed top-20 left-4 z-50 bg-black text-white p-4 rounded shadow-xl text-xs font-mono">
-                <h1 className="text-xl font-bold text-yellow-500 mb-2">TABLE DE MIXAGE</h1>
-                <p>🟦 BLEU = PADDING SECTION (Espace Interne)</p>
-                <p>🟧 ORANGE = MARGIN TITRE (Espace sous/sur Titre)</p>
-                <p>🟪 ROSE = SPACER (Séparateur)</p>
-                <p className="mt-2 text-gray-400">Nommez l'ID pour modifier/supprimer.</p>
+                <h1 className="text-xl font-bold text-yellow-500 mb-2">DEBUG "CALQUES"</h1>
+                <p>Ceci est la COPIE EXACTE de la PROD.</p>
+                <p>Les cadres bleus = Sections.</p>
+                <p>Les cadres Violets = Spacers.</p>
+                <p>Nous allons traquer les espaces.</p>
             </div>
 
             {/* ==================== BLOC A : HERO ==================== */}
-            <section className="relative h-screen bg-black" data-label="BLOC A">
-                <div className="mixer-label">SECTION A (HERO)</div>
-                <div className="absolute inset-0">
-                    <img src="/assets/images/ap_barrio stab.jpg" className="w-full h-full object-cover opacity-60" />
-                </div>
-                <div className="absolute bottom-0 w-full text-center pb-32">
-                    <h1 className="text-6xl text-white font-bold">L'ART DU<br />MOUVEMENT</h1>
+            <section className="relative h-screen overflow-hidden dbg-box" data-label="SECTION A">
+                <motion.div className="absolute inset-0">
+                    <img src="/assets/images/ap_barrio stab.jpg" className="w-full h-full object-cover about-hero-img" />
+                    <div className="absolute inset-0 bg-black/40"></div>
+                </motion.div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 px-4 flex justify-center flex-col items-center w-[90%] md:w-full" style={{ paddingBottom: '200px' }}>
+                    <motion.h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-none" style={{ fontFamily: 'var(--font-luckiest-guy)' }}>
+                        L'ART DU<br />MOUVEMENT
+                    </motion.h1>
                 </div>
             </section>
 
             {/* ==================== BLOC B : ORIGINE ==================== */}
-            <section className="bg-white relative z-10 container mx-auto" data-label="BLOC B">
-                <div className="mixer-label">SECTION B</div>
+            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 dbg-box" data-label="SECTION B (py-24)">
+                {/* Visualisation du Padding Haut de Section B (qui est de 24 ou 32) */}
+                <div className="dbg-space-visu top-0 h-24 md:h-32" style={{ content: '"PADDING HAUT B"' }}>PADDING HAUT SECTION B</div>
 
-                {/* PADDING HAUT */}
-                <div className="mixer-pad-top h-24 md:h-32" data-id="PAD-HAUT-B (py-32)"></div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-4">
-                    <div>
-                        <h2 className="text-4xl font-bold text-[#FF9F1C]">Tout a commencé par...</h2>
-                        {/* MARGE SOUS TITRE */}
-                        <div className="mixer-margin h-6 mb-6" data-id="MARG-TITRE-B (mb-6)"></div>
-                        <p>Texte Bloc B...</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <motion.div className="lg:sticky lg:top-32 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
+                        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                            Tout a commencé par...
+                        </motion.h2>
+                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                            Un regard différent. Une volonté de capturer non pas ce qui est visible, mais ce qui est ressenti.
+                        </motion.p>
+                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                            Nous ne sommes pas de simples observateurs. Nous sommes des traducteurs d'instants.
+                        </motion.p>
+                        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                            Que ce soit au cœur d'un concert... <span className="font-bold text-black">le point où l'image devient vivante</span>.
+                        </motion.p>
+                    </motion.div>
+                    <div className="relative">
+                        <div className="sticky top-32">
+                            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                                <img src="/assets/images/ap_blonde.png" className="w-full h-full object-cover about-blonde-img" />
+                            </div>
+                        </div>
                     </div>
-                    <div><img src="/assets/images/ap_blonde.png" className="w-full rounded" /></div>
                 </div>
 
-                {/* PADDING BAS */}
-                <div className="mixer-pad-bot h-24 md:h-32" data-id="PAD-BAS-B (py-32)"></div>
+                {/* Spacer de sécurité (vide en prod) */}
+
+                {/* Spacer Ajustable (ENTRE B ET C) - ATTENTION il est DANS la section B en prod */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 1"></div>
             </section>
-
-            {/* SPACER 1 (Entre B et C) */}
-            <div className="mixer-spacer h-6 md:h-12 lg:h-16" data-id="SPACER-1"></div>
-
 
             {/* ==================== BLOC C : FUSION ==================== */}
-            <section className="bg-gray-50 relative z-10" data-label="BLOC C">
-                <div className="mixer-label">SECTION C</div>
+            <section className="bg-gray-50 relative z-10 py-24 md:py-32 dbg-box" data-label="SECTION C (py-24)">
+                <div className="dbg-space-visu top-0 h-24 md:h-32">PADDING HAUT SECTION C</div>
 
-                {/* PADDING HAUT */}
-                <div className="mixer-pad-top h-24 md:h-32" data-id="PAD-HAUT-C (py-32)"></div>
-
-                <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div><img src="/assets/images/ap_pont alex.jpg" className="w-full h-64 object-cover" /></div>
-                    <div>
-                        <h2 className="text-4xl font-bold">Corps & Caméra</h2>
-                        {/* MARGE SOUS TITRE */}
-                        <div className="mixer-margin h-6 mb-6" data-id="MARG-TITRE-C (mb-6)"></div>
-                        <p>Texte Bloc C...</p>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div className="relative h-[500px] md:h-[600px] order-2 lg:order-1">
+                            <div className="absolute left-0 top-0 w-[60%] h-[75%] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+                                <img src="/assets/images/ap_pont alex.jpg" className="w-full h-full object-cover grayscale about-pont-img" />
+                            </div>
+                            <div className="absolute right-0 bottom-0 w-[65%] h-[80%] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10">
+                                <img src="/assets/images/ap_stabbvaw.JPG" className="w-full h-full object-cover about-steady-img" />
+                            </div>
+                        </div>
+                        <div className="order-1 lg:order-2 w-[90%] mx-auto lg:w-full lg:mx-0 justify-self-center lg:justify-self-start">
+                            <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                                Corps & Caméra
+                            </motion.h2>
+                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                                La fluidité n'est pas un hasard. Elle naît de la fusion entre l'opérateur et son outil.
+                            </motion.p>
+                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                                Être au cœur de l'action sans la perturber.
+                            </motion.p>
+                            <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                                Le corps s'efface... <span className="font-bold text-black">transformer le réel en récit visuel</span>.
+                            </motion.p>
+                        </div>
                     </div>
                 </div>
-
-                {/* PADDING BAS C - LE COUPABLE POTENTIEL */}
-                <div className="mixer-pad-bot h-24 md:h-32" data-id="PAD-BAS-C (py-32)"></div>
             </section>
-
-            {/* SPACER 2 (Entre C et D) */}
-            {/* Note : En Prod, j'ai déplacé ce spacer DANS D. Ici je le montre ENTRE pour que vous décidiez où il va/sa taille. */}
-            <div className="mixer-spacer h-6 md:h-12 lg:h-16" data-id="SPACER-2"></div>
-
 
             {/* ==================== BLOC D : GALERIE ==================== */}
-            <section className="bg-white relative z-10 overflow-hidden" data-label="BLOC D">
-                <div className="mixer-label">SECTION D</div>
+            <section className="bg-white relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden dbg-box" data-label="SECTION D (pt-0)">
+                {/* SPACER 2 (Début de section D en Prod) */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 2"></div>
 
-                {/* PADDING HAUT D (Actuellement 0, mais je mets une ligne pour le montrer) */}
-                <div className="mixer-pad-top h-0 border-2 border-red-500" data-id="PAD-HAUT-D (pt-0)"></div>
-
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-bold">Dans l'Instant</h2>
-                    {/* MARGE SOUS TITRE D */}
-                    <div className="mixer-margin h-4 mb-4" data-id="MARG-TITRE-D (mb-4)"></div>
-                    <p>Les images en mouvement</p>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4 mt-0 dbg-box" data-label="TITRE D (mt-0)">
+                    <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
+                        Dans l'Instant
+                    </motion.h2>
+                    <p className="text-center text-gray-600 text-lg">Les images en mouvement</p>
                 </div>
 
-                <div className="flex justify-center px-4 mt-8">
-                    <div className="w-full max-w-5xl h-64 bg-gray-200 flex items-center justify-center">IMAGE GALERIE</div>
+                <div className="flex justify-center px-4">
+                    <motion.div className="w-full max-w-5xl">
+                        <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                            <img src="/assets/images/ap_barriophil.jpg" className="w-full h-full object-cover about-cine-img" />
+                        </div>
+                    </motion.div>
                 </div>
-
-                {/* PADDING BAS D */}
-                <div className="mixer-pad-bot h-0 border-2 border-red-500" data-id="PAD-BAS-D (pb-0)"></div>
             </section>
-
-            {/* SPACER 3 (Entre D et Outro) */}
-            <div className="mixer-spacer h-6 md:h-12 lg:h-16" data-id="SPACER-3"></div>
 
             {/* ==================== OUTRO ==================== */}
-            <section className="bg-white relative z-10 flex flex-col items-center" data-label="OUTRO">
-                <div className="mixer-label">SECTION OUTRO</div>
+            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center dbg-box" data-label="OUTRO (pt-0)">
+                {/* SPACER 3 (Début de section Outro en Prod) */}
+                <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 3"></div>
 
-                {/* PADDING HAUT OUTRO */}
-                <div className="mixer-pad-top h-0 border-2 border-red-500" data-id="PAD-HAUT-OUTRO (pt-0)"></div>
-
-                <div className="w-[90%] text-center mt-4">
-                    <blockquote className="text-2xl italic">"Nous sculptons des émotions."</blockquote>
-                </div>
-
-                {/* PADDING BAS OUTRO */}
-                <div className="mixer-pad-bot h-24 md:h-32" data-id="PAD-BAS-OUTRO (pb-32)"></div>
+                <motion.div className="max-w-4xl mx-auto text-center w-[90%] md:w-[70%]" style={{ marginTop: 0 }}>
+                    <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 leading-relaxed">
+                        "Nous ne capturons pas des images.<br />
+                        Nous sculptons des <span className="font-bold text-[#FF9F1C]" style={{ fontFamily: 'var(--font-chewy)' }}>émotions</span>."
+                    </blockquote>
+                </motion.div>
             </section>
-
         </main>
     );
 }
