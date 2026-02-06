@@ -216,7 +216,7 @@ export default function AboutPage() {
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
             <section className="bg-white relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-4 mt-0">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
