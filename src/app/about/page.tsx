@@ -147,7 +147,7 @@ export default function AboutPage() {
                                 <img
                                     src="/assets/images/ap_pont alex.jpg"
                                     alt="Architecture"
-                                    className="w-full h-full object-cover grayscale"
+                                    className="w-full h-full object-cover grayscale about-pont-img"
                                 />
                             </motion.div>
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
                                 <img
                                     src="/assets/images/ap_steadyphil.JPG"
                                     alt="Opérateur Steadicam"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover about-steady-img"
                                 />
                             </motion.div>
                         </div>
