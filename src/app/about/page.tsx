@@ -39,7 +39,7 @@ export default function AboutPage() {
             <Navbar />
 
             {/* --- HEADER SECTION --- */}
-            <section className="px-6 md:px-12 mb-24 md:mb-32 mt-10">
+            <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-24 md:mb-32 mt-10">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -66,11 +66,11 @@ export default function AboutPage() {
             </section>
 
             {/* --- SECTION 1: LA PHILOSOPHIE (Image Oeil/Viseur) --- */}
-            <section className="px-6 md:px-12 mb-32 md:mb-48">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+            <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-32 md:mb-48">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
 
                     {/* Image Animated Wrapper (Recadrée pour cacher le bas) */}
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:order-1 order-2">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:order-1 order-2 shadow-xl">
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
@@ -81,8 +81,8 @@ export default function AboutPage() {
                             <img
                                 src="/assets/images/ap_barriophil.jpg"
                                 alt="Philosophie de l'image"
-                                className="w-full h-full object-cover object-top" // Focus haut pour cacher texte bas
-                                style={{ objectPosition: 'center 20%' }} // Fine tuning pour couper le bas texte
+                                className="w-full h-full object-cover object-top"
+                                style={{ objectPosition: 'center 20%' }}
                             />
                         </motion.div>
                     </div>
@@ -109,8 +109,9 @@ export default function AboutPage() {
             </section>
 
             {/* --- SECTION 2: LE COLLAGE (Superposition) --- */}
-            <section className="px-6 md:px-12 mb-32 md:mb-48 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10 overflow-hidden">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
+            <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-32 md:mb-48">
+                {/* Background Box Grise pour le contraste, mais intégrée dans la grid */}
+                <div className="bg-gray-50 py-24 px-6 md:px-12 rounded-[40px] grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
 
                     {/* Text Content */}
                     <motion.div
@@ -118,7 +119,7 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={staggerContainer}
-                        className="relative z-20" // Au dessus si besoin
+                        className="relative z-20"
                     >
                         <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]" style={{ fontFamily: 'var(--font-chewy)' }}>
                             Corps & Caméra
@@ -132,7 +133,7 @@ export default function AboutPage() {
                     </motion.div>
 
                     {/* Image Collage (Superposition Artistique) */}
-                    <div className="relative h-[600px] w-full flex items-center justify-center">
+                    <div className="relative h-[500px] md:h-[600px] w-full flex items-center justify-center">
 
                         {/* Image 1: Pont Alex (Arrière plan - Gauche) */}
                         <motion.div
@@ -155,13 +156,13 @@ export default function AboutPage() {
                             whileInView={{ opacity: 1, x: 0, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="absolute right-0 bottom-10 w-[60%] h-auto rounded-xl overflow-hidden shadow-2xl z-10 border-4 border-white"
-                            style={{ aspectRatio: 'auto' }} // Garder le ratio naturel
+                            className="absolute right-0 bottom-10 w-[60%] h-auto max-h-[70%] rounded-xl overflow-hidden shadow-2xl z-10 border-4 border-white"
+                            style={{ aspectRatio: 'auto' }}
                         >
                             <img
                                 src="/assets/images/ap_barrio stab.jpg"
                                 alt="Stabilisation Action"
-                                className="w-full h-full object-cover" // Cover pour remplir le block défini ou contain si on veut vraiment tout
+                                className="w-full h-full object-cover"
                             />
                         </motion.div>
                     </div>
@@ -170,7 +171,7 @@ export default function AboutPage() {
             </section>
 
             {/* --- SECTION 3: HAUTEUR & VISION (Image Barrio Haut) --- */}
-            <section className="px-6 md:px-12 mb-24">
+            <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-24">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
