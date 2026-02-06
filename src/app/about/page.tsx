@@ -147,7 +147,7 @@ export default function AboutPage() {
                                 <img
                                     src="/assets/images/ap_pont alex.jpg"
                                     alt="Architecture"
-                                    className="w-full h-full object-cover grayscale about-pont-img"
+                                    className="w-full h-full object-cover grayscale about-pont-img scale-125"
                                 />
                             </motion.div>
 
