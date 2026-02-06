@@ -132,9 +132,7 @@ export default function AboutPageDebug() {
                 <div className="dbg-space-visu top-0 h-0 border-b-2 border-red-500 text-red-500">❌ PADDING HAUT C (pt-0)</div>
 
                 {/* Spacer 1 (Déplacé ici) */}
-                <div className="leading-none text-[0px] m-0 p-0">
-                    <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer !mb-0" data-id="SPACER 1"></div>
-                </div>
+
 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
