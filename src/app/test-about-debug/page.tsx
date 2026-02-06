@@ -96,7 +96,7 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC B : ORIGINE ==================== */}
-            <section className="bg-blue-100 relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 dbg-box" data-label="SECTION B (BLEU)">
+            <section className="bg-blue-100 relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-0 md:pt-32 md:pb-0 dbg-box" data-label="SECTION B (BLEU)">
                 {/* Visualisation du Padding Haut de Section B (qui est de 24 ou 32) */}
                 <div className="dbg-space-visu top-0 h-24 md:h-32" style={{ content: '"PADDING HAUT B"' }}>PADDING HAUT SECTION B</div>
 
@@ -128,9 +128,8 @@ export default function AboutPageDebug() {
 
                 {/* Spacer Ajustable (ENTRE B ET C) - ATTENTION il est DANS la section B en prod */}
                 <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 1"></div>
-
-                {/* Visualisation Padding Bas B */}
-                <div className="dbg-space-visu bottom-0 h-24 md:h-32" style={{ content: '"PADDING BAS B"' }}>⬇️ PADDING BAS B (py-24/32)</div>
+                {/* Visualisation Padding Bas B (SUPPRIMÉ) */}
+                <div className="dbg-space-visu bottom-0 h-0 border-b-2 border-red-500 text-red-500">❌ PADDING BAS B (pb-0)</div>
             </section>
 
             {/* ==================== BLOC C : FUSION ==================== */}

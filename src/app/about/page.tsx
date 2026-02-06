@@ -81,7 +81,7 @@ export default function AboutPage() {
             </section>
 
             {/* ==================== BLOC B : L'ORIGINE ==================== */}
-            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-0 md:pt-32 md:pb-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                     {/* Colonne Texte */}
