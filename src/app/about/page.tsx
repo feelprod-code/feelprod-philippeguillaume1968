@@ -59,7 +59,7 @@ export default function AboutPage() {
                 <div className={`
                     absolute bottom-0 left-0 w-full z-10
                     container mx-auto px-4 sm:px-6 lg:px-8 
-                    pb-0 
+                    pb-32 
                     md:pb-32
                     flex justify-center
                 `}>
