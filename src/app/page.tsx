@@ -262,8 +262,8 @@ export default function Home() {
                             { videoId: "025yJW0B3GQ", image: "/assets/images/12-ANNIALLEMAGNE.png", alt: "ANNI ALLEMAGNE" },
                             { videoId: "ucJyA0cVRdg", image: "/assets/images/13-MARIAGE.png", alt: "MARIAGE" },
                             { videoId: "v6BcNiiB9DA", image: "/assets/images/15-THEOSURF.png", alt: "THEO SURF" },
-                            { videoId: "Pfj2jnbRwfw", image: "/assets/images/17.jpg", alt: "SOUVENIR 17" },
-                            { videoId: "aZBeiycEwl8", image: "/assets/images/22-U9.jpg", alt: "U9" },
+                            { videoId: "Pfj2jnbRwfw", image: "/assets/images/17TBASKET.png", alt: "SOUVENIR 17" },
+                            { videoId: "aZBeiycEwl8", image: "/assets/images/22-U91.png", alt: "U9" },
                         ]}
                     />
                 </Reveal>
