@@ -88,7 +88,7 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC B : ORIGINE ==================== */}
-            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 dbg-box" data-label="SECTION B (py-24)">
+            <section className="bg-blue-100 relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 dbg-box" data-label="SECTION B (BLEU)">
                 {/* Visualisation du Padding Haut de Section B (qui est de 24 ou 32) */}
                 <div className="dbg-space-visu top-0 h-24 md:h-32" style={{ content: '"PADDING HAUT B"' }}>PADDING HAUT SECTION B</div>
 
@@ -123,7 +123,7 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC C : FUSION ==================== */}
-            <section className="bg-gray-50 relative z-10 py-24 md:py-32 dbg-box" data-label="SECTION C (py-24)">
+            <section className="bg-purple-100 relative z-10 py-24 md:py-32 dbg-box" data-label="SECTION C (VIOLET)">
                 <div className="dbg-space-visu top-0 h-24 md:h-32">PADDING HAUT SECTION C</div>
 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -155,7 +155,7 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC D : GALERIE ==================== */}
-            <section className="bg-white relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden dbg-box" data-label="SECTION D (pt-0)">
+            <section className="bg-orange-100 relative z-10 pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden dbg-box" data-label="SECTION D (ORANGE)">
                 {/* SPACER 2 (Début de section D en Prod) */}
                 <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 2"></div>
 
@@ -176,7 +176,7 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== OUTRO ==================== */}
-            <section className="bg-white relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center dbg-box" data-label="OUTRO (pt-0)">
+            <section className="bg-pink-100 relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-0 md:pb-32 md:pt-0 flex flex-col items-center dbg-box" data-label="OUTRO (ROSE)">
                 {/* SPACER 3 (Début de section Outro en Prod) */}
                 <div className="spacer-mobile h-6 md:h-12 lg:h-16 dbg-spacer" data-id="SPACER 3"></div>
 
