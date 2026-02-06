@@ -35,7 +35,7 @@ const imageReveal: Variants = {
 
 export default function AboutPage() {
     return (
-        <main className="bg-white min-h-screen pt-48 pb-20">
+        <main className="bg-white min-h-screen pt-32 md:pt-64 pb-20">
             <Navbar />
 
             {/* --- HEADER SECTION --- */}
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 </motion.div>
             </section>
 
-            {/* --- SECTION 1: LA PHILOSOPHIE (Image Pont) --- */}
+            {/* --- SECTION 1: LA PHILOSOPHIE (Image SteadyPhil) --- */}
             <section className="px-6 md:px-12 mb-24 md:mb-32">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 
@@ -79,8 +79,8 @@ export default function AboutPage() {
                             className="w-full h-full"
                         >
                             <img
-                                src="/assets/images/ap_pont.jpeg"
-                                alt="Perspective Urbaine"
+                                src="/assets/images/ap_steadyphil.JPG"
+                                alt="Philosophie de l'image"
                                 className="w-full h-full object-cover"
                             />
                         </motion.div>
@@ -107,9 +107,9 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* --- SECTION 2: LA TECHNIQUE (Image Steady/Phil) --- */}
+            {/* --- SECTION 2: LA TECHNIQUE (Double Image Verticale) --- */}
             <section className="px-6 md:px-12 mb-24 md:mb-32 bg-gray-50 py-24 rounded-[40px] mx-4 md:mx-10">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
 
                     {/* Text Content */}
                     <motion.div
@@ -129,34 +129,34 @@ export default function AboutPage() {
                         </motion.p>
                     </motion.div>
 
-                    {/* Image Grid (Collage Style) */}
-                    <div className="relative h-[600px] w-full">
-                        {/* Image 1 (Back) */}
+                    {/* Image Grid (Double Vertical 9:16) */}
+                    <div className="flex gap-4 md:gap-8 justify-center h-[500px] md:h-[600px]">
+                        {/* Image 1: Pont Alex (N&B, 9:16) */}
                         <motion.div
-                            initial={{ opacity: 0, rotate: -5, x: -50 }}
-                            whileInView={{ opacity: 1, rotate: -3, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.2 }}
-                            className="absolute top-0 left-0 w-[70%] h-[70%] z-10 rounded-xl overflow-hidden shadow-xl"
+                            transition={{ duration: 0.8 }}
+                            className="relative w-1/2 h-full rounded-2xl overflow-hidden shadow-lg"
                         >
                             <img
-                                src="/assets/images/ap_steadyphil.JPG"
-                                alt="Steadicam Operator"
-                                className="w-full h-full object-cover"
+                                src="/assets/images/ap_pont alex.jpg"
+                                alt="Pont Alexandre III"
+                                className="w-full h-full object-cover grayscale" // Forced Grayscale
                             />
                         </motion.div>
 
-                        {/* Image 2 (Front) */}
+                        {/* Image 2: Barrio Stab (Couleur, 9:16, légèrement décalée) */}
                         <motion.div
-                            initial={{ opacity: 0, rotate: 5, y: 50 }}
-                            whileInView={{ opacity: 1, rotate: 3, y: 0 }}
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.4 }}
-                            className="absolute bottom-0 right-0 w-[65%] h-[65%] z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-white"
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="relative w-1/2 h-full rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-12" // Décalage vertical
                         >
                             <img
                                 src="/assets/images/ap_barrio stab.jpg"
-                                alt="Action Shot"
+                                alt="Stabilisation Action"
                                 className="w-full h-full object-cover"
                             />
                         </motion.div>
