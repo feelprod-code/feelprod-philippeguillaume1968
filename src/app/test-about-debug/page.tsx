@@ -180,7 +180,7 @@ export default function AboutPageDebug() {
             </section>
 
             {/* ==================== BLOC D : GALERIE CINÉTIQUE ==================== */}
-            <section className="pb-24 pt-0 md:pb-32 md:pt-0 overflow-hidden">
+            <section className="pb-0 pt-0 md:pb-0 md:pt-0 overflow-hidden">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
