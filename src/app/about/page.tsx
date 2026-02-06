@@ -59,10 +59,11 @@ export default function AboutPage() {
                 <div className={`
                     absolute bottom-0 left-0 w-full z-10
                     container mx-auto px-4 sm:px-6 lg:px-8 
-                    pb-32 
                     md:pb-32
                     flex justify-center
-                `}>
+                `}
+                    style={{ paddingBottom: '120px' }} /* <--- CHANGEZ CETTE VALEUR POUR LE MOBILE (ex: 50px ou 200px) */
+                >
                     <motion.h1
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
