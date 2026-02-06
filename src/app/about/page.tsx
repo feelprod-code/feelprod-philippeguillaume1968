@@ -90,27 +90,30 @@ export default function AboutPage() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
-                        className="lg:sticky lg:top-32 px-6 lg:px-0"
+                        className="lg:sticky lg:top-32"
                     >
-                        <motion.h2
-                            variants={fadeInUp}
-                            className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]"
-                            style={{ fontFamily: 'var(--font-chewy)' }}
-                        >
-                            Tout a commencé par...
-                        </motion.h2>
+                        {/* Conteneur de sécurité mobile */}
+                        <div className="w-[90%] mx-auto lg:w-full lg:mx-0">
+                            <motion.h2
+                                variants={fadeInUp}
+                                className="text-4xl md:text-5xl font-bold mb-6 text-[#FF9F1C]"
+                                style={{ fontFamily: 'var(--font-chewy)' }}
+                            >
+                                Tout a commencé par...
+                            </motion.h2>
 
-                        <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                            Un regard différent. Une volonté de capturer non pas ce qui est visible, mais ce qui est ressenti. Derrière chaque prise, il y a une intention, une recherche de l'émotion pure.
-                        </motion.p>
+                            <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                                Un regard différent. Une volonté de capturer non pas ce qui est visible, mais ce qui est ressenti. Derrière chaque prise, il y a une intention, une recherche de l'émotion pure.
+                            </motion.p>
 
-                        <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                            Nous ne sommes pas de simples observateurs. Nous sommes des traducteurs d'instants. Chaque cadrage, chaque mouvement de caméra est pensé pour amplifier l'instant, pour le transformer en une expérience sensorielle totale.
-                        </motion.p>
+                            <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                                Nous ne sommes pas de simples observateurs. Nous sommes des traducteurs d'instants. Chaque cadrage, chaque mouvement de caméra est pensé pour amplifier l'instant, pour le transformer en une expérience sensorielle totale.
+                            </motion.p>
 
-                        <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700">
-                            Que ce soit au cœur d'un concert, dans les rues vibrantes d'un quartier ou face à l'architecture majestueuse d'un monument, nous cherchons toujours la même chose : <span className="font-bold text-black">le point où l'image devient vivante</span>.
-                        </motion.p>
+                            <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700">
+                                Que ce soit au cœur d'un concert, dans les rues vibrantes d'un quartier ou face à l'architecture majestueuse d'un monument, nous cherchons toujours la même chose : <span className="font-bold text-black">le point où l'image devient vivante</span>.
+                            </motion.p>
+                        </div>
                     </motion.div>
 
                     {/* Colonne Image avec Parallaxe (via margin, pas transform) */}
@@ -180,27 +183,30 @@ export default function AboutPage() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={staggerContainer}
-                            className="order-1 lg:order-2 px-6 lg:px-0"
+                            className="order-1 lg:order-2"
                         >
-                            <motion.h2
-                                variants={fadeInUp}
-                                className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]"
-                                style={{ fontFamily: 'var(--font-chewy)' }}
-                            >
-                                Corps & Caméra
-                            </motion.h2>
+                            {/* Conteneur de sécurité mobile */}
+                            <div className="w-[90%] mx-auto lg:w-full lg:mx-0">
+                                <motion.h2
+                                    variants={fadeInUp}
+                                    className="text-4xl md:text-5xl font-bold mb-6 text-[#1d1d1f]"
+                                    style={{ fontFamily: 'var(--font-chewy)' }}
+                                >
+                                    Corps & Caméra
+                                </motion.h2>
 
-                            <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                                La fluidité n'est pas un hasard. Elle naît de la fusion entre l'opérateur et son outil. Le steadicam n'est plus un simple accessoire technique, il devient une extension naturelle du regard, une prothèse sensorielle.
-                            </motion.p>
+                                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                                    La fluidité n'est pas un hasard. Elle naît de la fusion entre l'opérateur et son outil. Le steadicam n'est plus un simple accessoire technique, il devient une extension naturelle du regard, une prothèse sensorielle.
+                                </motion.p>
 
-                            <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                                Être au cœur de l'action sans la perturber. C'est cette présence invisible qui permet de capter l'authenticité brute. Une danse subtile entre le cadreur et le sujet, où chaque mouvement est une respiration, chaque pan de caméra une émotion traduite.
-                            </motion.p>
+                                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
+                                    Être au cœur de l'action sans la perturber. C'est cette présence invisible qui permet de capter l'authenticité brute. Une danse subtile entre le cadreur et le sujet, où chaque mouvement est une respiration, chaque pan de caméra une émotion traduite.
+                                </motion.p>
 
-                            <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700">
-                                Le corps s'efface. La caméra voit ce que l'œil humain ne peut saisir. C'est là que commence le véritable travail : <span className="font-bold text-black">transformer le réel en récit visuel</span>.
-                            </motion.p>
+                                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-gray-700">
+                                    Le corps s'efface. La caméra voit ce que l'œil humain ne peut saisir. C'est là que commence le véritable travail : <span className="font-bold text-black">transformer le réel en récit visuel</span>.
+                                </motion.p>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
