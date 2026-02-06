@@ -56,7 +56,7 @@ export default function AboutPage() {
                 </motion.div>
 
                 {/* Titre Parallaxe */}
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative h-full flex items-center justify-center pt-64 md:pt-48">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative h-full flex items-end justify-center pb-24 md:pb-32">
                     <motion.h1
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
