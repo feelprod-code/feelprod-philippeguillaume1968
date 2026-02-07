@@ -630,6 +630,8 @@ footer {
   overflow: hidden;
   background-color: #fff;
   color: #1d1d1f;
+  padding-top: 65vh;
+  /* Default white space for all screens */
   padding-bottom: 50px;
 }
 
