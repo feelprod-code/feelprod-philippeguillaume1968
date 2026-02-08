@@ -313,7 +313,7 @@ export default function Home() {
             {/* Music Section */}
             {/* Music Section */}
             {/* --- CONTROLE UNIQUE ESPACE --- : Changez "-5vh" pour monter/descendre le bloc. C'est la SEULE ligne à toucher ! */}
-            <section className="section-musiques-container">
+            <section className="section-musiques-container !-mt-[-7vh]">
                 <div className="spacing-section-top" /> {/* ESPACE HAUT MUSIQUE */}
 
                 <div className="section-header header-musiques px-[5%]" style={{ "--comic-color": "#9C27B0" } as React.CSSProperties}>
